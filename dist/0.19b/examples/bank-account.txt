@@ -1,0 +1,840 @@
+# This script create a structure like a traditional bank account system
+
+# Customers
+customer C001 name Harrison Ford
+customer C001 address AAA street 12
+customer C001 phone 1234-1234
+
+customer C002 name Angelina Jolie
+customer C002 address BBB street 23
+customer C002 phone 2345-2345
+
+customer C003 name Nicole Kidman
+customer C003 address CCC street 34
+customer C003 phone 3456-3456
+
+customer C004 name Samuel Jackson
+customer C004 address DDD street 45
+customer C004 phone 4567-4567
+
+customer C005 name Jessica Alba
+customer C005 address FFF street 56
+customer C005 phone 5678-5678
+
+customer C006 name Denzel Washington
+customer C006 address GGG street 67
+customer C006 phone 6789-6789
+
+customer C007 name Daniel Craig
+customer C007 address HHH street 78
+customer C007 phone 7890-7890
+
+
+# Accounts
+C001 account A001 type current
+C001 account A001 date 21/04/2013
+C001 account A002 type investment
+C001 account A002 date 22/04/2013
+
+C002 account A001 type current
+C002 account A001 date 12/05/2013
+C002 account A002 type investment
+C002 account A002 date 13/05/2013
+
+C003 account A001 type current
+C003 account A001 date 02/06/2013
+C003 account A002 type investment
+C003 account A002 date 03/06/2013
+
+C004 account A001 type current
+C004 account A001 date 11/06/2013
+C004 account A002 type investment
+C004 account A002 date 12/06/2013
+
+C005 account A001 type current
+C005 account A001 date 01/04/2013
+C005 account A002 type investment
+C005 account A002 date 02/04/2013
+
+C006 account A001 type current
+C006 account A001 date 28/03/2013
+C006 account A002 type investment
+C006 account A002 date 29/03/2013
+
+C007 account A001 type current
+C007 account A001 date 30/05/2013
+C007 account A002 type investment
+C007 account A002 date 31/05/2013
+
+
+# Transactions
+C001 A001 transaction T001 01/01/2013 debit -35,13
+C001 A001 transaction T002 01/01/2013 credit 48,03
+C001 A001 transaction T003 01/01/2013 credit 15,94
+C001 A001 transaction T004 01/01/2013 credit 31,59
+C001 A001 transaction T005 01/01/2013 debit -34,95
+C001 A001 transaction T006 01/01/2013 credit 44,14
+C001 A001 transaction T007 01/01/2013 credit 6,53
+C001 A001 transaction T008 01/01/2013 debit -10,62
+C001 A001 transaction T009 01/01/2013 credit 50,04
+C001 A001 transaction T010 01/01/2013 credit 44,33
+C001 A001 balance 01/01/2013 159,90
+C001 A001 transaction T011 02/01/2013 credit 26,80
+C001 A001 transaction T012 02/01/2013 debit -30,27
+C001 A001 transaction T013 02/01/2013 credit 40,07
+C001 A001 transaction T014 02/01/2013 debit -25,57
+C001 A001 transaction T015 02/01/2013 debit -17,48
+C001 A001 transaction T016 02/01/2013 debit -35,15
+C001 A001 transaction T017 02/01/2013 debit -6,59
+C001 A001 transaction T018 02/01/2013 credit 46,83
+C001 A001 transaction T019 02/01/2013 debit -7,16
+C001 A001 transaction T020 02/01/2013 credit 41,54
+C001 A001 balance 02/01/2013 192,92
+C001 A001 transaction T021 03/01/2013 debit -11,03
+C001 A001 transaction T022 03/01/2013 debit -24,70
+C001 A001 transaction T023 03/01/2013 debit -17,96
+C001 A001 transaction T024 03/01/2013 credit 39,19
+C001 A001 transaction T025 03/01/2013 credit 33,60
+C001 A001 transaction T026 03/01/2013 credit 16,33
+C001 A001 transaction T027 03/01/2013 debit -7,31
+C001 A001 transaction T028 03/01/2013 debit -18,76
+C001 A001 transaction T029 03/01/2013 credit 47,65
+C001 A001 transaction T030 03/01/2013 credit 59,92
+C001 A001 balance 03/01/2013 309,85
+C001 A001 transaction T031 04/01/2013 credit 59,21
+C001 A001 transaction T032 04/01/2013 debit -14,77
+C001 A001 transaction T033 04/01/2013 credit 28,97
+C001 A001 transaction T034 04/01/2013 credit 52,76
+C001 A001 transaction T035 04/01/2013 credit 15,28
+C001 A001 transaction T036 04/01/2013 debit -37,09
+C001 A001 transaction T037 04/01/2013 debit -7,88
+C001 A001 transaction T038 04/01/2013 credit 29,61
+C001 A001 transaction T039 04/01/2013 debit -27,62
+C001 A001 transaction T040 04/01/2013 credit 54,85
+C001 A001 balance 04/01/2013 463,17
+C001 A001 transaction T041 05/01/2013 credit 30,32
+C001 A001 transaction T042 05/01/2013 debit -32,65
+C001 A001 transaction T043 05/01/2013 credit 38,71
+C001 A001 transaction T044 05/01/2013 credit 11,41
+C001 A001 transaction T045 05/01/2013 credit 31,09
+C001 A001 transaction T046 05/01/2013 credit 51,61
+C001 A001 transaction T047 05/01/2013 credit 41,92
+C001 A001 transaction T048 05/01/2013 debit -33,46
+C001 A001 transaction T049 05/01/2013 debit -13,59
+C001 A001 transaction T050 05/01/2013 credit 2,72
+C001 A001 balance 05/01/2013 591,25
+C001 A002 transaction T001 01/01/2013 debit -0,38
+C001 A002 transaction T002 01/01/2013 debit -7,58
+C001 A002 transaction T003 01/01/2013 credit 38,93
+C001 A002 transaction T004 01/01/2013 debit -35,59
+C001 A002 transaction T005 01/01/2013 credit 58,55
+C001 A002 transaction T006 01/01/2013 credit 50,64
+C001 A002 transaction T007 01/01/2013 debit -1,43
+C001 A002 transaction T008 01/01/2013 credit 54,01
+C001 A002 transaction T009 01/01/2013 credit 32,14
+C001 A002 transaction T010 01/01/2013 credit 11,56
+C001 A002 balance 01/01/2013 200,85
+C001 A002 transaction T011 02/01/2013 credit 9,45
+C001 A002 transaction T012 02/01/2013 credit 56,43
+C001 A002 transaction T013 02/01/2013 credit 57,29
+C001 A002 transaction T014 02/01/2013 credit 6,20
+C001 A002 transaction T015 02/01/2013 credit 53,44
+C001 A002 transaction T016 02/01/2013 credit 22,31
+C001 A002 transaction T017 02/01/2013 debit -37,01
+C001 A002 transaction T018 02/01/2013 credit 54,42
+C001 A002 transaction T019 02/01/2013 debit -31,55
+C001 A002 transaction T020 02/01/2013 debit -11,79
+C001 A002 balance 02/01/2013 380,04
+C001 A002 transaction T021 03/01/2013 debit -35,13
+C001 A002 transaction T022 03/01/2013 debit -36,67
+C001 A002 transaction T023 03/01/2013 credit 24,39
+C001 A002 transaction T024 03/01/2013 credit 59,13
+C001 A002 transaction T025 03/01/2013 debit -12,67
+C001 A002 transaction T026 03/01/2013 credit 28,04
+C001 A002 transaction T027 03/01/2013 debit -17,41
+C001 A002 transaction T028 03/01/2013 debit -7,82
+C001 A002 transaction T029 03/01/2013 debit -27,88
+C001 A002 transaction T030 03/01/2013 debit -13,57
+C001 A002 balance 03/01/2013 340,45
+C001 A002 transaction T031 04/01/2013 debit -18,86
+C001 A002 transaction T032 04/01/2013 credit 3,78
+C001 A002 transaction T033 04/01/2013 credit 5,51
+C001 A002 transaction T034 04/01/2013 credit 12,97
+C001 A002 transaction T035 04/01/2013 debit -29,73
+C001 A002 transaction T036 04/01/2013 debit -21,73
+C001 A002 transaction T037 04/01/2013 credit 33,94
+C001 A002 transaction T038 04/01/2013 debit -20,62
+C001 A002 transaction T039 04/01/2013 credit 39,71
+C001 A002 transaction T040 04/01/2013 debit -36,27
+C001 A002 balance 04/01/2013 309,15
+C001 A002 transaction T041 05/01/2013 debit -32,58
+C001 A002 transaction T042 05/01/2013 debit -17,83
+C001 A002 transaction T043 05/01/2013 credit 37,01
+C001 A002 transaction T044 05/01/2013 debit -15,51
+C001 A002 transaction T045 05/01/2013 debit -8,74
+C001 A002 transaction T046 05/01/2013 debit -34,14
+C001 A002 transaction T047 05/01/2013 debit -33,79
+C001 A002 transaction T048 05/01/2013 credit 38,98
+C001 A002 transaction T049 05/01/2013 credit 42,37
+C001 A002 transaction T050 05/01/2013 credit 36,63
+C001 A002 balance 05/01/2013 321,55
+C002 A001 transaction T001 01/01/2013 debit -8,59
+C002 A001 transaction T002 01/01/2013 debit -19,56
+C002 A001 transaction T003 01/01/2013 credit 7,50
+C002 A001 transaction T004 01/01/2013 credit 32,70
+C002 A001 transaction T005 01/01/2013 credit 21,68
+C002 A001 transaction T006 01/01/2013 credit 30,48
+C002 A001 transaction T007 01/01/2013 credit 50,37
+C002 A001 transaction T008 01/01/2013 debit -1,95
+C002 A001 transaction T009 01/01/2013 credit 20,12
+C002 A001 transaction T010 01/01/2013 credit 5,94
+C002 A001 balance 01/01/2013 138,69
+C002 A001 transaction T011 02/01/2013 credit 50,33
+C002 A001 transaction T012 02/01/2013 credit 27,79
+C002 A001 transaction T013 02/01/2013 credit 22,77
+C002 A001 transaction T014 02/01/2013 credit 45,31
+C002 A001 transaction T015 02/01/2013 credit 32,57
+C002 A001 transaction T016 02/01/2013 credit 47,50
+C002 A001 transaction T017 02/01/2013 credit 9,71
+C002 A001 transaction T018 02/01/2013 debit -18,87
+C002 A001 transaction T019 02/01/2013 credit 15,34
+C002 A001 transaction T020 02/01/2013 debit -32,42
+C002 A001 balance 02/01/2013 338,72
+C002 A001 transaction T021 03/01/2013 debit -28,55
+C002 A001 transaction T022 03/01/2013 credit 29,94
+C002 A001 transaction T023 03/01/2013 credit 33,86
+C002 A001 transaction T024 03/01/2013 credit 1,40
+C002 A001 transaction T025 03/01/2013 credit 24,99
+C002 A001 transaction T026 03/01/2013 debit -27,34
+C002 A001 transaction T027 03/01/2013 credit 54,62
+C002 A001 transaction T028 03/01/2013 credit 46,72
+C002 A001 transaction T029 03/01/2013 credit 36,72
+C002 A001 transaction T030 03/01/2013 credit 23,92
+C002 A001 balance 03/01/2013 535,00
+C002 A001 transaction T031 04/01/2013 credit 56,66
+C002 A001 transaction T032 04/01/2013 credit 32,99
+C002 A001 transaction T033 04/01/2013 credit 45,99
+C002 A001 transaction T034 04/01/2013 debit -5,63
+C002 A001 transaction T035 04/01/2013 debit -7,29
+C002 A001 transaction T036 04/01/2013 debit -32,85
+C002 A001 transaction T037 04/01/2013 debit -20,64
+C002 A001 transaction T038 04/01/2013 credit 36,57
+C002 A001 transaction T039 04/01/2013 credit 38,60
+C002 A001 transaction T040 04/01/2013 credit 55,08
+C002 A001 balance 04/01/2013 734,48
+C002 A001 transaction T041 05/01/2013 debit -10,22
+C002 A001 transaction T042 05/01/2013 debit -17,97
+C002 A001 transaction T043 05/01/2013 credit 6,07
+C002 A001 transaction T044 05/01/2013 credit 21,96
+C002 A001 transaction T045 05/01/2013 credit 41,74
+C002 A001 transaction T046 05/01/2013 credit 18,53
+C002 A001 transaction T047 05/01/2013 credit 32,86
+C002 A001 transaction T048 05/01/2013 credit 1,21
+C002 A001 transaction T049 05/01/2013 credit 3,05
+C002 A001 transaction T050 05/01/2013 credit 24,00
+C002 A001 balance 05/01/2013 855,71
+C002 A002 transaction T001 01/01/2013 credit 25,81
+C002 A002 transaction T002 01/01/2013 debit -12,77
+C002 A002 transaction T003 01/01/2013 debit -12,53
+C002 A002 transaction T004 01/01/2013 credit 59,68
+C002 A002 transaction T005 01/01/2013 credit 1,83
+C002 A002 transaction T006 01/01/2013 credit 42,83
+C002 A002 transaction T007 01/01/2013 credit 14,62
+C002 A002 transaction T008 01/01/2013 credit 47,92
+C002 A002 transaction T009 01/01/2013 debit -14,14
+C002 A002 transaction T010 01/01/2013 credit 20,58
+C002 A002 balance 01/01/2013 173,83
+C002 A002 transaction T011 02/01/2013 credit 37,34
+C002 A002 transaction T012 02/01/2013 credit 1,29
+C002 A002 transaction T013 02/01/2013 credit 52,58
+C002 A002 transaction T014 02/01/2013 debit -8,06
+C002 A002 transaction T015 02/01/2013 credit 56,87
+C002 A002 transaction T016 02/01/2013 credit 54,89
+C002 A002 transaction T017 02/01/2013 credit 12,32
+C002 A002 transaction T018 02/01/2013 debit -22,99
+C002 A002 transaction T019 02/01/2013 credit 32,83
+C002 A002 transaction T020 02/01/2013 credit 7,07
+C002 A002 balance 02/01/2013 397,97
+C002 A002 transaction T021 03/01/2013 debit -0,21
+C002 A002 transaction T022 03/01/2013 credit 16,93
+C002 A002 transaction T023 03/01/2013 debit -4,95
+C002 A002 transaction T024 03/01/2013 credit 9,88
+C002 A002 transaction T025 03/01/2013 credit 59,41
+C002 A002 transaction T026 03/01/2013 debit -22,56
+C002 A002 transaction T027 03/01/2013 credit 45,93
+C002 A002 transaction T028 03/01/2013 debit -5,06
+C002 A002 transaction T029 03/01/2013 credit 9,85
+C002 A002 transaction T030 03/01/2013 debit -2,13
+C002 A002 balance 03/01/2013 505,06
+C002 A002 transaction T031 04/01/2013 debit -31,06
+C002 A002 transaction T032 04/01/2013 credit 30,16
+C002 A002 transaction T033 04/01/2013 credit 34,48
+C002 A002 transaction T034 04/01/2013 debit -18,34
+C002 A002 transaction T035 04/01/2013 credit 25,69
+C002 A002 transaction T036 04/01/2013 credit 58,56
+C002 A002 transaction T037 04/01/2013 credit 42,46
+C002 A002 transaction T038 04/01/2013 credit 10,22
+C002 A002 transaction T039 04/01/2013 credit 2,97
+C002 A002 transaction T040 04/01/2013 debit -2,82
+C002 A002 balance 04/01/2013 657,38
+C002 A002 transaction T041 05/01/2013 credit 3,10
+C002 A002 transaction T042 05/01/2013 credit 26,04
+C002 A002 transaction T043 05/01/2013 credit 31,16
+C002 A002 transaction T044 05/01/2013 credit 8,04
+C002 A002 transaction T045 05/01/2013 credit 53,97
+C002 A002 transaction T046 05/01/2013 credit 25,72
+C002 A002 transaction T047 05/01/2013 debit -37,55
+C002 A002 transaction T048 05/01/2013 credit 11,90
+C002 A002 transaction T049 05/01/2013 credit 37,46
+C002 A002 transaction T050 05/01/2013 debit -6,27
+C002 A002 balance 05/01/2013 810,95
+C003 A001 transaction T001 01/01/2013 credit 3,85
+C003 A001 transaction T002 01/01/2013 credit 45,56
+C003 A001 transaction T003 01/01/2013 debit -13,51
+C003 A001 transaction T004 01/01/2013 credit 59,76
+C003 A001 transaction T005 01/01/2013 debit -9,94
+C003 A001 transaction T006 01/01/2013 debit -33,80
+C003 A001 transaction T007 01/01/2013 credit 54,13
+C003 A001 transaction T008 01/01/2013 credit 29,80
+C003 A001 transaction T009 01/01/2013 debit -14,96
+C003 A001 transaction T010 01/01/2013 credit 1,81
+C003 A001 balance 01/01/2013 122,70
+C003 A001 transaction T011 02/01/2013 credit 55,09
+C003 A001 transaction T012 02/01/2013 credit 48,18
+C003 A001 transaction T013 02/01/2013 debit -25,54
+C003 A001 transaction T014 02/01/2013 debit -2,20
+C003 A001 transaction T015 02/01/2013 debit -37,48
+C003 A001 transaction T016 02/01/2013 credit 18,34
+C003 A001 transaction T017 02/01/2013 credit 35,62
+C003 A001 transaction T018 02/01/2013 debit -24,72
+C003 A001 transaction T019 02/01/2013 debit -12,32
+C003 A001 transaction T020 02/01/2013 credit 59,30
+C003 A001 balance 02/01/2013 236,97
+C003 A001 transaction T021 03/01/2013 debit -39,47
+C003 A001 transaction T022 03/01/2013 credit 22,86
+C003 A001 transaction T023 03/01/2013 credit 58,73
+C003 A001 transaction T024 03/01/2013 credit 19,56
+C003 A001 transaction T025 03/01/2013 debit -9,42
+C003 A001 transaction T026 03/01/2013 debit -9,85
+C003 A001 transaction T027 03/01/2013 debit -28,28
+C003 A001 transaction T028 03/01/2013 credit 51,43
+C003 A001 transaction T029 03/01/2013 debit -3,43
+C003 A001 transaction T030 03/01/2013 credit 15,79
+C003 A001 balance 03/01/2013 314,89
+C003 A001 transaction T031 04/01/2013 debit -37,11
+C003 A001 transaction T032 04/01/2013 debit -16,75
+C003 A001 transaction T033 04/01/2013 debit -9,38
+C003 A001 transaction T034 04/01/2013 credit 41,19
+C003 A001 transaction T035 04/01/2013 debit -36,61
+C003 A001 transaction T036 04/01/2013 debit -10,89
+C003 A001 transaction T037 04/01/2013 credit 17,46
+C003 A001 transaction T038 04/01/2013 credit 13,75
+C003 A001 transaction T039 04/01/2013 debit -2,53
+C003 A001 transaction T040 04/01/2013 credit 12,29
+C003 A001 balance 04/01/2013 286,31
+C003 A001 transaction T041 05/01/2013 debit -34,60
+C003 A001 transaction T042 05/01/2013 credit 34,08
+C003 A001 transaction T043 05/01/2013 credit 46,55
+C003 A001 transaction T044 05/01/2013 credit 17,95
+C003 A001 transaction T045 05/01/2013 debit -1,25
+C003 A001 transaction T046 05/01/2013 debit -9,12
+C003 A001 transaction T047 05/01/2013 debit -1,79
+C003 A001 transaction T048 05/01/2013 debit -4,16
+C003 A001 transaction T049 05/01/2013 debit -26,75
+C003 A001 transaction T050 05/01/2013 credit 24,21
+C003 A001 balance 05/01/2013 331,43
+C003 A002 transaction T001 01/01/2013 credit 58,94
+C003 A002 transaction T002 01/01/2013 debit -27,46
+C003 A002 transaction T003 01/01/2013 credit 38,38
+C003 A002 transaction T004 01/01/2013 debit -24,37
+C003 A002 transaction T005 01/01/2013 credit 48,50
+C003 A002 transaction T006 01/01/2013 credit 7,74
+C003 A002 transaction T007 01/01/2013 debit -19,72
+C003 A002 transaction T008 01/01/2013 debit -26,87
+C003 A002 transaction T009 01/01/2013 credit 8,31
+C003 A002 transaction T010 01/01/2013 debit -20,94
+C003 A002 balance 01/01/2013 42,51
+C003 A002 transaction T011 02/01/2013 debit -35,91
+C003 A002 transaction T012 02/01/2013 credit 33,64
+C003 A002 transaction T013 02/01/2013 credit 11,71
+C003 A002 transaction T014 02/01/2013 debit -38,46
+C003 A002 transaction T015 02/01/2013 credit 6,42
+C003 A002 transaction T016 02/01/2013 debit -2,09
+C003 A002 transaction T017 02/01/2013 debit -14,97
+C003 A002 transaction T018 02/01/2013 credit 36,04
+C003 A002 transaction T019 02/01/2013 debit -37,07
+C003 A002 transaction T020 02/01/2013 credit 26,45
+C003 A002 balance 02/01/2013 28,27
+C003 A002 transaction T021 03/01/2013 debit -16,34
+C003 A002 transaction T022 03/01/2013 debit -38,36
+C003 A002 transaction T023 03/01/2013 debit -34,97
+C003 A002 transaction T024 03/01/2013 debit -14,24
+C003 A002 transaction T025 03/01/2013 debit -23,29
+C003 A002 transaction T026 03/01/2013 credit 22,03
+C003 A002 transaction T027 03/01/2013 credit 30,18
+C003 A002 transaction T028 03/01/2013 debit -0,94
+C003 A002 transaction T029 03/01/2013 credit 47,97
+C003 A002 transaction T030 03/01/2013 credit 1,98
+C003 A002 balance 03/01/2013 2,29
+C003 A002 transaction T031 04/01/2013 credit 46,80
+C003 A002 transaction T032 04/01/2013 debit -11,28
+C003 A002 transaction T033 04/01/2013 debit -20,49
+C003 A002 transaction T034 04/01/2013 debit -34,24
+C003 A002 transaction T035 04/01/2013 credit 13,61
+C003 A002 transaction T036 04/01/2013 credit 32,63
+C003 A002 transaction T037 04/01/2013 credit 19,72
+C003 A002 transaction T038 04/01/2013 credit 50,20
+C003 A002 transaction T039 04/01/2013 credit 7,60
+C003 A002 transaction T040 04/01/2013 debit -11,40
+C003 A002 balance 04/01/2013 95,44
+C003 A002 transaction T041 05/01/2013 debit -26,54
+C003 A002 transaction T042 05/01/2013 credit 59,80
+C003 A002 transaction T043 05/01/2013 debit -23,86
+C003 A002 transaction T044 05/01/2013 credit 1,88
+C003 A002 transaction T045 05/01/2013 debit -6,63
+C003 A002 transaction T046 05/01/2013 debit -13,11
+C003 A002 transaction T047 05/01/2013 credit 46,25
+C003 A002 transaction T048 05/01/2013 credit 29,32
+C003 A002 transaction T049 05/01/2013 debit -30,16
+C003 A002 transaction T050 05/01/2013 debit -28,65
+C003 A002 balance 05/01/2013 103,74
+C004 A001 transaction T001 01/01/2013 debit -34,71
+C004 A001 transaction T002 01/01/2013 debit -16,19
+C004 A001 transaction T003 01/01/2013 debit -1,65
+C004 A001 transaction T004 01/01/2013 credit 21,37
+C004 A001 transaction T005 01/01/2013 debit -3,45
+C004 A001 transaction T006 01/01/2013 debit -28,09
+C004 A001 transaction T007 01/01/2013 credit 49,64
+C004 A001 transaction T008 01/01/2013 debit -12,54
+C004 A001 transaction T009 01/01/2013 credit 5,29
+C004 A001 transaction T010 01/01/2013 debit -17,19
+C004 A001 balance 01/01/2013 -37,52
+C004 A001 transaction T011 02/01/2013 credit 44,91
+C004 A001 transaction T012 02/01/2013 debit -37,71
+C004 A001 transaction T013 02/01/2013 credit 27,54
+C004 A001 transaction T014 02/01/2013 credit 47,30
+C004 A001 transaction T015 02/01/2013 debit -18,23
+C004 A001 transaction T016 02/01/2013 credit 6,04
+C004 A001 transaction T017 02/01/2013 credit 17,09
+C004 A001 transaction T018 02/01/2013 debit -30,64
+C004 A001 transaction T019 02/01/2013 debit -11,25
+C004 A001 transaction T020 02/01/2013 credit 34,15
+C004 A001 balance 02/01/2013 41,68
+C004 A001 transaction T021 03/01/2013 credit 14,43
+C004 A001 transaction T022 03/01/2013 credit 32,62
+C004 A001 transaction T023 03/01/2013 credit 21,31
+C004 A001 transaction T024 03/01/2013 debit -4,56
+C004 A001 transaction T025 03/01/2013 credit 58,34
+C004 A001 transaction T026 03/01/2013 debit -30,39
+C004 A001 transaction T027 03/01/2013 credit 43,65
+C004 A001 transaction T028 03/01/2013 credit 13,73
+C004 A001 transaction T029 03/01/2013 debit -26,11
+C004 A001 transaction T030 03/01/2013 debit -33,59
+C004 A001 balance 03/01/2013 131,11
+C004 A001 transaction T031 04/01/2013 credit 38,10
+C004 A001 transaction T032 04/01/2013 debit -0,47
+C004 A001 transaction T033 04/01/2013 debit -32,24
+C004 A001 transaction T034 04/01/2013 debit -4,89
+C004 A001 transaction T035 04/01/2013 debit -22,51
+C004 A001 transaction T036 04/01/2013 credit 20,25
+C004 A001 transaction T037 04/01/2013 credit 46,10
+C004 A001 transaction T038 04/01/2013 debit -29,00
+C004 A001 transaction T039 04/01/2013 debit -17,03
+C004 A001 transaction T040 04/01/2013 debit -0,70
+C004 A001 balance 04/01/2013 128,72
+C004 A001 transaction T041 05/01/2013 credit 32,02
+C004 A001 transaction T042 05/01/2013 debit -3,52
+C004 A001 transaction T043 05/01/2013 credit 22,22
+C004 A001 transaction T044 05/01/2013 credit 29,10
+C004 A001 transaction T045 05/01/2013 credit 42,05
+C004 A001 transaction T046 05/01/2013 credit 37,17
+C004 A001 transaction T047 05/01/2013 credit 48,01
+C004 A001 transaction T048 05/01/2013 debit -38,13
+C004 A001 transaction T049 05/01/2013 debit -2,28
+C004 A001 transaction T050 05/01/2013 credit 48,23
+C004 A001 balance 05/01/2013 343,59
+C004 A002 transaction T001 01/01/2013 debit -8,04
+C004 A002 transaction T002 01/01/2013 credit 9,89
+C004 A002 transaction T003 01/01/2013 credit 9,85
+C004 A002 transaction T004 01/01/2013 debit -26,56
+C004 A002 transaction T005 01/01/2013 credit 14,76
+C004 A002 transaction T006 01/01/2013 credit 22,90
+C004 A002 transaction T007 01/01/2013 debit -39,91
+C004 A002 transaction T008 01/01/2013 debit -36,64
+C004 A002 transaction T009 01/01/2013 credit 42,57
+C004 A002 transaction T010 01/01/2013 credit 40,40
+C004 A002 balance 01/01/2013 29,22
+C004 A002 transaction T011 02/01/2013 credit 27,39
+C004 A002 transaction T012 02/01/2013 debit -13,22
+C004 A002 transaction T013 02/01/2013 debit -0,02
+C004 A002 transaction T014 02/01/2013 credit 1,96
+C004 A002 transaction T015 02/01/2013 debit -11,78
+C004 A002 transaction T016 02/01/2013 credit 33,88
+C004 A002 transaction T017 02/01/2013 credit 29,16
+C004 A002 transaction T018 02/01/2013 credit 34,47
+C004 A002 transaction T019 02/01/2013 debit -32,80
+C004 A002 transaction T020 02/01/2013 debit -18,54
+C004 A002 balance 02/01/2013 79,72
+C004 A002 transaction T021 03/01/2013 credit 42,76
+C004 A002 transaction T022 03/01/2013 credit 4,17
+C004 A002 transaction T023 03/01/2013 debit -6,25
+C004 A002 transaction T024 03/01/2013 credit 27,36
+C004 A002 transaction T025 03/01/2013 credit 26,68
+C004 A002 transaction T026 03/01/2013 credit 8,87
+C004 A002 transaction T027 03/01/2013 credit 32,05
+C004 A002 transaction T028 03/01/2013 debit -29,21
+C004 A002 transaction T029 03/01/2013 debit -21,73
+C004 A002 transaction T030 03/01/2013 credit 14,70
+C004 A002 balance 03/01/2013 179,12
+C004 A002 transaction T031 04/01/2013 debit -25,15
+C004 A002 transaction T032 04/01/2013 debit -11,03
+C004 A002 transaction T033 04/01/2013 credit 11,31
+C004 A002 transaction T034 04/01/2013 debit -18,94
+C004 A002 transaction T035 04/01/2013 credit 57,08
+C004 A002 transaction T036 04/01/2013 debit -8,58
+C004 A002 transaction T037 04/01/2013 debit -37,87
+C004 A002 transaction T038 04/01/2013 debit -21,05
+C004 A002 transaction T039 04/01/2013 credit 39,25
+C004 A002 transaction T040 04/01/2013 credit 49,79
+C004 A002 balance 04/01/2013 213,93
+C004 A002 transaction T041 05/01/2013 credit 0,94
+C004 A002 transaction T042 05/01/2013 debit -35,69
+C004 A002 transaction T043 05/01/2013 debit -15,62
+C004 A002 transaction T044 05/01/2013 credit 42,53
+C004 A002 transaction T045 05/01/2013 credit 22,92
+C004 A002 transaction T046 05/01/2013 credit 15,59
+C004 A002 transaction T047 05/01/2013 credit 42,45
+C004 A002 transaction T048 05/01/2013 credit 26,37
+C004 A002 transaction T049 05/01/2013 credit 2,72
+C004 A002 transaction T050 05/01/2013 debit -10,20
+C004 A002 balance 05/01/2013 305,94
+C005 A001 transaction T001 01/01/2013 credit 28,29
+C005 A001 transaction T002 01/01/2013 credit 53,18
+C005 A001 transaction T003 01/01/2013 credit 53,66
+C005 A001 transaction T004 01/01/2013 debit -8,79
+C005 A001 transaction T005 01/01/2013 debit -24,23
+C005 A001 transaction T006 01/01/2013 debit -17,40
+C005 A001 transaction T007 01/01/2013 credit 0,42
+C005 A001 transaction T008 01/01/2013 credit 34,41
+C005 A001 transaction T009 01/01/2013 debit -20,37
+C005 A001 transaction T010 01/01/2013 credit 16,47
+C005 A001 balance 01/01/2013 115,64
+C005 A001 transaction T011 02/01/2013 debit -29,31
+C005 A001 transaction T012 02/01/2013 debit -0,44
+C005 A001 transaction T013 02/01/2013 debit -35,74
+C005 A001 transaction T014 02/01/2013 debit -4,49
+C005 A001 transaction T015 02/01/2013 credit 50,43
+C005 A001 transaction T016 02/01/2013 debit -28,38
+C005 A001 transaction T017 02/01/2013 debit -23,35
+C005 A001 transaction T018 02/01/2013 debit -32,20
+C005 A001 transaction T019 02/01/2013 credit 50,20
+C005 A001 transaction T020 02/01/2013 credit 41,52
+C005 A001 balance 02/01/2013 103,88
+C005 A001 transaction T021 03/01/2013 debit -32,33
+C005 A001 transaction T022 03/01/2013 credit 19,93
+C005 A001 transaction T023 03/01/2013 debit -9,60
+C005 A001 transaction T024 03/01/2013 credit 21,46
+C005 A001 transaction T025 03/01/2013 debit -6,38
+C005 A001 transaction T026 03/01/2013 credit 42,29
+C005 A001 transaction T027 03/01/2013 debit -29,28
+C005 A001 transaction T028 03/01/2013 debit -22,06
+C005 A001 transaction T029 03/01/2013 debit -26,06
+C005 A001 transaction T030 03/01/2013 credit 22,03
+C005 A001 balance 03/01/2013 83,88
+C005 A001 transaction T031 04/01/2013 credit 23,41
+C005 A001 transaction T032 04/01/2013 credit 55,23
+C005 A001 transaction T033 04/01/2013 debit -33,62
+C005 A001 transaction T034 04/01/2013 debit -13,77
+C005 A001 transaction T035 04/01/2013 credit 32,99
+C005 A001 transaction T036 04/01/2013 debit -16,52
+C005 A001 transaction T037 04/01/2013 debit -17,48
+C005 A001 transaction T038 04/01/2013 debit -11,63
+C005 A001 transaction T039 04/01/2013 credit 28,37
+C005 A001 transaction T040 04/01/2013 credit 2,42
+C005 A001 balance 04/01/2013 133,28
+C005 A001 transaction T041 05/01/2013 debit -24,42
+C005 A001 transaction T042 05/01/2013 debit -31,04
+C005 A001 transaction T043 05/01/2013 credit 32,48
+C005 A001 transaction T044 05/01/2013 credit 45,36
+C005 A001 transaction T045 05/01/2013 credit 11,42
+C005 A001 transaction T046 05/01/2013 credit 8,12
+C005 A001 transaction T047 05/01/2013 debit -4,05
+C005 A001 transaction T048 05/01/2013 debit -33,30
+C005 A001 transaction T049 05/01/2013 debit -22,26
+C005 A001 transaction T050 05/01/2013 credit 38,17
+C005 A001 balance 05/01/2013 153,76
+C005 A002 transaction T001 01/01/2013 credit 4,58
+C005 A002 transaction T002 01/01/2013 credit 20,64
+C005 A002 transaction T003 01/01/2013 credit 40,47
+C005 A002 transaction T004 01/01/2013 debit -13,27
+C005 A002 transaction T005 01/01/2013 credit 44,77
+C005 A002 transaction T006 01/01/2013 credit 11,07
+C005 A002 transaction T007 01/01/2013 debit -13,04
+C005 A002 transaction T008 01/01/2013 credit 14,77
+C005 A002 transaction T009 01/01/2013 credit 31,30
+C005 A002 transaction T010 01/01/2013 credit 25,48
+C005 A002 balance 01/01/2013 166,77
+C005 A002 transaction T011 02/01/2013 credit 55,31
+C005 A002 transaction T012 02/01/2013 debit -20,59
+C005 A002 transaction T013 02/01/2013 credit 5,30
+C005 A002 transaction T014 02/01/2013 debit -16,88
+C005 A002 transaction T015 02/01/2013 credit 9,78
+C005 A002 transaction T016 02/01/2013 credit 27,29
+C005 A002 transaction T017 02/01/2013 credit 0,52
+C005 A002 transaction T018 02/01/2013 credit 20,24
+C005 A002 transaction T019 02/01/2013 credit 23,59
+C005 A002 transaction T020 02/01/2013 credit 40,38
+C005 A002 balance 02/01/2013 311,71
+C005 A002 transaction T021 03/01/2013 credit 5,97
+C005 A002 transaction T022 03/01/2013 debit -17,86
+C005 A002 transaction T023 03/01/2013 debit -20,05
+C005 A002 transaction T024 03/01/2013 credit 57,28
+C005 A002 transaction T025 03/01/2013 credit 48,07
+C005 A002 transaction T026 03/01/2013 credit 20,38
+C005 A002 transaction T027 03/01/2013 debit -3,28
+C005 A002 transaction T028 03/01/2013 credit 25,28
+C005 A002 transaction T029 03/01/2013 credit 36,06
+C005 A002 transaction T030 03/01/2013 credit 47,75
+C005 A002 balance 03/01/2013 511,31
+C005 A002 transaction T031 04/01/2013 debit -13,40
+C005 A002 transaction T032 04/01/2013 credit 8,16
+C005 A002 transaction T033 04/01/2013 credit 14,65
+C005 A002 transaction T034 04/01/2013 credit 57,07
+C005 A002 transaction T035 04/01/2013 debit -39,66
+C005 A002 transaction T036 04/01/2013 credit 5,74
+C005 A002 transaction T037 04/01/2013 debit -2,69
+C005 A002 transaction T038 04/01/2013 credit 8,37
+C005 A002 transaction T039 04/01/2013 credit 28,72
+C005 A002 transaction T040 04/01/2013 debit -30,41
+C005 A002 balance 04/01/2013 547,86
+C005 A002 transaction T041 05/01/2013 debit -32,42
+C005 A002 transaction T042 05/01/2013 credit 13,06
+C005 A002 transaction T043 05/01/2013 debit -26,14
+C005 A002 transaction T044 05/01/2013 credit 47,27
+C005 A002 transaction T045 05/01/2013 credit 45,36
+C005 A002 transaction T046 05/01/2013 debit -28,02
+C005 A002 transaction T047 05/01/2013 debit -5,06
+C005 A002 transaction T048 05/01/2013 debit -26,86
+C005 A002 transaction T049 05/01/2013 credit 42,38
+C005 A002 transaction T050 05/01/2013 credit 6,04
+C005 A002 balance 05/01/2013 583,47
+C006 A001 transaction T001 01/01/2013 credit 20,39
+C006 A001 transaction T002 01/01/2013 credit 30,93
+C006 A001 transaction T003 01/01/2013 credit 3,03
+C006 A001 transaction T004 01/01/2013 credit 18,17
+C006 A001 transaction T005 01/01/2013 debit -39,56
+C006 A001 transaction T006 01/01/2013 credit 29,46
+C006 A001 transaction T007 01/01/2013 debit -30,83
+C006 A001 transaction T008 01/01/2013 debit -8,24
+C006 A001 transaction T009 01/01/2013 debit -11,15
+C006 A001 transaction T010 01/01/2013 debit -13,31
+C006 A001 balance 01/01/2013 -1,11
+C006 A001 transaction T011 02/01/2013 debit -26,04
+C006 A001 transaction T012 02/01/2013 debit -10,59
+C006 A001 transaction T013 02/01/2013 credit 7,56
+C006 A001 transaction T014 02/01/2013 credit 40,21
+C006 A001 transaction T015 02/01/2013 credit 59,72
+C006 A001 transaction T016 02/01/2013 credit 4,72
+C006 A001 transaction T017 02/01/2013 debit -33,75
+C006 A001 transaction T018 02/01/2013 credit 10,76
+C006 A001 transaction T019 02/01/2013 credit 38,06
+C006 A001 transaction T020 02/01/2013 credit 52,78
+C006 A001 balance 02/01/2013 142,32
+C006 A001 transaction T021 03/01/2013 credit 36,18
+C006 A001 transaction T022 03/01/2013 credit 8,22
+C006 A001 transaction T023 03/01/2013 debit -36,27
+C006 A001 transaction T024 03/01/2013 credit 20,42
+C006 A001 transaction T025 03/01/2013 debit -30,87
+C006 A001 transaction T026 03/01/2013 credit 18,37
+C006 A001 transaction T027 03/01/2013 credit 12,05
+C006 A001 transaction T028 03/01/2013 credit 59,68
+C006 A001 transaction T029 03/01/2013 debit -31,16
+C006 A001 transaction T030 03/01/2013 credit 15,59
+C006 A001 balance 03/01/2013 214,53
+C006 A001 transaction T031 04/01/2013 credit 9,94
+C006 A001 transaction T032 04/01/2013 debit -6,57
+C006 A001 transaction T033 04/01/2013 credit 20,11
+C006 A001 transaction T034 04/01/2013 debit -27,96
+C006 A001 transaction T035 04/01/2013 credit 44,40
+C006 A001 transaction T036 04/01/2013 credit 11,03
+C006 A001 transaction T037 04/01/2013 credit 27,49
+C006 A001 transaction T038 04/01/2013 debit -32,62
+C006 A001 transaction T039 04/01/2013 credit 37,76
+C006 A001 transaction T040 04/01/2013 credit 21,98
+C006 A001 balance 04/01/2013 320,09
+C006 A001 transaction T041 05/01/2013 debit -36,47
+C006 A001 transaction T042 05/01/2013 credit 32,24
+C006 A001 transaction T043 05/01/2013 credit 8,18
+C006 A001 transaction T044 05/01/2013 credit 32,15
+C006 A001 transaction T045 05/01/2013 credit 10,82
+C006 A001 transaction T046 05/01/2013 debit -37,08
+C006 A001 transaction T047 05/01/2013 debit -29,04
+C006 A001 transaction T048 05/01/2013 credit 11,86
+C006 A001 transaction T049 05/01/2013 credit 19,51
+C006 A001 transaction T050 05/01/2013 debit -16,94
+C006 A001 balance 05/01/2013 315,32
+C006 A002 transaction T001 01/01/2013 debit -36,78
+C006 A002 transaction T002 01/01/2013 debit -39,72
+C006 A002 transaction T003 01/01/2013 credit 27,66
+C006 A002 transaction T004 01/01/2013 credit 11,53
+C006 A002 transaction T005 01/01/2013 credit 39,75
+C006 A002 transaction T006 01/01/2013 credit 10,26
+C006 A002 transaction T007 01/01/2013 credit 30,45
+C006 A002 transaction T008 01/01/2013 credit 19,14
+C006 A002 transaction T009 01/01/2013 debit -10,39
+C006 A002 transaction T010 01/01/2013 credit 49,43
+C006 A002 balance 01/01/2013 101,33
+C006 A002 transaction T011 02/01/2013 debit -4,78
+C006 A002 transaction T012 02/01/2013 credit 18,36
+C006 A002 transaction T013 02/01/2013 credit 21,95
+C006 A002 transaction T014 02/01/2013 debit -30,21
+C006 A002 transaction T015 02/01/2013 credit 39,02
+C006 A002 transaction T016 02/01/2013 debit -3,06
+C006 A002 transaction T017 02/01/2013 credit 53,84
+C006 A002 transaction T018 02/01/2013 credit 27,83
+C006 A002 transaction T019 02/01/2013 debit -25,43
+C006 A002 transaction T020 02/01/2013 credit 1,72
+C006 A002 balance 02/01/2013 200,57
+C006 A002 transaction T021 03/01/2013 debit -2,94
+C006 A002 transaction T022 03/01/2013 credit 31,15
+C006 A002 transaction T023 03/01/2013 credit 13,57
+C006 A002 transaction T024 03/01/2013 debit -23,07
+C006 A002 transaction T025 03/01/2013 credit 37,74
+C006 A002 transaction T026 03/01/2013 credit 48,65
+C006 A002 transaction T027 03/01/2013 credit 14,27
+C006 A002 transaction T028 03/01/2013 credit 43,88
+C006 A002 transaction T029 03/01/2013 credit 35,12
+C006 A002 transaction T030 03/01/2013 credit 26,25
+C006 A002 balance 03/01/2013 425,19
+C006 A002 transaction T031 04/01/2013 credit 4,79
+C006 A002 transaction T032 04/01/2013 credit 41,79
+C006 A002 transaction T033 04/01/2013 credit 28,72
+C006 A002 transaction T034 04/01/2013 credit 1,01
+C006 A002 transaction T035 04/01/2013 credit 55,94
+C006 A002 transaction T036 04/01/2013 credit 31,09
+C006 A002 transaction T037 04/01/2013 credit 26,74
+C006 A002 transaction T038 04/01/2013 credit 26,44
+C006 A002 transaction T039 04/01/2013 credit 47,22
+C006 A002 transaction T040 04/01/2013 debit -20,91
+C006 A002 balance 04/01/2013 668,02
+C006 A002 transaction T041 05/01/2013 debit -33,97
+C006 A002 transaction T042 05/01/2013 credit 18,87
+C006 A002 transaction T043 05/01/2013 debit -10,76
+C006 A002 transaction T044 05/01/2013 credit 3,31
+C006 A002 transaction T045 05/01/2013 credit 6,17
+C006 A002 transaction T046 05/01/2013 debit -13,25
+C006 A002 transaction T047 05/01/2013 credit 29,62
+C006 A002 transaction T048 05/01/2013 debit -22,10
+C006 A002 transaction T049 05/01/2013 debit -4,02
+C006 A002 transaction T050 05/01/2013 debit -32,60
+C006 A002 balance 05/01/2013 609,29
+C007 A001 transaction T001 01/01/2013 credit 55,24
+C007 A001 transaction T002 01/01/2013 debit -26,47
+C007 A001 transaction T003 01/01/2013 debit -2,17
+C007 A001 transaction T004 01/01/2013 credit 9,01
+C007 A001 transaction T005 01/01/2013 credit 11,56
+C007 A001 transaction T006 01/01/2013 debit -36,14
+C007 A001 transaction T007 01/01/2013 debit -3,75
+C007 A001 transaction T008 01/01/2013 debit -6,17
+C007 A001 transaction T009 01/01/2013 credit 26,30
+C007 A001 transaction T010 01/01/2013 credit 13,48
+C007 A001 balance 01/01/2013 40,89
+C007 A001 transaction T011 02/01/2013 debit -25,06
+C007 A001 transaction T012 02/01/2013 credit 34,14
+C007 A001 transaction T013 02/01/2013 credit 16,98
+C007 A001 transaction T014 02/01/2013 credit 33,97
+C007 A001 transaction T015 02/01/2013 credit 28,27
+C007 A001 transaction T016 02/01/2013 credit 34,32
+C007 A001 transaction T017 02/01/2013 debit -2,81
+C007 A001 transaction T018 02/01/2013 debit -5,95
+C007 A001 transaction T019 02/01/2013 debit -28,67
+C007 A001 transaction T020 02/01/2013 credit 27,26
+C007 A001 balance 02/01/2013 153,34
+C007 A001 transaction T021 03/01/2013 debit -10,97
+C007 A001 transaction T022 03/01/2013 credit 44,88
+C007 A001 transaction T023 03/01/2013 credit 58,43
+C007 A001 transaction T024 03/01/2013 credit 13,75
+C007 A001 transaction T025 03/01/2013 credit 18,66
+C007 A001 transaction T026 03/01/2013 credit 20,45
+C007 A001 transaction T027 03/01/2013 credit 57,25
+C007 A001 transaction T028 03/01/2013 debit -26,49
+C007 A001 transaction T029 03/01/2013 credit 56,33
+C007 A001 transaction T030 03/01/2013 credit 38,33
+C007 A001 balance 03/01/2013 423,96
+C007 A001 transaction T031 04/01/2013 credit 40,67
+C007 A001 transaction T032 04/01/2013 credit 42,49
+C007 A001 transaction T033 04/01/2013 debit -22,18
+C007 A001 transaction T034 04/01/2013 credit 39,56
+C007 A001 transaction T035 04/01/2013 credit 22,92
+C007 A001 transaction T036 04/01/2013 credit 1,51
+C007 A001 transaction T037 04/01/2013 debit -3,77
+C007 A001 transaction T038 04/01/2013 credit 56,39
+C007 A001 transaction T039 04/01/2013 credit 58,25
+C007 A001 transaction T040 04/01/2013 credit 33,22
+C007 A001 balance 04/01/2013 693,02
+C007 A001 transaction T041 05/01/2013 credit 57,30
+C007 A001 transaction T042 05/01/2013 debit -37,17
+C007 A001 transaction T043 05/01/2013 credit 4,17
+C007 A001 transaction T044 05/01/2013 debit -16,03
+C007 A001 transaction T045 05/01/2013 debit -18,65
+C007 A001 transaction T046 05/01/2013 credit 36,86
+C007 A001 transaction T047 05/01/2013 debit -25,37
+C007 A001 transaction T048 05/01/2013 credit 47,51
+C007 A001 transaction T049 05/01/2013 debit -36,55
+C007 A001 transaction T050 05/01/2013 credit 42,66
+C007 A001 balance 05/01/2013 747,75
+C007 A002 transaction T001 01/01/2013 debit -22,20
+C007 A002 transaction T002 01/01/2013 credit 50,73
+C007 A002 transaction T003 01/01/2013 credit 28,82
+C007 A002 transaction T004 01/01/2013 debit -30,15
+C007 A002 transaction T005 01/01/2013 credit 54,43
+C007 A002 transaction T006 01/01/2013 debit -29,22
+C007 A002 transaction T007 01/01/2013 debit -12,27
+C007 A002 transaction T008 01/01/2013 credit 48,24
+C007 A002 transaction T009 01/01/2013 credit 32,58
+C007 A002 transaction T010 01/01/2013 debit -16,14
+C007 A002 balance 01/01/2013 104,82
+C007 A002 transaction T011 02/01/2013 credit 5,49
+C007 A002 transaction T012 02/01/2013 debit -23,42
+C007 A002 transaction T013 02/01/2013 debit -17,72
+C007 A002 transaction T014 02/01/2013 credit 29,14
+C007 A002 transaction T015 02/01/2013 credit 36,14
+C007 A002 transaction T016 02/01/2013 credit 26,96
+C007 A002 transaction T017 02/01/2013 debit -24,21
+C007 A002 transaction T018 02/01/2013 credit 45,82
+C007 A002 transaction T019 02/01/2013 credit 6,86
+C007 A002 transaction T020 02/01/2013 credit 13,25
+C007 A002 balance 02/01/2013 203,13
+C007 A002 transaction T021 03/01/2013 credit 7,25
+C007 A002 transaction T022 03/01/2013 debit -31,45
+C007 A002 transaction T023 03/01/2013 credit 42,27
+C007 A002 transaction T024 03/01/2013 debit -37,63
+C007 A002 transaction T025 03/01/2013 debit -34,08
+C007 A002 transaction T026 03/01/2013 debit -36,43
+C007 A002 transaction T027 03/01/2013 debit -7,17
+C007 A002 transaction T028 03/01/2013 credit 50,87
+C007 A002 transaction T029 03/01/2013 credit 15,64
+C007 A002 transaction T030 03/01/2013 debit -22,40
+C007 A002 balance 03/01/2013 150,00
+C007 A002 transaction T031 04/01/2013 debit -0,14
+C007 A002 transaction T032 04/01/2013 credit 1,55
+C007 A002 transaction T033 04/01/2013 debit -36,20
+C007 A002 transaction T034 04/01/2013 credit 46,60
+C007 A002 transaction T035 04/01/2013 debit -26,64
+C007 A002 transaction T036 04/01/2013 credit 38,76
+C007 A002 transaction T037 04/01/2013 credit 14,88
+C007 A002 transaction T038 04/01/2013 debit -30,88
+C007 A002 transaction T039 04/01/2013 debit -32,00
+C007 A002 transaction T040 04/01/2013 debit -26,15
+C007 A002 balance 04/01/2013 99,78
+C007 A002 transaction T041 05/01/2013 credit 57,93
+C007 A002 transaction T042 05/01/2013 debit -17,92
+C007 A002 transaction T043 05/01/2013 credit 36,09
+C007 A002 transaction T044 05/01/2013 credit 1,39
+C007 A002 transaction T045 05/01/2013 debit -29,48
+C007 A002 transaction T046 05/01/2013 debit -11,73
+C007 A002 transaction T047 05/01/2013 debit -2,46
+C007 A002 transaction T048 05/01/2013 credit 3,97
+C007 A002 transaction T049 05/01/2013 credit 10,14
+C007 A002 transaction T050 05/01/2013 debit -20,42
+C007 A002 balance 05/01/2013 127,29

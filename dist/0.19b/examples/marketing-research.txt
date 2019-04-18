@@ -1,0 +1,468 @@
+# Research related to a shampoo brand.
+# Answers are related about these characteristics:
+# color: dark clear opaque transparent ugly beautiful weird common
+# smell: good bad tasty fragrant strong weak sickly smelly weird floral woody citric sweet
+# creaminess: good bad thick thin watery flaky 
+# price: expensive cheap good bad average
+
+color opaque ugly beutiful 
+color opaque clear 
+color dark opaque ugly beutiful 
+color ugly clear transparent beutiful 
+color dark clear 
+color dark clear 
+color dark clear transparent beutiful 
+color ugly clear transparent beutiful 
+color dark opaque ugly clear transparent beutiful 
+color dark opaque transparent 
+color dark opaque ugly clear 
+color dark clear transparent beutiful 
+color dark clear 
+color dark opaque ugly clear 
+color dark clear transparent beutiful 
+color dark clear 
+color dark clear 
+color dark opaque ugly transparent beutiful 
+color dark clear transparent beutiful 
+color dark opaque ugly clear 
+color dark opaque beutiful 
+color dark transparent 
+color dark opaque ugly clear transparent beutiful 
+color dark clear 
+color dark clear transparent beutiful 
+color dark opaque ugly beutiful 
+color ugly transparent 
+color dark opaque ugly clear transparent beutiful 
+color dark clear transparent beutiful 
+color ugly clear transparent 
+color dark clear 
+color dark opaque ugly clear transparent beutiful 
+color ugly transparent beutiful 
+color dark transparent 
+color dark transparent beutiful 
+color opaque beutiful 
+color opaque beutiful 
+color opaque transparent 
+color ugly transparent 
+color opaque beutiful 
+color opaque transparent 
+color dark transparent 
+color dark clear transparent beutiful 
+color ugly clear transparent beutiful 
+color opaque transparent 
+color opaque beutiful 
+color dark transparent 
+color dark opaque clear transparent beutiful 
+color ugly beutiful 
+color ugly clear 
+color dark opaque ugly transparent 
+color dark transparent 
+color ugly clear transparent beutiful 
+color dark opaque ugly clear transparent beutiful 
+color dark opaque ugly clear transparent beutiful 
+color ugly clear transparent beutiful 
+color ugly beutiful 
+color ugly clear transparent beutiful 
+color opaque beutiful 
+color dark opaque ugly clear transparent beutiful 
+color ugly beutiful 
+color dark opaque ugly clear 
+color dark clear transparent beutiful 
+color dark opaque clear transparent beutiful 
+color opaque transparent 
+color opaque clear 
+color dark opaque ugly beutiful 
+color opaque beutiful 
+color opaque beutiful 
+color ugly clear transparent 
+color opaque clear 
+color ugly clear transparent beutiful 
+color dark clear 
+color dark transparent 
+color dark transparent 
+color dark opaque ugly clear 
+color dark clear 
+color ugly clear transparent beutiful 
+color opaque clear 
+color dark opaque ugly clear 
+color dark opaque beutiful 
+color opaque beutiful 
+color dark opaque ugly clear 
+color dark opaque transparent 
+color opaque beutiful 
+color ugly beutiful 
+color dark opaque ugly clear transparent beutiful 
+color opaque transparent beutiful 
+color ugly clear transparent beutiful 
+color ugly beutiful 
+color ugly transparent 
+color opaque ugly beutiful 
+color opaque beutiful 
+color opaque beutiful 
+color opaque clear 
+color dark opaque ugly clear transparent beutiful 
+color ugly beutiful 
+color dark clear 
+color dark clear transparent beutiful 
+color ugly clear transparent beutiful 
+color ugly clear transparent beutiful 
+color ugly clear transparent beutiful 
+color ugly transparent 
+color dark transparent 
+color dark clear 
+color opaque transparent 
+color dark opaque ugly clear 
+color ugly beutiful 
+color opaque beutiful 
+color dark clear 
+color ugly clear transparent beutiful 
+color opaque transparent 
+color dark clear transparent beutiful 
+color dark opaque ugly beutiful 
+color dark transparent 
+color dark transparent 
+color dark opaque ugly clear transparent beutiful 
+color opaque transparent 
+color ugly clear transparent beutiful 
+
+smell strong fragrant 
+smell good tasty fragrant weak smelly floral 
+smell sickly fragrant 
+smell good tasty strong sickly weird wood smelly 
+smell weird weak 
+smell weird bad fragrant weak smelly 
+smell strong weak 
+smell sickly weird smelly floral 
+smell wood weak smelly floral 
+smell wood smelly floral citric 
+smell sickly weird fragrant weak smelly floral 
+smell sickly weird wood bad fragrant weak smelly floral 
+smell sickly weird wood floral 
+smell sickly weak 
+smell weird fragrant weak smelly floral 
+smell sickly weak 
+smell sickly weird fragrant 
+smell good tasty strong weak smelly 
+smell good fragrant 
+smell weird wood floral 
+smell tasty strong sickly weird citric 
+smell good tasty strong sickly weird citric 
+smell strong sickly weird wood bad fragrant 
+smell tasty strong sickly bad fragrant weak smelly 
+smell weird weak smelly 
+smell good tasty strong bad fragrant weak 
+smell sickly weak 
+smell weird wood bad fragrant weak smelly 
+smell good tasty floral citric 
+smell wood citric 
+smell weird weak 
+smell weird wood floral 
+smell tasty strong sickly fragrant 
+smell strong fragrant weak 
+smell sickly weak smelly 
+smell sickly weird wood weak smelly floral 
+smell wood smelly 
+smell tasty strong sickly fragrant weak smelly 
+smell weird wood fragrant weak 
+smell good tasty strong sickly weird wood floral citric 
+smell sickly floral 
+smell good tasty strong sickly weird wood smelly floral citric 
+smell tasty strong sickly floral 
+smell strong sickly weird wood bad fragrant weak smelly floral citric 
+smell strong sickly weird smelly floral citric 
+smell tasty strong sickly fragrant 
+smell strong sickly weak 
+smell sickly weird wood fragrant weak 
+smell tasty strong sickly floral 
+smell good tasty strong sickly weird wood citric 
+smell tasty bad fragrant weak smelly floral citric 
+smell good citric 
+smell good tasty strong sickly weird wood floral citric 
+smell good bad fragrant weak smelly floral citric 
+smell good tasty strong sickly weird wood bad fragrant weak smelly 
+smell tasty fragrant weak smelly floral 
+smell sickly bad fragrant 
+smell strong bad fragrant 
+smell tasty strong sickly weird fragrant weak smelly floral citric 
+smell sickly weird weak 
+smell good citric 
+smell good floral 
+smell wood fragrant 
+smell strong sickly weird floral citric 
+smell good tasty bad fragrant weak smelly floral 
+smell strong sickly weird wood floral citric 
+smell good tasty strong sickly weird wood bad fragrant weak smelly floral 
+smell good tasty strong sickly weird smelly 
+smell sickly weak 
+smell strong sickly weird fragrant weak smelly 
+smell sickly weird wood weak smelly floral 
+smell good bad fragrant weak smelly floral citric 
+smell tasty fragrant weak smelly floral 
+smell good fragrant weak 
+smell wood smelly 
+smell sickly fragrant 
+smell good tasty strong fragrant 
+smell good tasty weak smelly floral citric 
+smell weird bad fragrant weak 
+smell weird wood bad fragrant weak smelly floral 
+smell weird fragrant 
+smell sickly weird wood fragrant 
+smell strong sickly citric 
+smell weird bad fragrant weak smelly floral 
+smell good tasty bad 
+smell good tasty strong sickly weird floral 
+smell strong weak 
+smell weird floral 
+smell tasty bad fragrant weak smelly floral citric 
+smell tasty strong sickly fragrant weak smelly floral 
+smell tasty weak 
+smell tasty strong sickly weird wood floral citric 
+smell weird bad fragrant weak smelly floral citric 
+smell strong sickly weird bad fragrant weak smelly 
+smell sickly weak smelly 
+smell wood citric 
+smell good tasty strong sickly weird bad fragrant weak smelly 
+smell tasty strong sickly weird wood floral citric 
+smell good citric 
+smell good tasty fragrant 
+smell good tasty strong sickly weird weak 
+smell tasty strong sickly weird wood bad 
+smell weird wood smelly 
+smell tasty fragrant weak smelly floral citric 
+smell strong sickly weird floral 
+smell good tasty floral citric 
+smell strong citric 
+smell strong weak smelly floral citric 
+smell sickly weak smelly 
+smell strong floral citric 
+smell strong fragrant 
+smell sickly weird bad fragrant weak smelly 
+smell sickly weird smelly 
+smell sickly fragrant weak 
+smell tasty bad 
+smell good tasty strong sickly weird wood weak smelly 
+smell strong sickly weird wood fragrant 
+smell good tasty bad fragrant 
+smell tasty strong sickly citric 
+smell strong bad fragrant weak smelly floral citric 
+smell strong sickly weird wood bad fragrant weak 
+smell good tasty strong sickly weird wood citric 
+smell strong weak smelly floral 
+smell good tasty strong sickly weird wood floral 
+smell tasty strong bad fragrant 
+smell wood smelly floral 
+smell weird wood citric 
+smell good tasty strong sickly bad fragrant weak smelly floral citric 
+smell weird wood floral 
+smell tasty weak smelly floral citric 
+smell sickly weird fragrant weak 
+smell weird wood smelly 
+smell sickly weird wood fragrant 
+
+creaminess good thick bad 
+creaminess thick bad thin 
+creaminess good thick bad 
+creaminess good bad thin 
+creaminess good thick bad thin 
+creaminess good bad 
+creaminess good thick bad 
+creaminess good thick bad 
+creaminess thick bad thin 
+creaminess good bad 
+creaminess thick thin 
+creaminess good thick bad 
+creaminess thick bad 
+creaminess good thin 
+creaminess thick thin 
+creaminess good thick thin 
+creaminess thick bad thin 
+creaminess good bad thin 
+creaminess good thick thin 
+creaminess good thick thin 
+creaminess good bad 
+creaminess thick bad thin 
+creaminess thick bad 
+creaminess thick bad thin 
+creaminess good thick bad thin 
+creaminess good thick bad thin 
+creaminess thick bad 
+creaminess thick bad 
+creaminess good thick thin 
+creaminess thick bad 
+creaminess thick thin 
+creaminess good thick bad 
+creaminess good thick bad thin 
+creaminess good bad 
+creaminess good thick thin 
+creaminess good bad 
+creaminess good thick bad 
+creaminess good thick bad 
+creaminess good thick bad 
+creaminess thick bad thin 
+creaminess good bad 
+creaminess thick bad 
+creaminess good thin 
+creaminess thick thin 
+creaminess good thick bad 
+creaminess good thick bad 
+creaminess thick bad thin 
+creaminess thick bad 
+creaminess thick bad 
+creaminess thick bad thin 
+creaminess good thin 
+creaminess good bad thin 
+creaminess good thick bad thin 
+creaminess thick thin 
+creaminess good thick bad 
+creaminess good bad 
+creaminess good bad 
+creaminess good thick thin 
+creaminess good thick bad thin 
+creaminess thick bad thin 
+creaminess good thick bad 
+creaminess thick thin 
+creaminess thick thin 
+creaminess thick bad thin 
+creaminess good thick bad thin 
+creaminess good bad thin 
+creaminess good thick bad thin 
+creaminess good thin 
+creaminess thick bad thin 
+creaminess good bad thin 
+creaminess good bad thin 
+creaminess good thin 
+creaminess good thin 
+creaminess thick bad 
+creaminess good thin 
+creaminess thick bad 
+creaminess good thick bad thin 
+creaminess good thin 
+creaminess thick bad 
+creaminess good bad 
+creaminess good bad 
+creaminess good thick bad thin 
+creaminess thick bad thin 
+creaminess thick bad thin 
+creaminess good thin 
+creaminess thick bad thin 
+creaminess thick bad thin 
+creaminess good thick bad 
+creaminess good thick thin 
+creaminess good thin 
+creaminess good thin 
+creaminess good thick thin 
+creaminess good thick thin 
+creaminess thick bad 
+creaminess good thick bad 
+creaminess thick bad thin 
+creaminess good bad thin 
+creaminess good thick bad 
+creaminess good thick bad 
+creaminess thick bad 
+
+price good bad 
+price good bad 
+price expensive bad 
+price expensive cheap bad 
+price expensive good cheap bad 
+price expensive good bad 
+price expensive good cheap 
+price expensive cheap bad 
+price expensive cheap bad 
+price expensive cheap 
+price expensive bad 
+price expensive good cheap bad 
+price good bad 
+price expensive good cheap 
+price good cheap bad 
+price expensive cheap bad 
+price expensive good bad 
+price expensive cheap 
+price expensive cheap 
+price good cheap bad 
+price good cheap 
+price good bad 
+price good cheap 
+price expensive cheap bad 
+price good bad 
+price good cheap bad 
+price good bad 
+price expensive good cheap bad 
+price expensive good bad 
+price expensive good cheap 
+price expensive cheap bad 
+price expensive bad 
+price expensive cheap bad 
+price good cheap 
+price expensive good cheap 
+price good cheap 
+price good cheap 
+price expensive good cheap bad 
+price good bad 
+price expensive cheap bad 
+price expensive good bad 
+price good bad 
+price good bad 
+price expensive bad 
+price expensive good cheap bad 
+price expensive cheap bad 
+price good cheap bad 
+price expensive good bad 
+price expensive bad 
+price expensive cheap 
+price good cheap 
+price expensive cheap 
+price expensive good cheap 
+price good cheap 
+price good bad 
+price expensive cheap bad 
+price expensive good cheap bad 
+price expensive good bad 
+price expensive cheap bad 
+price expensive good bad 
+price expensive bad 
+price expensive cheap 
+price expensive good bad 
+price expensive cheap 
+price expensive bad 
+price good bad 
+price expensive good cheap 
+price expensive good cheap 
+price good cheap 
+price expensive cheap 
+price good cheap 
+price good cheap 
+price good cheap 
+price expensive good cheap 
+price expensive cheap bad 
+price expensive good bad 
+price expensive good cheap 
+price expensive bad 
+price expensive bad 
+price expensive bad 
+price good cheap bad 
+price good cheap bad 
+price good cheap 
+price expensive good bad 
+price expensive good bad 
+price expensive bad 
+price expensive good bad 
+price good cheap bad 
+price expensive good cheap 
+price expensive good bad 
+price expensive good cheap bad 
+price expensive bad 
+price expensive cheap 
+price expensive good cheap bad 
+price expensive cheap bad 
+price expensive good bad 
+price good cheap 
+price good cheap 
+price good bad 
+price expensive good bad 
+price expensive cheap 
+price expensive cheap bad 
+price good bad 
+price expensive good bad 
+price good cheap bad 
+price expensive good cheap 

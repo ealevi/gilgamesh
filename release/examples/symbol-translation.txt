@@ -1,0 +1,57 @@
+# This example shows how to create a translation program using Gilgamesh.
+# It is possible to use it to identify words or symbols that can be translated according
+# the order and combination use.
+
+fact;2;/\/ snake
+fact;2;=== path
+fact;2;... go
+fact;2;_/\_ house
+fact;2;_[]_ door
+fact;2;(-_-) sleep
+fact;2;(:-) happy
+fact;2;(o.O) surprise
+fact;2;(o_o) me
+fact;2;/*\ garden
+fact;1;_[]_ /*\ weapon
+fact;1;... (-_-) death
+
+# The symbol message is:
+# (o_o) (-_-)
+# /*\ /\/ ... _/\_ _[]_
+# (o_o) (o.O) _[]_ /*\ ... (-_-) /\/
+# (o_o) (:-)
+
+echo;-------- Translation for Line 1 -------- 
+(o_o)?-
+(-_-)?-
+
+echo;-------- Translation for Line 2 -------- 
+/*\?-
+/\/?-
+...?-
+_/\_?-
+_[]_?-
+
+echo;-------- Translation for Line 3 -------- 
+(o_o)?-
+(o.O)?-
+_[]_ /*\?-
+... (-_-)?-
+/\/?-
+
+echo;-------- Translation for Line 4 -------- 
+(o_o)?-
+(:-)?-
+
+
+
+
+
+
+
+
+
+
+
+
+

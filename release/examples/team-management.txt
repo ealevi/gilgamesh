@@ -1,0 +1,1001 @@
+# Team combinations. Each line represents one win.
+Daniel David Michelle Ronald 
+Carol Sarah 
+Carol Karen Ronald Sharon 
+George John Susan 
+Anthony Jennifer 
+Deborah Richard 
+Daniel Jennifer Richard Sarah 
+Deborah George Karen 
+Daniel Ronald 
+Deborah George Patricia 
+Daniel George Ronald Susan 
+David Ronald 
+Christopher James Ronald 
+Jennifer John Patricia Susan 
+David Karen Michelle Susan 
+Richard Ronald 
+George Susan 
+Carol Daniel John Sharon 
+Christopher Daniel Sarah Susan 
+Carol Daniel John Sarah 
+Daniel Richard Susan 
+Carol Patricia Richard 
+Carol David Karen Sarah 
+Deborah George Michelle Ronald 
+George James Richard 
+David George Jennifer Susan 
+David George Richard Sarah 
+James Karen Richard Sharon 
+Carol Richard 
+Anthony Carol George John 
+Christopher Patricia 
+Christopher Deborah 
+Christopher Daniel Patricia 
+Daniel Sharon 
+Anthony Karen 
+Jennifer Sarah 
+Christopher Jennifer Sarah 
+Carol Patricia Sharon 
+Daniel David John 
+George Karen Sarah 
+Carol Richard 
+Richard Sharon 
+Anthony David Deborah Karen 
+Daniel James Ronald Sarah 
+Patricia Ronald 
+Christopher James Ronald 
+David Sarah Susan 
+David James 
+Deborah Michelle Sarah Susan 
+John Sharon 
+Anthony Carol Daniel 
+Carol James Jennifer 
+Deborah George Richard Ronald 
+Carol Christopher Deborah 
+Anthony Christopher Jennifer Ronald 
+Anthony James Jennifer Susan 
+John Michelle Sarah 
+Carol Jennifer John Sarah 
+Anthony Patricia Ronald 
+Anthony Daniel Patricia Sharon 
+Michelle Patricia Susan 
+Anthony George Patricia Richard 
+James Jennifer Sharon 
+Carol Daniel Sharon 
+Carol Karen Michelle 
+Anthony Karen 
+Richard Ronald 
+David George Ronald Sarah 
+Carol Karen Susan 
+Anthony Christopher David John 
+Anthony David Patricia Susan 
+James Sarah 
+Carol Christopher James Richard 
+Anthony Carol Christopher John 
+Patricia Susan 
+George Karen Patricia 
+Daniel Michelle Ronald Susan 
+Carol Michelle 
+Carol Christopher 
+Carol Jennifer Karen 
+Anthony Daniel John Sharon 
+Christopher Jennifer Susan 
+Deborah Karen Sharon 
+Deborah Jennifer 
+Carol Karen Patricia 
+David Jennifer Ronald Sarah 
+Karen Patricia Sharon 
+James Susan 
+Deborah Michelle Sharon 
+Jennifer John 
+Christopher Daniel John 
+Deborah Michelle Sharon Susan 
+Richard Susan 
+James Michelle Patricia 
+John Sarah 
+David George Richard Sarah 
+Carol Christopher Karen Michelle 
+Carol Karen Richard Susan 
+Karen Patricia 
+George James Patricia Susan 
+Christopher James Michelle Ronald 
+Anthony Daniel Jennifer Patricia 
+Carol Sarah 
+David Richard Ronald 
+Deborah George John Sarah 
+Daniel Jennifer 
+Carol Jennifer Patricia 
+Patricia Sharon 
+Patricia Sarah Susan 
+James Karen Sarah Susan 
+Anthony George James Sharon 
+Michelle Richard 
+Michelle Richard Sharon Susan 
+David Deborah Karen 
+Deborah George 
+David Richard Ronald Sarah 
+Karen Sarah 
+Carol Jennifer 
+Carol Michelle Sarah 
+Jennifer Patricia Susan 
+David James Michelle Sarah 
+Anthony David Michelle 
+Carol David James 
+Karen Michelle Ronald Sharon 
+George James Sarah 
+Daniel John Michelle Patricia 
+Anthony Carol Christopher Jennifer 
+Anthony Karen Susan 
+George James 
+Christopher David John Patricia 
+Carol Deborah Sarah 
+Michelle Sharon Susan 
+George James Sarah 
+Anthony Jennifer Michelle Ronald 
+David Ronald 
+Anthony John Richard 
+Sarah Susan 
+David Deborah Sarah Susan 
+David Deborah Sarah Susan 
+Anthony Carol Christopher Michelle 
+Carol Jennifer Patricia 
+Jennifer Sarah Sharon 
+Carol James Sharon Susan 
+Daniel George John 
+Richard Sharon 
+David Jennifer Karen Sharon 
+Carol Michelle 
+George John Patricia Sarah 
+Patricia Richard 
+Anthony Christopher John 
+Christopher Sarah 
+Jennifer Ronald 
+David Deborah 
+Anthony Richard 
+David Ronald Sharon 
+David Richard 
+Richard Sarah 
+David George Karen 
+Carol Ronald 
+Carol Ronald Sarah Susan 
+Anthony Richard 
+Patricia Sarah 
+Deborah John 
+Michelle Sharon Susan 
+George James 
+Christopher George John 
+Michelle Patricia Ronald Sharon 
+John Karen 
+Anthony Daniel James Michelle 
+Daniel John Karen Ronald 
+Deborah Patricia 
+Karen Patricia Susan 
+Patricia Susan 
+John Patricia Richard 
+Christopher Sarah 
+Deborah Richard Sharon 
+Carol Susan 
+Christopher Deborah Jennifer Patricia 
+Anthony Ronald 
+Sarah Sharon 
+Deborah Patricia Susan 
+Deborah Richard Sharon 
+James Karen 
+Anthony Michelle Patricia 
+Anthony Sarah Sharon 
+Carol Richard 
+Carol David Michelle 
+David Karen Patricia Richard 
+George John Richard Ronald 
+George Michelle 
+Jennifer Sharon 
+George Karen 
+Anthony Deborah James Richard 
+John Michelle Sarah Susan 
+Carol Sarah Susan 
+Carol Deborah Richard Ronald 
+Daniel Michelle 
+Carol Daniel Karen 
+Anthony James Jennifer Sharon 
+Karen Susan 
+Karen Sarah 
+George James 
+John Richard 
+Karen Richard 
+Christopher Deborah Karen Michelle 
+John Michelle Sarah 
+Carol Christopher Karen Susan 
+Deborah Patricia Sarah 
+Anthony John Richard 
+Christopher David Deborah Sarah 
+Anthony David George John 
+Anthony Jennifer Michelle 
+Deborah John Patricia 
+Christopher James 
+David Deborah Richard Susan 
+James Jennifer 
+Christopher George 
+Anthony Christopher David John 
+Deborah Patricia Sharon Susan 
+James Jennifer Michelle 
+John Michelle Sarah Sharon 
+Daniel Michelle Patricia Sarah 
+Carol John Richard 
+Carol George James Jennifer 
+John Michelle Richard Ronald 
+Deborah John Ronald Susan 
+James Ronald Sarah 
+Anthony Patricia 
+Christopher James 
+Carol David Sharon 
+Deborah James Susan 
+Patricia Ronald 
+James Karen 
+Anthony David Jennifer Michelle 
+Carol Deborah Jennifer Sharon 
+David Jennifer 
+Deborah John Sharon 
+Anthony Daniel Richard 
+Karen Susan 
+Christopher Daniel George Richard 
+Daniel Sharon 
+Patricia Richard 
+Christopher Ronald Sharon 
+Christopher John Ronald 
+Karen Michelle 
+Carol Karen Susan 
+Carol James Sharon 
+Christopher Daniel David Deborah 
+David Patricia Richard 
+Christopher Patricia Susan 
+James Jennifer 
+Michelle Richard 
+Patricia Richard Ronald 
+James Karen 
+Anthony David Sarah Susan 
+Daniel John 
+Carol Deborah James Karen 
+George Jennifer Ronald 
+James Patricia Sharon 
+George James 
+Patricia Sharon 
+Christopher George Sharon 
+Anthony Carol David Michelle 
+Anthony Michelle 
+Carol Deborah 
+John Ronald 
+Carol Deborah Karen Patricia 
+Ronald Sarah Sharon 
+David James 
+Christopher Daniel George Sarah 
+Karen Patricia Ronald Sharon 
+Christopher John Karen 
+Jennifer Michelle Richard Sharon 
+Carol Christopher Sarah 
+Carol Michelle Patricia Sharon 
+Anthony Daniel James Ronald 
+Christopher David James 
+Daniel John 
+James Sharon 
+Carol Daniel George Patricia 
+James Sharon 
+Christopher Jennifer Patricia 
+Christopher James 
+Christopher George Ronald Sarah 
+Carol Sharon 
+Anthony Jennifer 
+Carol John Patricia Richard 
+George Ronald Sharon 
+Anthony James Richard Sharon 
+Deborah John Ronald Sharon 
+David Deborah Jennifer Sarah 
+David Karen Richard Susan 
+Anthony David 
+Anthony Sharon Susan 
+Anthony Daniel Deborah Karen 
+Michelle Richard 
+Daniel David James 
+Michelle Sharon 
+Carol Jennifer Michelle Sarah 
+Anthony Daniel Deborah Ronald 
+Christopher Deborah James Susan 
+Christopher Daniel James Ronald 
+Carol Christopher Karen 
+Daniel Jennifer Karen Michelle 
+Anthony David John 
+Daniel Deborah Patricia 
+Deborah Patricia Sharon Susan 
+Christopher David Deborah George 
+Michelle Sharon 
+Christopher Karen Richard 
+Michelle Sharon 
+Carol John Sarah Sharon 
+Carol Daniel Karen Ronald 
+Anthony Daniel Jennifer Sarah 
+Carol Deborah Sarah 
+David Susan 
+Anthony John Patricia 
+Carol George Karen Sarah 
+Carol Deborah 
+Carol Richard Susan 
+Carol John Susan 
+John Susan 
+James Michelle Susan 
+Jennifer Karen 
+John Karen Michelle 
+Carol David 
+Michelle Richard Sharon Susan 
+Christopher Daniel George Sarah 
+James John Karen Patricia 
+Deborah George James Karen 
+Jennifer Michelle Patricia 
+Daniel Patricia 
+James Ronald 
+James Sharon 
+Anthony Christopher James Richard 
+Deborah Sarah Susan 
+Daniel Sarah 
+Anthony Daniel Jennifer Richard 
+Anthony Richard 
+Daniel Richard Sharon 
+Anthony David James 
+George Patricia Sharon Susan 
+Carol Jennifer Patricia 
+John Sharon 
+Michelle Patricia Sharon 
+Christopher James 
+George Karen Michelle Ronald 
+Deborah George Ronald 
+David George James Michelle 
+George Jennifer John 
+Daniel David Richard 
+David Karen 
+Christopher Sharon 
+Richard Susan 
+Sarah Sharon 
+Carol George John Patricia 
+Patricia Sarah 
+David James John 
+David George Michelle Susan 
+Carol Deborah James Sarah 
+Daniel Jennifer Karen Patricia 
+Carol John 
+Carol George Jennifer Karen 
+John Richard Ronald Susan 
+Anthony Patricia Sharon 
+Daniel Michelle Ronald Sharon 
+David Jennifer Richard Sharon 
+Deborah James 
+Karen Susan 
+James Karen 
+Deborah Sharon 
+Anthony David John Karen 
+Carol Michelle Ronald 
+George Richard 
+Carol James 
+Daniel George John Ronald 
+Deborah George Sarah 
+Carol Christopher Deborah Ronald 
+Christopher Daniel Deborah 
+Christopher George Jennifer Patricia 
+Michelle Patricia 
+Daniel Patricia Sharon 
+Anthony Karen Sharon Susan 
+James Karen 
+John Karen Michelle Sarah 
+David Jennifer Michelle 
+George Karen 
+George John Karen Ronald 
+Daniel Jennifer Richard 
+Daniel David 
+George James 
+James Jennifer Richard Sharon 
+Daniel Patricia Richard Sharon 
+David Jennifer Patricia Susan 
+Christopher Deborah George Sharon 
+Anthony Sarah Susan 
+Carol Christopher Richard Susan 
+Carol David 
+Anthony Christopher Richard 
+David Ronald 
+Anthony Michelle Patricia Susan 
+Anthony George Sarah 
+Karen Sarah Sharon Susan 
+Anthony Deborah Karen 
+George Karen Sarah Susan 
+Christopher Daniel David George 
+Daniel James Michelle 
+David Sarah Susan 
+George James Karen 
+James Karen Sarah 
+David Patricia Sarah 
+Carol Christopher John Ronald 
+James Karen 
+James John Karen Patricia 
+George Richard 
+Carol Christopher David Sarah 
+Carol Sarah Susan 
+Anthony Carol Daniel George 
+Patricia Richard Sharon 
+David George 
+Deborah Jennifer John 
+Deborah Karen Sarah 
+Christopher Jennifer Karen Sharon 
+Carol Patricia Sharon Susan 
+Jennifer Sarah 
+James Sarah Susan 
+Anthony Susan 
+David John Ronald 
+Karen Patricia 
+Christopher David James Ronald 
+Karen Michelle Patricia 
+Carol James 
+Sarah Sharon 
+Deborah James Sarah 
+Christopher David Sarah Sharon 
+Carol Susan 
+Carol Christopher George Sharon 
+Jennifer Patricia Sharon 
+Carol Deborah Karen 
+David James 
+Karen Richard 
+Carol James 
+Christopher George James Susan 
+Daniel George Jennifer 
+John Michelle 
+Karen Michelle 
+Jennifer Karen Patricia 
+David Karen Ronald Sharon 
+Deborah George John Karen 
+James Sharon 
+Anthony Christopher Michelle Susan 
+David George 
+George Karen Patricia 
+Carol Christopher Karen 
+Carol Richard 
+Carol Richard 
+James Jennifer 
+Deborah George Susan 
+Daniel Deborah Richard 
+Karen Patricia 
+David Deborah Jennifer Michelle 
+Jennifer Sharon 
+Daniel John Richard 
+Anthony Christopher James Sharon 
+Carol Richard Sharon Susan 
+Anthony George John 
+Deborah George Karen Ronald 
+Richard Ronald 
+Deborah John Karen Patricia 
+George Michelle 
+Anthony Susan 
+George James Sarah 
+Carol Christopher Sarah Susan 
+David James Karen Sarah 
+Anthony Christopher David Ronald 
+David James 
+Patricia Susan 
+Carol John Ronald 
+Anthony Daniel James 
+Jennifer Michelle Sharon 
+David James Karen Sarah 
+Anthony Richard 
+Carol Jennifer Richard 
+Daniel George Ronald Susan 
+David George James 
+Patricia Richard 
+James Patricia Ronald Sarah 
+David Michelle 
+Daniel Karen 
+Anthony Jennifer Ronald 
+Daniel Jennifer 
+Anthony Deborah Richard Susan 
+David Jennifer John Sarah 
+Anthony James Sharon 
+Daniel George 
+James Karen 
+John Richard 
+Deborah John Karen 
+Christopher Michelle Sharon Susan 
+Carol David 
+Richard Ronald 
+James John Karen Richard 
+Jennifer Karen Sarah 
+George Karen Richard Sarah 
+Carol Christopher Daniel David 
+Daniel Jennifer Michelle 
+John Michelle Patricia 
+Daniel Sharon 
+Jennifer Sarah 
+David Jennifer Sharon 
+Daniel Karen 
+George Patricia Ronald 
+Deborah Michelle 
+Jennifer John Ronald 
+Christopher George 
+Christopher Susan 
+David Michelle Sarah 
+David Patricia Sharon Susan 
+David Jennifer Michelle Susan 
+James Sarah Susan 
+Deborah Karen 
+Christopher David Sharon 
+Carol George Richard Sarah 
+Daniel Jennifer Patricia 
+Daniel Sharon 
+James Jennifer Karen 
+Anthony Christopher Michelle Ronald 
+Anthony Deborah George Michelle 
+Patricia Richard 
+John Sharon 
+Carol Patricia Susan 
+Christopher Daniel Jennifer Ronald 
+Christopher John Ronald 
+Karen Michelle Sarah Susan 
+James Patricia Ronald Sarah 
+John Karen 
+David George John 
+Anthony Christopher Richard 
+Deborah James Michelle Sarah 
+David Deborah Jennifer Sharon 
+Carol David 
+Carol Christopher Karen Susan 
+Patricia Susan 
+Christopher Karen Ronald Susan 
+Christopher George Jennifer 
+Anthony David Karen Susan 
+James Michelle 
+David James Ronald 
+Carol Deborah Patricia Sarah 
+Anthony Daniel Karen Sarah 
+Richard Ronald 
+Christopher John Patricia Richard 
+Karen Patricia 
+Patricia Sarah 
+Daniel Karen Susan 
+Carol Deborah Sarah Sharon 
+Carol John Karen Sarah 
+Anthony Sharon 
+Jennifer Michelle Sharon Susan 
+Anthony David George James 
+Sarah Sharon 
+Jennifer John Karen Susan 
+Carol Sarah Susan 
+Carol Deborah Karen Sarah 
+John Susan 
+James Jennifer Susan 
+David James Patricia Sarah 
+Christopher Karen Patricia Sarah 
+John Karen 
+Deborah Jennifer Karen Michelle 
+Deborah Jennifer John Ronald 
+Deborah Patricia Richard Ronald 
+David Michelle Richard Sarah 
+George James Richard 
+George Sarah 
+Christopher Daniel Deborah James 
+George Patricia Sharon 
+Christopher Karen Michelle 
+Karen Michelle 
+Deborah Sharon Susan 
+George John Sharon 
+Carol Christopher George 
+David Karen 
+George Patricia Ronald 
+Deborah Jennifer Michelle 
+Deborah Richard Sarah Sharon 
+Daniel Ronald 
+Anthony Christopher John Richard 
+Carol Richard Sarah Susan 
+Christopher David Ronald 
+Carol David James Sharon 
+George John 
+Anthony John 
+Daniel Richard Ronald 
+Daniel Deborah Jennifer Michelle 
+Anthony Daniel 
+George Michelle Sharon 
+Carol James Karen 
+Richard Susan 
+Richard Sharon 
+James Patricia 
+Christopher George Jennifer Richard 
+George Patricia 
+Carol Deborah Karen Susan 
+Christopher Karen 
+Christopher Deborah James John 
+Anthony Michelle Patricia 
+Anthony Richard 
+Anthony Jennifer Karen Michelle 
+John Sharon 
+Carol Richard Sarah Susan 
+David John Sarah 
+John Sarah 
+Christopher George Karen Michelle 
+Christopher George Jennifer 
+Daniel Jennifer Sarah 
+Jennifer Michelle Sharon 
+George John 
+James Karen 
+Christopher Patricia 
+Deborah Michelle Sharon 
+Carol Richard 
+Karen Michelle 
+Karen Sharon 
+Christopher David Michelle Ronald 
+Jennifer Michelle Richard Sharon 
+George Ronald 
+George Ronald Susan 
+Jennifer Michelle 
+George John Sharon 
+David George Richard 
+Daniel Sharon 
+Jennifer Richard 
+Deborah Sharon 
+Christopher Karen 
+Christopher Michelle 
+Anthony James John Richard 
+Christopher James Jennifer Karen 
+Jennifer John Richard Susan 
+Deborah Michelle Susan 
+Jennifer Sharon Susan 
+Deborah Karen Patricia Sharon 
+Carol David Deborah 
+Christopher James Jennifer Karen 
+Daniel James Sarah 
+Carol Deborah Ronald Sarah 
+Christopher Patricia 
+Anthony Christopher James Ronald 
+Anthony Daniel Patricia 
+Carol Christopher Daniel David 
+Daniel George James 
+Jennifer Michelle Richard Susan 
+Deborah Michelle 
+Carol Jennifer Karen Patricia 
+Anthony Carol 
+George Patricia Richard Sharon 
+Jennifer Sarah 
+Anthony Christopher George Sharon 
+Jennifer Ronald 
+Daniel James Richard 
+Anthony John Karen Susan 
+Patricia Richard 
+George James Patricia 
+Deborah James 
+Deborah Patricia 
+David Karen Michelle Sarah 
+Anthony Daniel George Karen 
+John Karen Richard Sarah 
+Anthony Karen 
+Deborah Karen 
+John Michelle 
+Carol James 
+Jennifer John Ronald 
+John Michelle 
+Deborah Sharon 
+Carol James 
+Carol David Sarah 
+George John Susan 
+Daniel David Jennifer Karen 
+Deborah James Karen Sharon 
+Deborah John Richard Sharon 
+George Patricia Sarah Susan 
+Karen Susan 
+Carol Karen 
+Carol Jennifer Michelle Patricia 
+David Karen Sarah 
+Christopher James 
+John Michelle Sharon 
+Daniel David Sarah 
+Daniel Deborah Sarah 
+David Patricia Sharon 
+James Patricia Ronald Susan 
+David Michelle 
+Patricia Ronald 
+Deborah Patricia 
+Christopher Jennifer Sarah 
+Anthony James Sarah Susan 
+Christopher Richard Sarah Susan 
+Anthony Carol Deborah 
+Deborah Jennifer Patricia 
+Anthony Daniel Richard 
+David George 
+David Ronald 
+Jennifer John Susan 
+Anthony Deborah John Sarah 
+Jennifer Karen Michelle 
+Christopher Karen Susan 
+Christopher Richard Ronald 
+Christopher George Michelle Susan 
+David Michelle Patricia Sarah 
+Daniel James Richard 
+Jennifer John Sarah 
+Deborah Jennifer 
+Carol Susan 
+Daniel Jennifer Richard 
+David Michelle 
+Anthony Christopher Jennifer Karen 
+Anthony Christopher Jennifer Patricia 
+David Michelle 
+Carol Christopher James 
+Carol Jennifer 
+Carol Richard Ronald 
+Anthony James Michelle 
+Christopher James John 
+James Jennifer 
+James Jennifer 
+Carol Sarah Susan 
+George James 
+David George Patricia Ronald 
+Anthony Christopher James Susan 
+Anthony James Richard Ronald 
+Christopher Daniel Sarah 
+John Karen Patricia Ronald 
+David Michelle Patricia 
+Patricia Ronald Susan 
+Michelle Richard Sharon 
+Christopher George Michelle 
+Ronald Sharon 
+Christopher David Deborah Susan 
+Carol Deborah Patricia Sarah 
+Anthony George Karen Susan 
+Anthony Michelle 
+Anthony David John Patricia 
+George Karen Richard 
+Deborah Jennifer John Michelle 
+Carol David 
+Deborah George 
+David James 
+Daniel David Richard 
+Ronald Sarah 
+Daniel Jennifer 
+Daniel Jennifer Michelle 
+Anthony Carol Daniel Jennifer 
+Carol Deborah Sharon 
+David George 
+Anthony Deborah John Sharon 
+Christopher James Sarah Susan 
+Christopher James Jennifer Michelle 
+James John 
+Anthony Christopher George 
+George John Patricia Ronald 
+Carol Daniel Deborah Karen 
+Carol George Ronald 
+Anthony Patricia Sarah Sharon 
+Carol Ronald 
+Anthony Daniel Ronald 
+Carol Jennifer John Sharon 
+James Richard 
+Deborah Ronald 
+John Michelle Patricia 
+James Susan 
+James Karen Patricia Susan 
+David Karen Ronald 
+Christopher Daniel Jennifer 
+David Ronald 
+George John 
+Daniel John Karen Sarah 
+Christopher George Richard 
+Jennifer John Richard 
+Carol George Jennifer 
+Carol David James 
+Anthony Daniel Sarah Sharon 
+Carol Daniel Deborah Karen 
+Christopher Deborah George Karen 
+John Patricia Ronald 
+George John Michelle Patricia 
+Daniel James Patricia 
+Deborah Patricia 
+Deborah Jennifer Karen 
+Anthony James Patricia 
+George James John Karen 
+Carol Christopher Sarah 
+Anthony George Ronald 
+Daniel Sharon 
+Richard Ronald 
+Daniel James Richard 
+Carol Daniel George Michelle 
+Daniel John Patricia Susan 
+Christopher Deborah Ronald 
+Christopher George Sharon 
+Daniel Jennifer 
+Jennifer John Karen Ronald 
+Christopher Daniel Karen Michelle 
+John Michelle Ronald Susan 
+Christopher Deborah Karen Patricia 
+Christopher George James 
+David John Richard Sharon 
+Carol Ronald Sharon Susan 
+Anthony Christopher Sharon 
+Anthony Daniel Michelle Sharon 
+Deborah Michelle Ronald Sharon 
+Ronald Susan 
+David John Karen Susan 
+Christopher Michelle 
+Christopher Michelle Sharon 
+David Deborah Michelle 
+Anthony Christopher John 
+George John Michelle Ronald 
+Sarah Sharon 
+Daniel Sarah 
+Anthony Daniel Patricia 
+Anthony James Susan 
+George Sharon 
+George Jennifer John 
+Daniel Jennifer Richard 
+David James Michelle Sarah 
+David Karen Michelle 
+Deborah George Michelle 
+Anthony Deborah George Patricia 
+George Michelle 
+Michelle Sharon 
+Daniel James Michelle Ronald 
+Anthony Jennifer Michelle Sharon 
+David Jennifer Michelle Patricia 
+Christopher George Jennifer Richard 
+Deborah Patricia 
+Christopher Sarah Susan 
+Anthony James Karen Patricia 
+Carol Christopher James 
+Daniel John Ronald Sharon 
+Anthony Michelle 
+Daniel George Karen Ronald 
+Anthony Daniel Richard 
+Deborah John Michelle Patricia 
+Deborah George James Susan 
+Carol Sarah 
+Carol David Sarah 
+James Karen Richard 
+Anthony Sarah Susan 
+David James 
+Carol Richard Sarah Sharon 
+James Michelle Sarah 
+Carol Ronald Susan 
+Christopher George John 
+Deborah John 
+Carol Ronald 
+James John 
+David Deborah Michelle Susan 
+Deborah George 
+Anthony Karen 
+Anthony Deborah Jennifer 
+Carol David James 
+Anthony Daniel Jennifer 
+George James Michelle Ronald 
+Carol Deborah 
+Deborah George Susan 
+Carol Sarah 
+Daniel Karen Patricia Sarah 
+John Ronald 
+David Jennifer 
+Anthony Deborah Sarah Susan 
+David James 
+Jennifer Michelle Susan 
+Anthony Ronald 
+Richard Ronald 
+John Sarah 
+David George 
+Michelle Richard Susan 
+George John Ronald 
+George Michelle Patricia 
+Christopher George James 
+David James Patricia 
+Daniel Sharon 
+Anthony Daniel Jennifer 
+Carol Christopher Susan 
+John Michelle Sharon Susan 
+Carol Jennifer 
+Anthony Richard 
+Carol James 
+Deborah Michelle 
+George Patricia 
+Carol Daniel Karen Ronald 
+Christopher Richard 
+Christopher Ronald Sarah 
+Carol Deborah Susan 
+Michelle Sharon 
+John Sharon 
+Jennifer Patricia 
+Anthony Michelle Patricia 
+Carol Deborah Jennifer Richard 
+Anthony Jennifer Richard 
+Christopher James Susan 
+David George James 
+Richard Ronald 
+Richard Ronald Sarah 
+Christopher George Sharon 
+George Sharon 
+Richard Sharon 
+Anthony David George Sarah 
+Christopher David Jennifer Michelle 
+Carol Christopher Deborah 
+Daniel James Jennifer 
+Daniel Jennifer John Sarah 
+George John Patricia 
+Anthony Christopher John Michelle 
+Deborah Sarah 
+Patricia Ronald 
+George Jennifer Sarah Sharon 
+Jennifer John Karen Patricia 
+Daniel George John Sarah 
+Michelle Susan 
+Deborah Richard Susan 
+Deborah Jennifer Sharon 
+Anthony John Richard 
+David James John Richard 
+Deborah Karen 
+Anthony Daniel Jennifer Susan 
+Daniel James Richard Ronald 
+Daniel Deborah Richard Sharon 
+David John Sharon Susan 
+Carol Deborah 
+Christopher David Michelle Sarah 
+David James Richard Susan 
+Karen Richard Ronald Susan 
+John Ronald Sarah 
+Daniel Michelle 
+Anthony James Patricia 
+James Michelle 
+Christopher Michelle 
+Carol David 
+David Michelle 
+Karen Sharon 
+Anthony Patricia Ronald Susan 
+Anthony George Karen 
+Daniel George Michelle 
+Carol Karen Michelle Patricia 
+George James 
+Christopher David Karen 
+Deborah Sharon 
+Michelle Ronald 
+Anthony Deborah Karen Richard 
+Deborah Patricia Susan 
+David George John Susan 
+Ronald Susan 
+Deborah John Richard Sharon 
+George Ronald 
+David James John Susan 
+Deborah Sarah Susan 
+Anthony Carol Richard Ronald 
+Jennifer Ronald 
+Anthony Christopher Sharon 
+Christopher David Deborah 
+Anthony Christopher Patricia Susan 
+Christopher Deborah Susan 
+Michelle Sharon Susan 
+Deborah Ronald Susan 
+Anthony Christopher 
+Anthony Daniel Sharon 
+Ronald Sarah 
+Anthony Jennifer 
+Anthony George John Ronald 
+Deborah Michelle Patricia Susan 
+Michelle Ronald 
+Carol David Patricia 
+Carol Daniel David Ronald 
+Daniel David James Sharon 
+Daniel Jennifer Michelle Patricia 
+George Jennifer Richard 
+Christopher George Patricia 
+Anthony Christopher George Michelle 
+Deborah George Jennifer 
+Ronald Sarah 
+Carol Jennifer John 
+George John 
+Jennifer Sarah Susan 
+Daniel Ronald 
+Anthony David James 
+Jennifer Patricia Ronald Sharon 
+Deborah Michelle 
+Christopher Jennifer Sharon 
+Deborah Sarah 
+Anthony George Susan 
+Anthony Daniel John 
+Christopher Jennifer Karen Patricia 
+James John Ronald 
+Anthony Richard Sharon 
+Carol James Susan 
+George Michelle Ronald 
+Richard Ronald 
+Carol Ronald Sarah Susan 

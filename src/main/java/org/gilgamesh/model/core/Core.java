@@ -170,6 +170,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	/**
 	 * Delete fact.
 	 * If the atoms involved have connections to other facts, they will be not deleted.
+	 * @return true if the fact was removed. false otherwise. 
 	 * @param values The atoms list used to make that fact.
 	 */
 	public boolean remove(List<Type> values)
@@ -239,7 +240,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 
 	/**
 	 * Get a list of answers for a question.
-	 * This method provides the same answer as getAnswer(false, <atoms>), except for the fact that the answer has to have all question atoms.
+	 * This method provides the same answer as getAnswer(false, atoms), except for the fact that the answer has to have all question atoms.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
 	 * @param values Question atoms.
 	 * @return A list of Answer objects, containing the answers with their respective forces. The list is ordered from the most probable to the less probable.

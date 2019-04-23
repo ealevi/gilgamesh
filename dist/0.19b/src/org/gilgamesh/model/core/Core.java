@@ -23,13 +23,10 @@ package org.gilgamesh.model.core;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.TreeSet;
 
 import org.gilgamesh.model.Answer;
 
@@ -37,32 +34,29 @@ import org.gilgamesh.model.Answer;
 
 
 /**
- * The Gilgamesh memory.<br/><br/>
+ * The Gilgamesh memory.
  * This is the main class to manage AI data. You should create one of it for each context you have.
  * @author Eduardo Alevi
  * @param <Type> The generic type you want to work on.
  */
 public class Core<Type extends Comparable<Type>> implements Serializable
 {
-	private static final long serialVersionUID = 1L;
-	
-	private static final transient int CPUS = Runtime.getRuntime().availableProcessors();
-	private static final transient int THREADS = CPUS * CPUS;
-	private transient Object lock = new Object();
-	
-	private ArrayList<Atom<Type>> atoms = new ArrayList<Atom<Type>>();
-	private HashSet<Fact<Type>> facts = new HashSet<Fact<Type>>();
-	
-	
+	public static final long serialVersionUID = 20L;
 
-	
+	private transient Object lock = new Object();
+
+	private HashMap<Type, Atom<Type>> atoms = new HashMap<Type, Atom<Type>>();
+
+
+
+
 	private synchronized Object getLock()
 	{
 		if(lock == null)
 			lock = new Object();
 		return lock;
 	}
-	
+
 	/**
 	 * Reinforce a fact, with +1 to force.
 	 * @param values The atoms which will make a fact.
@@ -72,7 +66,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	{
 		fact(1.0, convert(values));
 	}
-	
+
 	/**
 	 * Punish a fact, with -1 to force.
 	 * @param values The atoms which will make a fact.
@@ -82,47 +76,47 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	{
 		fact(-1.0, convert(values));
 	}
-	
+
 	/**
 	 * Reinforce a fact, with +1 to force.
-	 * @param values List of Type atoms to make a fact. 
+	 * @param values List of Type atoms to make a fact.
 	 */
 	public void reinforce(List<Type> values)
 	{
 		fact(1.0, convert(values));
 	}
-	
+
 	/**
 	 * Punish a fact, with -1 to force.
-	 * @param values List of Type atoms to make a fact. 
+	 * @param values List of Type atoms to make a fact.
 	 */
 	public void punish(List<Type> values)
 	{
 		fact(-1.0, convert(values));
 	}
-	
+
 	private Atom<Type>[] convert(List<Type> values)
 	{
 		@SuppressWarnings("unchecked")
 		Atom<Type> array[] = new Atom[values.size()];
-		
+
 		for(int i=0; i<values.size(); i++)
 			array[i] = new Atom<Type>(values.get(i));
-		
+
 		return array;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private Atom<Type>[] convert(Type ... values)
 	{
 		Atom<Type> array[] = new Atom[values.length];
-		
+
 		for(int i=0; i<values.length; i++)
 			array[i] = new Atom<Type>(values[i]);
-		
+
 		return array;
 	}
-	
+
 	/**
 	 * Make a explicit fact, with a defined force.
 	 * @param force The force to be defined to the fact (or summed if the fact exists).
@@ -133,7 +127,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	{
 		fact(force, convert(values));
 	}
-	
+
 	/**
 	 * Make a explicit fact, with a defined force.
 	 * @param force The force to be defined to the fact (or summed if the fact exists).
@@ -143,33 +137,28 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	{
 		fact(force, convert(values));
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private void fact(double force, Atom<Type> ... values)
 	{
 		synchronized(getLock())
 		{
 			Fact<Type> fact = new Fact<Type>(values);
-			
-			facts.add(fact);
-			
-			for(int i=0; i<values.length; i++)
+
+			for(Atom<Type> atom : values)
 			{
-				int index = atoms.indexOf(values[i]);
-				
-				if(index < 0)
-				{
-					atoms.add(values[i]);
-					index = atoms.size() - 1;
-				}
-				
-				atoms.get(index).add(fact, force);
+				if(!atoms.keySet().contains(atom.value))
+					atoms.put(atom.value, atom);
+
+				atoms.get(atom.value).add(fact, force);
 			}
 		}
 	}
 
 	/**
-	 * Delete fact.<br/><br/>If the atoms involved have connections to other facts, they will be not deleted.
+	 * Delete a fact.
+	 * If the atoms involved have connections to other facts, they will be not deleted.
+	 * @return true if the fact was removed or false otherwise.
 	 * @param values The atoms used to make that fact.
 	 */
 	@SuppressWarnings("unchecked")
@@ -177,51 +166,25 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	{
 		return remove(convert(values));
 	}
-	
+
 	/**
-	 * Delete fact.<br/><br/>If the atoms involved have connections to other facts, they will be not deleted.
+	 * Delete fact.
+	 * If the atoms involved have connections to other facts, they will be not deleted.
 	 * @param values The atoms list used to make that fact.
 	 */
 	public boolean remove(List<Type> values)
 	{
 		return remove(convert(values));
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private boolean remove(Atom<Type> ... values)
 	{
 		synchronized(getLock())
 		{
-			Fact<Type> fact = new Fact<Type>(values);
-			boolean result = facts.remove(fact);
-			
-			for(int i=0; i<values.length; i++)
-			{
-				int index = atoms.indexOf(values[i]);
-				
-				if(index >= 0)
-				{
-					Atom<Type> atom = atoms.get(index);
-					
-					if(atom.getFacts().contains(fact))
-						atom.getFacts().remove(fact);
-				}
-			}
-			
-			for(int i=0; i<values.length; i++)
-			{
-				int index = atoms.indexOf(values[i]);
-				
-				if(index >= 0)
-				{
-					Atom<Type> atom = atoms.get(index);
-					
-					if(atom.getFacts().size() <= 0)
-						atoms.remove(atom);
-				}
-			}
-			
-			return result;
+			for(Atom<Type> atom : values)
+				atoms.remove(atom.value);
+			return true;
 		}
 	}
 
@@ -232,14 +195,12 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	 */
 	public Atom<Type> getAtom(Type atom)
 	{
-		int index = atoms.indexOf(atom);
-		
-		if(index < 0)
-			return null;
+		if(atom != null && atoms.keySet().contains(atom))
+			return atoms.get(atom);
 		else
-			return atoms.get(index);
+			return null;
 	}
-	
+
 	/**
 	 * Return an single and most probable answer.
 	 * @param values The question atoms you want to ask.
@@ -251,13 +212,13 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 		Answer<Fact<Type>> answer = answer(Arrays.asList(values));
 		if(answer != null)
 			return answer.value.values();
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Return an single and most probable answer.
-	 * @param values A list of question atoms. 
+	 * @param values A list of question atoms.
 	 * @return The answer atoms, in the form of Answer class which contains the forces.
 	 */
 	public Answer<Fact<Type>> answer(List<Type> values)
@@ -265,19 +226,19 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 		List<Answer<Fact<Type>>> list = getAnswers(false, false, values);
 		if(list.size() > 0)
 			return list.get(0);
-		
+
 		list = getAnswers(true, false, values);
 		if(list.size() > 0)
 		{
-			list.get(0).setForce(list.get(0).getForce() / (double) values.size()); 
+			list.get(0).setForce(list.get(0).getForce() / (double) values.size());
 			return list.get(0);
 		}
 
 		return null;
 	}
-	
+
 	/**
-	 * Get a list of answers for a question.<br/><br/>
+	 * Get a list of answers for a question.
 	 * This method provides the same answer as getAnswer(false, <atoms>), except for the fact that the answer has to have all question atoms.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
 	 * @param values Question atoms.
@@ -291,7 +252,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 			{
 				if(values.length != atoms.length)
 					return false;
-				
+
 				loop:
 				for(Atom<Type> value : convert(values))
 				{
@@ -300,16 +261,22 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 							continue loop;
 					return false;
 				}
-				
+
 				return true;
 			}
-		}, values); 
+
+			@Override
+			public double calc(Fact<Type> fact, double force)
+			{
+				return force / values.length;
+			}
+		}, values);
 	}
-		
+
 	/**
 	 * Get a list of answers for a question.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
-	 * @param matchAny true if the answer should contains any question atoms. false if the answers should contains all question atoms. 
+	 * @param matchAny true if the answer should contains any question atoms. false if the answers should contains all question atoms.
 	 * @param values Question atoms.
 	 * @return A list of Answer objects, containing the answers with their respective forces. The list is ordered from the most probable to the less probable.
 	 */
@@ -321,11 +288,11 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 		else
 			return getAnswersAND(suppress, convert(values));
 	}
-		
+
 	/**
 	 * Get a list of answers for a question.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
-	 * @param matchAny true if the answer should contains any question atoms. false if the answers should contains all question atoms. 
+	 * @param matchAny true if the answer should contains any question atoms. false if the answers should contains all question atoms.
 	 * @param values List of question atoms.
 	 * @return A list of Answer objects, containing the answers with their respective forces. The list is ordered from the most probable to the less probable.
 	 */
@@ -351,10 +318,16 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 							continue loop;
 					return false;
 				}
-				
+
 				return true;
 			}
-		}, values); 
+
+			@Override
+			public double calc(Fact<Type> fact, double force)
+			{
+				return force / values.length;
+			}
+		}, values);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -369,14 +342,26 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 						if(atom.equals(value))
 							return true;
 				}
-				
+
 				return false;
 			}
-		}, values); 
+
+			@Override
+			public double calc(Fact<Type> fact, double force)
+			{
+				int factor = values.length + 1;
+
+				for(Atom<Type> atom : values)
+					if(fact.contains(atom))
+						factor--;
+
+				return (force / values.length) / (double) (factor);
+			}
+		}, values);
 	}
 
 	/**
-	 * Returns a customized list of answers.<br/><br/>
+	 * Returns a customized list of answers.
 	 * If you want to customize the logic done by Gilgamesh, you can implement the Core inner class <i>Predicate</i> in order to
 	 * provide your own matching implementation.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
@@ -389,9 +374,9 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	{
 		return getAnswers(suppress, predicate, convert(values));
 	}
-	
+
 	/**
-	 * Returns a customized list of answers.<br/><br/>
+	 * Returns a customized list of answers.
 	 * If you want to customize the logic done by Gilgamesh, you can implement the Core inner class <i>Predicate</i> in order to
 	 * provide your own matching implementation.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
@@ -403,80 +388,60 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	{
 		return getAnswers(suppress, predicate, convert(values));
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private List<Answer<Fact<Type>>> getAnswers(final boolean suppress, final Predicate<Type> predicate, final Atom<Type> ... values)
 	{
 		synchronized(getLock())
 		{
-			final HashMap<Fact<Type>, Double> results = new HashMap<Fact<Type>, Double>();
-			ArrayList<Runnable> tasks = new ArrayList<Runnable>();
-			
+			HashMap<Fact<Type>, Double> results = new HashMap<Fact<Type>, Double>();
+			HashSet<Atom<Type>> set = suppress? new HashSet<Atom<Type>>(Arrays.asList(values)) : null;
+
 			if(atoms == null)
 				return new ArrayList<Answer<Fact<Type>>>();
-			
-			for(int i=0; i<values.length; i++)
+
+			for(Atom<Type> current : values)
 			{
-				final int idx = i;
-				tasks.add(new Runnable() {
-					public void run()
+				if(current.value == null || !atoms.keySet().contains(current.value))
+					continue;
+
+				Atom<Type> atom = atoms.get(current.value);
+
+				for(Fact<Type> fact : atom.getFacts())
+					if(predicate.match(fact.atoms))
 					{
-						int index = atoms.indexOf(values[idx]);
-						
-						if(index < 0)
-							return;
-						
-						Atom<Type> atom = atoms.get(index);
-						
-						for(Fact<Type> fact : atom.getFacts())
-							if(predicate.match(fact.atoms))
-								synchronized(results)
-								{
-									Fact<Type> newFact = suppress? fact.suppress(values) : fact;
-									double force = results.get(newFact) == null? atom.getForce(fact) : results.get(newFact) + atom.getForce(fact);
-									
-									if(newFact.atoms != null && newFact.atoms.length > 0)
-										results.put(newFact, force);
-								}
+						Fact<Type> newFact = suppress? fact.suppress(set) : fact;
+						double force = results.get(newFact) == null? atom.getForce(fact) : results.get(newFact) + atom.getForce(fact);
+
+						if(newFact.atoms != null && newFact.atoms.length > 0)
+							results.put(newFact, force);
 					}
-				});
 			}
-			
-			final ThreadPoolExecutor pool = new ThreadPoolExecutor(CPUS, THREADS, Long.MAX_VALUE, TimeUnit.MINUTES, 
-					new ArrayBlockingQueue<Runnable>(THREADS, true), new ThreadPoolExecutor.CallerRunsPolicy());
 
-			for(Runnable task : tasks)
-				pool.execute(task);
 
-			pool.shutdown();
+			TreeSet<Answer<Fact<Type>>> answers = new TreeSet<Answer<Fact<Type>>>();
 
-			while(!pool.isTerminated())
-			{
-				Thread.yield();
-				continue;
-			}
-			
-			ArrayList<Answer<Fact<Type>>> answers = new ArrayList<Answer<Fact<Type>>>();
-			
 			for(Fact<Type> fact : results.keySet())
-				answers.add(new Answer<Fact<Type>>(fact, results.get(fact) / (double) values.length, fact.time));
-			
-			Collections.sort(answers);
-			Collections.reverse(answers);
-			
-			return answers;
+				answers.add(new Answer<Fact<Type>>(fact, predicate.calc(fact, results.get(fact)), fact.time));
+
+			return new ArrayList<Answer<Fact<Type>>>(answers.descendingSet());
 		}
 	}
 	
 	@SuppressWarnings("unchecked")
 	public Atom<Type>[] getAtoms()
 	{
-		return atoms.toArray(new Atom[0]);
+		return atoms.values().toArray(new Atom[0]);
 	}
 	
 	@SuppressWarnings("unchecked")
 	public Fact<Type>[] getFacts()
 	{
+		HashSet<Fact<Type>> facts = new HashSet<Fact<Type>>();
+
+		for(Atom<Type> atom : atoms.values())
+			facts.addAll(atom.getFacts());
+
 		return facts.toArray(new Fact[0]);
 	}
 	
@@ -491,7 +456,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
     	if(atoms == null)
     		return new Statistics(0, 0, 0, 0);
 
-    	for(Atom<Type> atom : atoms)
+    	for(Atom<Type> atom : atoms.values())
     		for(Fact<Type> fact : atom.getFacts())
 				values.add(atom.getForce(fact));
 
@@ -516,7 +481,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
     
 	
     /**
-     * Class to validate an answer.<br/><br/>
+     * Class to validate an answer.
      * This class is used to validate when a fact matches to the question. Can be customized to receive other validations.
      * @author Eduardo Alevi
      * @param <Type> The atom type.
@@ -525,6 +490,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	public static abstract class Predicate<Type extends Comparable<Type>>
 	{
 		public abstract boolean match(Atom<Type> ... answer);
+		public abstract double calc(Fact<Type> fact, double force);
 	}
 	
 	/**

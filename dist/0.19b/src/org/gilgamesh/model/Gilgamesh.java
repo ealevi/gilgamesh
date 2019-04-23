@@ -41,7 +41,7 @@ public class Gilgamesh
 	
 
 	/**
-	 * Creates a usable Core (memory) of Gilgamesh.<\br><\br>
+	 * Creates a usable Core (memory) of Gilgamesh.
 	 * This method is called when you need a memory and you want it working only with strings.
 	 * @return The generic Core for strings.
 	 */
@@ -51,7 +51,7 @@ public class Gilgamesh
 	}
 	
 	/**
-	 * Creates a usable Core (memory) of Gilgamesh.<\br><\br>
+	 * Creates a usable Core (memory) of Gilgamesh.
 	 * This method creates a instance of Core for generic classes. Notice this method is
 	 * used when you want to use a specific class for this context.
 	 * @return The generic Core for a specific class.

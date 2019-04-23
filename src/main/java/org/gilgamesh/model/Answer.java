@@ -20,7 +20,7 @@
 package org.gilgamesh.model;
 
 /**
- * Class that represents an answer.<br/><br/>
+ * Class that represents an answer.
  * This class is usually used to store a fact with its respective force. 
  * @author Eduardo Alevi
  * @param <Type> The atoms type.

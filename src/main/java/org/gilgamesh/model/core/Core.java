@@ -21,10 +21,12 @@
 package org.gilgamesh.model.core;
 
 import java.io.Serializable;
-import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.TreeSet;
 
 import org.gilgamesh.model.Answer;
 
@@ -39,7 +41,7 @@ import org.gilgamesh.model.Answer;
  */
 public class Core<Type extends Comparable<Type>> implements Serializable
 {
-	public static final long serialVersionUID = 19L;
+	public static final long serialVersionUID = 20L;
 
 	private transient Object lock = new Object();
 
@@ -154,7 +156,9 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	}
 
 	/**
-	 * Delete fact.<br/><br/>If the atoms involved have connections to other facts, they will be not deleted.
+	 * Delete a fact.
+	 * If the atoms involved have connections to other facts, they will be not deleted.
+	 * @return true if the fact was removed or false otherwise.
 	 * @param values The atoms used to make that fact.
 	 */
 	@SuppressWarnings("unchecked")
@@ -434,7 +438,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	{
 		HashSet<Fact<Type>> facts = new HashSet<Fact<Type>>();
 
-		for(Atom atom : atoms.values())
+		for(Atom<Type> atom : atoms.values())
 			facts.addAll(atom.getFacts());
 
 		return facts.toArray(new Fact[0]);

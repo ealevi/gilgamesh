@@ -36,7 +36,7 @@ import org.gilgamesh.model.core.Fact;
 public class GilgameshTest
 {
 	private static int counter;
-	
+	private static int THREADS = 1000;
 	
 	public static void main(String args[]) throws Exception
 	{
@@ -151,9 +151,9 @@ public class GilgameshTest
 
 		check(true, answers, atoms, forces);
 
-		testThread1();
-		testThread2();
-		testThread3();
+		threads1();
+		threads2();
+		threads3();
 
 		System.out.println("\n\n\nTest ended successfully.");
 		System.exit(0);
@@ -191,18 +191,15 @@ public class GilgameshTest
 		return value / Math.pow(10, precision);
 	}
 	
-	private static void testThread1() throws InterruptedException
+	private static void threads1() throws InterruptedException
 	{
 		final Core<String> core = new Core<String>();
 		HashMap<String, Integer> counter = new HashMap<String, Integer>();
 		
-		int CPUS = Runtime.getRuntime().availableProcessors();
-		int THREADS = CPUS * CPUS;
-
 		ExecutorService executor = Executors.newFixedThreadPool(THREADS);
 		List<Callable<Object>> todo = new ArrayList<Callable<Object>>();
 
-		for(int i=0; i<100000; i++)
+		for(int i=0; i<1000; i++)
 		{
 			final String string = "" + new Random().nextInt(50);
 			
@@ -211,10 +208,20 @@ public class GilgameshTest
 			else
 				counter.put(string, counter.get(string) + 1);
 			
-			todo.add(Executors.callable(new TestThread() {
+			todo.add(Executors.callable(new Runnable() {
 				public void run()
 				{
-					core.reinforce(string);
+					try
+					{
+						int time = (int) (Math.random() * 1000);
+						Thread.currentThread().setPriority(time % 2 == 0? Thread.MAX_PRIORITY : Thread.MIN_PRIORITY);
+						Thread.sleep(time);
+						core.reinforce(string);
+					}
+					catch(InterruptedException e)
+					{
+						System.err.print(e);
+					}
 				}
 			}));
 		}
@@ -229,11 +236,9 @@ public class GilgameshTest
 		}
 	}
 	
-	private static void testThread2() throws InterruptedException
+	private static void threads2() throws InterruptedException
 	{
 		System.out.println("\nTesting and matching forces - can take a while...");
-		int CPUS = Runtime.getRuntime().availableProcessors();
-		int THREADS = CPUS * CPUS;
 		final Core<String> core = new Core<String>();
 		final ArrayList<String[]> original = new ArrayList<String[]>();
 		final ConcurrentHashMap<String, String[]> facts = new ConcurrentHashMap<String, String[]>();
@@ -256,23 +261,33 @@ public class GilgameshTest
 		List<Callable<Object>> todo = new ArrayList<Callable<Object>>();
 
 		for(int i=0; i<1000; i++)
-			todo.add(Executors.callable(new TestThread() {
+			todo.add(Executors.callable(new Runnable() {
 				public void run()
 				{
-					String fact[] = original.get((int) (original.size() * Math.random()));
-
-					if(fact == null)
-						return;
-
-					String key = createKey(fact);
-					String partial[] = createPartialFact(fact);
-
-					Answer<Fact<String>> answer = core.getAnswers(true, false, partial).get(0);
-
-					if(answer != null)
+					try
 					{
-						facts.put(key, partial);
-						forces.put(key, answer.getForce());
+						int time = (int) (Math.random() * 1000);
+						Thread.currentThread().setPriority(time % 2 == 0? Thread.MAX_PRIORITY : Thread.MIN_PRIORITY);
+						Thread.sleep(time);
+						String fact[] = original.get((int) (original.size() * Math.random()));
+
+						if(fact == null)
+							return;
+
+						String key = createKey(fact);
+						String partial[] = createPartialFact(fact);
+
+						Answer<Fact<String>> answer = core.getAnswers(true, false, partial).get(0);
+
+						if(answer != null)
+						{
+							facts.put(key, partial);
+							forces.put(key, answer.getForce());
+						}
+					}
+					catch(InterruptedException e)
+					{
+						System.err.print(e);
 					}
 				}
 			}));
@@ -281,14 +296,24 @@ public class GilgameshTest
 
 		todo.clear();
 		for(final String key : facts.keySet())
-			todo.add(Executors.callable(new TestThread() {
+			todo.add(Executors.callable(new Runnable() {
 				public void run()
 				{
-					String partial[] = facts.get(key);
-					Answer<Fact<String>> answer = core.getAnswers(true, false, partial).get(0);
+					try
+					{
+						int time = (int) (Math.random() * 1000);
+						Thread.currentThread().setPriority(time % 2 == 0? Thread.MAX_PRIORITY : Thread.MIN_PRIORITY);
+						Thread.sleep(time);
+						String partial[] = facts.get(key);
+						Answer<Fact<String>> answer = core.getAnswers(true, false, partial).get(0);
 
-					if(answer != null)
-						assert answer.getForce() == forces.get(key) : "Error on expected force";
+						if(answer != null)
+							assert answer.getForce() == forces.get(key) : "Error on expected force";
+					}
+					catch(InterruptedException e)
+					{
+						System.err.print(e);
+					}
 				}
 			}));
 
@@ -317,16 +342,13 @@ public class GilgameshTest
 	}
 
 
-	private static void testThread3() throws InterruptedException
+	private static void threads3() throws InterruptedException
 	{
 		final Core<String> core1 = new Core<String>();
 		final Core<String> core2 = new Core<String>();
-		final int CPUS = Runtime.getRuntime().availableProcessors();
-		final int THREADS = CPUS * CPUS;
-		final int MAX = 1000;
 		final ArrayList<String[]> facts = new ArrayList<String[]>();
 		
-		for(int i=0; i<MAX; i++)
+		for(int i=0; i<1000; i++)
 		{
 			int size = new Random().nextInt(10);
 			ArrayList<String> fact = new ArrayList<String>();
@@ -348,7 +370,17 @@ public class GilgameshTest
 			todo.add(Executors.callable(new Runnable() {
 				public void run()
 				{
-					core2.reinforce(fact);
+					try
+					{
+						int time = (int) (Math.random() * 1000);
+						Thread.currentThread().setPriority(time % 2 == 0? Thread.MAX_PRIORITY : Thread.MIN_PRIORITY);
+						Thread.sleep(time);
+						core2.reinforce(fact);
+					}
+					catch(InterruptedException e)
+					{
+						System.err.print(e);
+					}
 				}
 			}));
 
@@ -367,17 +399,6 @@ public class GilgameshTest
 		
 	}
 
-	
-	private static abstract class TestThread implements Runnable
-	{
-		public TestThread()
-		{
-			if(new Random().nextInt() % 2 == 0)
-				Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
-			else
-				Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
-		}
-	}
 	
 
 }

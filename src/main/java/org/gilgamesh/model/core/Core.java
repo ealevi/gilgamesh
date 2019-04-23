@@ -34,7 +34,7 @@ import org.gilgamesh.model.Answer;
 
 
 /**
- * The Gilgamesh memory.<br/><br/>
+ * The Gilgamesh memory.
  * This is the main class to manage AI data. You should create one of it for each context you have.
  * @author Eduardo Alevi
  * @param <Type> The generic type you want to work on.
@@ -168,7 +168,8 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	}
 
 	/**
-	 * Delete fact.<br/><br/>If the atoms involved have connections to other facts, they will be not deleted.
+	 * Delete fact.
+	 * If the atoms involved have connections to other facts, they will be not deleted.
 	 * @param values The atoms list used to make that fact.
 	 */
 	public boolean remove(List<Type> values)
@@ -237,7 +238,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	}
 
 	/**
-	 * Get a list of answers for a question.<br/><br/>
+	 * Get a list of answers for a question.
 	 * This method provides the same answer as getAnswer(false, <atoms>), except for the fact that the answer has to have all question atoms.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
 	 * @param values Question atoms.
@@ -360,7 +361,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	}
 
 	/**
-	 * Returns a customized list of answers.<br/><br/>
+	 * Returns a customized list of answers.
 	 * If you want to customize the logic done by Gilgamesh, you can implement the Core inner class <i>Predicate</i> in order to
 	 * provide your own matching implementation.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
@@ -375,7 +376,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
 	}
 
 	/**
-	 * Returns a customized list of answers.<br/><br/>
+	 * Returns a customized list of answers.
 	 * If you want to customize the logic done by Gilgamesh, you can implement the Core inner class <i>Predicate</i> in order to
 	 * provide your own matching implementation.
 	 * @param suppress Indicates that answers should be combined, suppressing the atoms informed.
@@ -480,7 +481,7 @@ public class Core<Type extends Comparable<Type>> implements Serializable
     
 	
     /**
-     * Class to validate an answer.<br/><br/>
+     * Class to validate an answer.
      * This class is used to validate when a fact matches to the question. Can be customized to receive other validations.
      * @author Eduardo Alevi
      * @param <Type> The atom type.

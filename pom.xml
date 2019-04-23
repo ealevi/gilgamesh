@@ -1,8 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gilgamesh-ai</groupId>
 	<artifactId>core</artifactId>
-	<version>0.19b</version>
+	<version>0.20b-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Gilgamesh Artificial Intelligence Project</name>
 	<description>Gilgamesh is a new concept AI system which mixes logic programming and fuzzy logic. It can be used for several purposes.</description>
@@ -16,7 +18,7 @@
 		<connection>scm:git:https://github.com/ealevi/gilgamesh.git</connection>
 		<developerConnection>scm:git:https://github.com/ealevi/gilgamesh.git</developerConnection>
 		<url>https://github.com/ealevi/gilgamesh.git</url>
-		<tag>core-0.19b</tag>
+		<tag>0.20b</tag>
 	</scm>
 	<licenses>
 		<license>
@@ -24,6 +26,24 @@
 			<url>https://www.gnu.org/</url>
 		</license>
 	</licenses>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+	<issueManagement>
+		<system>Github</system>
+		<url>https://github.com/dexecutor/dexecutor-core/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Travis</system>
+		<url>https://travis-ci.org/dexecutor/dexecutor-core</url>
+	</ciManagement>
 	<developers>
 		<developer>
 			<id>ealevi</id>
@@ -37,6 +57,36 @@
 			<timezone>-3</timezone>
 		</developer>
 	</developers>
+	<profiles>
+		<!-- GPG Signature on release -->
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${version.maven-gpg-plugin}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 	<build>
 		<plugins>
 			<plugin>
@@ -44,7 +94,7 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.4</version>
 				<configuration>
-					<finalName>gilgamesh-ai</finalName>
+					<finalName>gilgamesh</finalName>
 					<archive>
 						<manifest>
 							<mainClass>org.gilgamesh.CommandShell</mainClass>

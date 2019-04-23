@@ -1,0 +1,19 @@
+#release configuration
+#Mon Apr 22 20:09:59 BRT 2019
+scm.tagNameFormat=@{project.artifactId}-@{project.version}
+scm.tag=core-0.19b
+project.dev.org.gilgamesh-ai\:core=0.20b-SNAPSHOT
+project.scm.org.gilgamesh-ai\:core.connection=scm\:git\:https\://github.com/ealevi/gilgamesh.git
+pushChanges=false
+scm.url=scm\:git\:https\://github.com/ealevi/gilgamesh.git
+preparationGoals=clean verify
+project.scm.org.gilgamesh-ai\:core.developerConnection=scm\:git\:https\://github.com/ealevi/gilgamesh.git
+remoteTagging=true
+projectVersionPolicyId=default
+scm.commentPrefix=[maven-release-plugin] 
+project.scm.org.gilgamesh-ai\:core.tag=v1.0.4
+exec.snapshotReleasePluginAllowed=false
+exec.additionalArguments=-Psonatype-oss-release
+project.scm.org.gilgamesh-ai\:core.url=https\://github.com/ealevi/gilgamesh.git
+completedPhase=generate-release-poms
+project.rel.org.gilgamesh-ai\:core=0.19b

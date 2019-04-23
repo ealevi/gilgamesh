@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gilgamesh-ai</groupId>
 	<artifactId>gilgamesh</artifactId>
-	<version>0.21b-SNAPSHOT</version>
+	<version>0.20b</version>
 	<packaging>jar</packaging>
 	<name>Gilgamesh Artificial Intelligence Project</name>
 	<description>Gilgamesh is a new concept AI system which mixes logic programming and fuzzy logic. It can be used for several purposes.</description>
@@ -16,7 +16,7 @@
 		<connection>scm:git:git@github.com:{organization}/{project}.git</connection>
 		<developerConnection>scm:git:git@github.com:{organization}/{project}.git</developerConnection>
 		<url>scm:git:git@github.com:{organization}/{project}.git</url>
-		<tag>HEAD</tag>
+		<tag>0.20b</tag>
 	</scm>
 	<licenses>
 		<license>

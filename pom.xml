@@ -17,7 +17,7 @@
 	   <developerConnection>scm:git:https://github.com/ealevi/gilgamesh.git</developerConnection>
 	   <url>https://github.com/ealevi/gilgamesh.git</url>
 	  <tag>0.20b</tag>
-  </scm>
+	</scm>
 	<licenses>
 		<license>
 			<name>GNU Free Documentation License, Version 1.3</name>
@@ -34,14 +34,6 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
-	<issueManagement>
-		<system>Github</system>
-		<url>https://github.com/dexecutor/dexecutor-core/issues</url>
-	</issueManagement>
-	<ciManagement>
-		<system>Travis</system>
-		<url>https://travis-ci.org/dexecutor/dexecutor-core</url>
-	</ciManagement>
 	<developers>
 		<developer>
 			<id>ealevi</id>
@@ -55,36 +47,6 @@
 			<timezone>-3</timezone>
 		</developer>
 	</developers>
-	<profiles>
-		<!-- GPG Signature on release -->
-		<profile>
-			<id>release-sign-artifacts</id>
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>${version.maven-gpg-plugin}</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 	<build>
 		<plugins>
 			<plugin>

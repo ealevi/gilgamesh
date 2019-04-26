@@ -121,12 +121,12 @@
 							<goal>jar</goal>
 						</goals>
 					</execution>
-					<execution>
+					<!-- execution>
 						<id>attach-javadoc</id>
 						<goals>
 							<goal>jar</goal>
 						</goals>
-					</execution>
+					</execution --> 
 				</executions>
 			</plugin>			
 		</plugins>
@@ -146,6 +146,9 @@
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
 						<version>1.6</version>
+						<configuration>
+							<arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
+						</configuration>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>

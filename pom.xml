@@ -86,7 +86,7 @@
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>2.8.2</version>
-				<executions>
+				<!--executions>
 					<execution>
 						<id>default-deploy</id>
 						<phase>deploy</phase>
@@ -94,7 +94,10 @@
 							<goal>deploy</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions-->
+				<configuration>
+					<skip>true</skip>
+				</configuration>
 			</plugin>			
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
@@ -116,19 +119,28 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>attach-sources</id>
+						<id>package-sources</id>
 						<goals>
 							<goal>jar</goal>
 						</goals>
 					</execution>
-					<!--execution>
-						<id>attach-javadoc</id>
+					<execution>
+						<id>package-javadoc</id>
+						<phase>package</phase>
 						<goals>
 							<goal>jar</goal>
 						</goals>
-					</execution--> 
+					</execution> 
 				</executions>
 			</plugin>			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<generateBackupPoms>false</generateBackupPoms>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<profiles>

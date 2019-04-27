@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gilgamesh-ai</groupId>
 	<artifactId>gilgamesh</artifactId>
-	<version>0.21b-SNAPSHOT</version>
+	<version>0.21-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Gilgamesh Artificial Intelligence Project</name>
 	<description>Gilgamesh is a new concept AI system which mixes logic programming and fuzzy logic. It can be used for several purposes.</description>
@@ -121,12 +121,12 @@
 							<goal>jar</goal>
 						</goals>
 					</execution>
-					<execution>
+					<!--execution>
 						<id>attach-javadoc</id>
 						<goals>
 							<goal>jar</goal>
 						</goals>
-					</execution> 
+					</execution--> 
 				</executions>
 			</plugin>			
 		</plugins>

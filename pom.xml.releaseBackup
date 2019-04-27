@@ -147,6 +147,8 @@
 						<artifactId>maven-gpg-plugin</artifactId>
 						<version>1.6</version>
 						<configuration>
+							<localCheckout>true</localCheckout>
+							<pushChanges>false</pushChanges>
 							<arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
 						</configuration>
 						<executions>

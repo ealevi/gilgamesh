@@ -121,12 +121,12 @@
 							<goal>jar</goal>
 						</goals>
 					</execution>
-					<!-- execution>
+					<execution>
 						<id>attach-javadoc</id>
 						<goals>
 							<goal>jar</goal>
 						</goals>
-					</execution --> 
+					</execution> 
 				</executions>
 			</plugin>			
 		</plugins>

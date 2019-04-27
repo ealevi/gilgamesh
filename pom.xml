@@ -135,15 +135,20 @@
 							<goal>jar</goal>
 						</goals>
 					</execution>
-					<execution>
-						<id>package-javadoc</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution> 
 				</executions>
 			</plugin>			
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+				<execution>
+					<id>package-javadoc</id>
+					<phase>package</phase>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+					</execution>
+				</executions>
+				</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>

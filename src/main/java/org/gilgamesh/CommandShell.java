@@ -44,7 +44,7 @@ public class CommandShell {
 
 	private static enum Command {
 		UNKNOWN, COMMENT, LINKS, HELP, EXIT, RESET, ATOMS, ENTRY, LEARN, REINFORCE, PUNISH, FACT, FACTS, FORGET, QUESTION, QUESTION_SUB, 
-		SCRIPT, LOAD, SAVE, DONE, ANSWER, ANSWERALL, ANSWERANY, ANSWERSUPP, ANSWERDIST, STATISTICS, ECHO, VERSION;
+		SCRIPT, LOAD, SAVE, DONE, DEDUCE, ANSWER, ANSWERANY, ANSWERSUPP, ANSWERDIST, STATISTICS, ECHO, VERSION;
 	};
 
 
@@ -124,13 +124,15 @@ public class CommandShell {
 				case FORGET:
 					gilgamesh.forget(getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length())));
 					break;
+				case DEDUCE:
+						params = getParameters(line);
+						int level = Integer.parseInt(params[0]);
+						Atom<?> atoms[] = getBlocks(params[1]);
+						Fact answer = gilgamesh.deduce(level, 0, true, true, atoms);
+						System.out.println(answer);
+					break;
 				case ANSWER:
 					for (Fact current : gilgamesh.getAnswers(false, false, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
-						output.write((current.toString() + "\n").getBytes());
-					output.flush();
-					break;
-				case ANSWERALL:
-					for (Fact current : gilgamesh.getAnswersFixed(false, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
 						output.write((current.toString() + "\n").getBytes());
 					output.flush();
 					break;
@@ -324,10 +326,10 @@ public class CommandShell {
 		System.out.println("punish;<atoms>\t\tDecrease the force by 1 for that fact.");
 		System.out.println("forget;<atoms>\t\tUnlearn and delete a fact from Gilgamesh memory.");
 		System.out.println("answer;<atoms>\t\tGet all answers, matching all atoms.");
-		System.out.println("answerall;<atoms>\tGet all answers, matching all atoms and fact size.");
 		System.out.println("answerany;<atoms>\tGet all answers, matching any atom.");
 		System.out.println("answersupp;<atoms>\tGet all answers, matching all atoms, but suppressing the question atoms.");
 		System.out.println("answerdist;<atoms>\tGet all answers, matching any atom, but suppressing the question atoms.");
+		System.out.println("deduce;<level>\tDeduce a best answer, according the memory deep level informed (eg. 0, 2, 100 etc).");
 		System.out.println("script;<IN>;<OUT>\tRead the <IN> script file and answer in <OUT> text file (optional).");
 		System.out.println("save;<OUT>\t\tSave the Gilgamesh Core memory in a binary file.");
 		System.out.println("load;<IN>\t\tLoad the Gilgamesh Core memory from a binary file.");

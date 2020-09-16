@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gilgamesh-ai</groupId>
 	<artifactId>gilgamesh</artifactId>
-	<version>0.22b-SNAPSHOT</version>
+	<version>0.21b-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Gilgamesh Artificial Intelligence Project</name>
 	<description>Gilgamesh is a new concept AI system which mixes logic programming and fuzzy logic. It can be used for several purposes.</description>
@@ -169,7 +169,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<!-- version>1.6</version -->
+						<version>1.6</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>

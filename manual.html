@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta>
+	<meta name="keywords" content="gilgamesh, artificial, intelligence, data mining, ai, prolog, neural networks, java"></meta>
+	<meta name="author" content="Eduardo Alevi"></meta>
+	<title>Gilgamesh AI Project</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <link rel = "shortcut icon" type = "image/x-icon" href = "./images/logo.png"/>
+	<!-- script type="text/javascript" src="./js/model/Util.js" >< /script -->
+	
+</head>
+<body>
+
+	<div><img id="border_left" src="./images/border.jpg"/></div>
+	<div><img id="border_right" src="./images/border.jpg"/></div>
+	
+	<div id="columnID">
+
+		<div id="barID">
+			<div><img class="logo" src="./images/logo.png"/></div>
+			<div class="title1">Gilgamesh Artificial Intelligence Project</div>
+		</div>
+		
+		<div id="titleID" class="title2">
+			<div class="title1">User Manual</div>
+		</div>
+		
+		<div id="contentID">
+			
+			<div class="title2">Index</div>
+			<div class="content">
+				<ul>
+					<li><a href="#overviewID">Overview</a></li>
+					<li><a href="#coreConceptsID">Gilgamesh Core Concepts</a></li>
+					<li><a href="#gettingStartedID">Getting Started</a></li>
+					<li><a href="#commandShellID">Command Shell</a></li>
+					<li><a href="#examplesID">Practical Examples</a>
+						<ul>
+							<li><a href="#exampleStockID">Stock Flow Control</a></li>
+							<li><a href="#exampleMechanicalID">Mechanical Diagnosis</a></li>
+							<li><a href="#exampleMedicalID">Medical Prediction</a></li>
+							<li><a href="#exampleMarketingID">Marketing Research</a></li>
+							<li><a href="#exampleTeamID">Team Management</a></li>
+							<li><a href="#exampleProgrammingID">Customized Programming Language</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+			<div id="overviewID" class="title3">Overview</div>
+			<div class="content">
+				<p>This manual refers to a project made in 2013 in order
+				to help people and programmers which intend to use the artificial
+				intelligence code called Gilgamesh. The Gilgamesh is an Artificial
+				Intelligence library, using an alternative concept mixing some
+				concepts between prolog and neural networks. Common users and
+				programmers can use it in a large number of situations (which is
+				attempted to show in this manual).</p>
+				<p>The main purpose about all this
+				work is to contribute with other as possible, helping people with
+				their own objectives, using the knowledge described here to achieve
+				that. Furthermore, it is expected for programmers use the code or
+				ideas presented here to help other people, finding solutions to
+				problems where computers are better than humans. Originally, the
+				Gilgamesh code has been developed to help in stock market
+				prediction, but it can be used in a wide range of areas. It is
+				expected to receive some suggestions and ideas from you in order to
+				improve it.</p>
+				<p><b>History</b></p>
+				<p>The Gilgamesh concept was created in the middle
+				of 2013, but their concepts were thought for a long time so it was
+				constructed based on them. All started around 2005, when a group of
+				friends started an uncommitted AI project called Spirit Project. At
+				that time, they made some meetings to learn and study some AI
+				concepts, just for fun. They got good results, but around one year
+				later the project ended up with more unsolved questions and
+				disagreements than when it began. Since the end of Spirit project
+				and during all those years, lots of possible solutions to the
+				unsolved remaining problems came up. Actually, lot of solutions were
+				created for some different concepts and implemented in Gilgamesh (it
+				is up to you to decide if they will serve you or not). In 2013, an
+				opportunity happens to put all the ideas together, releasing the
+				Gilgamesh Artificial Intelligence Project (before it was called as
+				Core Project) and since then, it is being used to predict stock
+				market moves, with satisfactory results.</p>
+				<p>After a while and being
+				sure about its effectiveness, it was decided to share the code as
+				open source and create this material to help people understand what
+				the creator had in mind. It was created some small programs applied
+				to various areas in order to give a start point for those who want
+				to use them in a similar situation.</p>
+				<p>All information and code
+				available on this manual are not an academic study about AI or its
+				math concepts. Its intent is to be a practical work for
+				professionals or companies to get practical results using it. For
+				that, it was attempted to provide all kind of help, about the
+				concepts created and about the code developed, keeping everything as
+				simple as possible, trying to achieve not only programmers, but
+				enthusiasts and common public in general. Most concepts in this
+				manual reflect the creator's opinions and his ideas about AI. It has
+				no intention to argue about mathematical models or AI concepts.
+				</p>
+			</div>
+			
+			<div id="coreConceptsID" class="title3">Gilgamesh Core Concepts</div>
+			<div class="content">
+				<p>Almost all the concepts
+				used into Gilgamesh were done thinking about blocks of information
+				connected among them. It was like if we would have a bunch of
+				neurons where each one could keep an entire block of information as
+				we know. Besides that, it was attempted to use and adjust the code
+				to be close enough about how some psychological concepts works in
+				the brain.</p>
+				<p>The Gilgamesh's block of information is called <b>atom</b> (like
+				in some other AI programs). An atom can be a simple word, a number,
+				a character or a group of all of them. A group of related atoms is
+				called <b>fact</b>. Let's consider entering the information below in
+				Gilgamesh's memory:</p>
+				
+				<table class="datatable">
+					<thead> <tr> <td>Type<td> <td>Atom</td> <td>Atom</td> <td>Atom</td> </tr> </thead>
+					<tbody> 
+						<tr> <td style="background: lightgray;">Fact<td> <td>DOG</td> <td>EATS</td> <td>MEAT</td> </tr>
+						<tr> <td style="background: lightgray;">Fact<td> <td>DOG</td> <td>EATS</td> <td>RATION</td> </tr>
+					</tbody>
+				</table>
+				
+				<p>Gilgamesh connects atoms creating facts, indicating how many times
+				each one occurred. For that, it uses a counter that works as memory
+				prints called force in code for each fact:</p>
+				
+				<table class="datatable">
+					<thead> <tr> <td>Type<td> <td>Atom</td> <td>Atom</td> <td>Atom</td> <td>Force</td> </tr> </thead>
+					<tbody> 
+						<tr> <td style="background: lightgray;">Fact<td> <td>DOG</td> <td>EATS</td> <td>MEAT</td> <td>1</td></tr>
+						<tr> <td style="background: lightgray;">Fact<td> <td>DOG</td> <td>EATS</td> <td>RATION</td> <td>1</td></tr>
+					</tbody>
+				</table>
+
+				<p>If we enter the information "DOG EATS MEAT" again, the state in Gilgamesh's memory will be:</p>
+				
+				<table class="datatable">
+					<thead> <tr> <td>Type<td> <td>Atom</td> <td>Atom</td> <td>Atom</td> <td>Force</td> </tr> </thead>
+					<tbody> 
+						<tr> <td style="background: lightgray;">Fact<td> <td>DOG</td> <td>EATS</td> <td>MEAT</td> <td>2</td></tr>
+						<tr> <td style="background: lightgray;">Fact<td> <td>DOG</td> <td>EATS</td> <td>RATION</td> <td>1</td></tr>
+					</tbody>
+				</table>
+
+				<p>In this case, if the Gilgamesh is requested to answer some like
+				"what does the dog eat?" providing the atoms "DOG" and "EATS" the
+				answer will be "MEAT", since this atom is a member of a fact which
+				occurs twice in memory.</p>
+
+			</div>
+			
+			<div id="gettingStartedID" class="title3">Getting Started</div>
+			<div class="content">
+				<p>Gilgamesh has a command line interpreter, in order to
+					simplify its general use (remember that you have to have Java 8 or
+					later installed in your computer).</p>
+				<p>To run Gilgamesh's Command Line in your local computer:
+				<ol>
+					<li>Download Gilgamesh latest version using this link: <a href="./files/gilgamesh-1.0.zip">Gilgamesh Zip File</a></li>
+					<li>Copy it into a folder and unzip it</li>
+					<li>Double click in "gilgamesh.bat" or execute "gilgamesh.sh" for Linux users.
+					<li>The Command Shell screen will open:</li>
+				</ol>
+				
+				<div class="code">
+					---------------------------------------------------------------------------------------------<br/>
+					Gilgamesh Artificial Intelligence Project<br/>
+					Copyright (C) 2014  Eduardo Alevi<br/>
+					This program is free software: you can redistribute it and/or modify<br/>
+					it under the terms of the GNU General Public License as published by<br/>
+					the Free Software Foundation, either version 3 of the License, or<br/>
+					(at your option) any later version.<br/>
+					This program is distributed in the hope that it will be useful,<br/>
+					but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>
+					MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br/>
+					GNU General Public License for more details.<br/>
+					You should have received a copy of the GNU General Public License<br/>
+					along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.<br/>
+					<br/>
+					<br/>
+					Welcome to Gilgamesh command shell!<br/>
+					Type "help;" followed by &lt;ENTER&gt; to see command line help.<br/>
+					<br/>
+					gilgamesh:<br/>
+					<br/>
+				</div>
+				
+				<p>That's it. :)</p>
+				
+			</div>
+			
+			
+			<div id="commandShellID" class="title3">Command Shell</div>
+			<div class="content">
+				<p>The Gilgamesh starts with no memory so you have to teach it
+					entering some facts. To teach it, you have to type your atoms
+					(block of information) in a raw way.</p>
+					<p>Gilgamesh is not programmed to
+					understanding natural language what means if you want to enter the
+					information like "My dog eats meat", you should enter only the essential
+					information you need (dog eats meat).</p>
+					<p>It can accept commands too if
+					you put ; (semicolon) at the end or the middle of a typed line. It
+					will understand as a command and its respective parameters (if it
+					has any). If the line ends with a ? (question mark), then it will
+					understand as a question for a single answer.</p>
+					<p>Any other words typed
+					in a line, separated with blank spaces, will be considered as a
+					fact (atoms connected among them). If you want to consider a longer
+					atom (with more than one word), then put those words between ' and
+					' (single quotes). So, to enter a fact, you can simply type the
+					words you want, followed by ENTER key:</p>
+					<p>
+				<div class="code">
+					gilgamesh: dog eats meat
+				</div>
+				<p>Then to ask something to program, type the atoms you want with "?" at end and press ENTER, like:</p>
+				<div class="code">
+					gilgamesh: eats meat?<br/>
+					dog eats meat<br/>
+					gilgamesh:<br/>
+				</div>
+				<p>The atoms order in a question does not matter. For commands,
+					they are executed by its name followed by ";" and theirs parameters
+					if they have:</p>
+				<div class="code">
+					gilgamesh: answer; eats meat<br/>
+					[ 566053483331700: 6.00000000 = dog eats meat ]<br/>
+				</div>
+				<p>Were the values represents the timestamp, force and atoms for that fact.</p>
+				<p>You can type <b>help</b> to see all supported commands:</p>
+				
+				<div class="code">
+					gilgamesh: help;<br/>
+				</div>				
+				<p>You can read a previously created text script with Gilgamesh commands using:</p>
+				<div class="code">
+					gilgamesh: script; example.txt<br/>
+				</div>				
+				<p>And if you want the generated output in another text file, use:</p>
+				<div class="code">
+					gilgamesh: script; example.txt; result.txt<br/>
+				</div>	
+				<p>You can export and import Gilgamesh's memory in a binary file, using:</p>			
+				<div class="code">
+					gilgamesh: save; memory.dat<br/>
+					gilgamesh: load; memory.dat<br/>
+				</div>	
+			</div>
+			
+			<div id="examplesID" class="title3">Practical Examples</div>
+
+			<div class="content">
+				<p>Each example below has its own file inside Gilgamesh's
+					download file. To execute them, just run the command using the real
+					file name:</p>
+				<div class="code">
+						gilgamesh: script; examples/filename.txt
+				</div>
+			</div>
+			
+			<div class="content">
+			
+				<div id="exampleStockID" class="title4">Stock Flow Control (examples/stock-flow.txt)</div>
+				<p>This example is about controlling parts flow in a factory,
+					just to demonstrate how Gilgamesh can keep information, without any
+					fact reinforcements. Let's suppose you have a small industry and
+					wants to register all material that enters and exits your plant.</p>
+				<p>Remember that Gilgamesh is an AI system so it will learn
+					facts - if you want a system that makes calculations, then probable
+					you should customize it through source code or exporting data to a
+					worksheet. To register the material flow, you just need to enter
+					all information. Example:</p>
+				<p>
+				
+				<table class="datatable">
+					<thead><tr><td>Type</td><td>Number</td><td>Part</td><td>Description</td></tr></thead>
+					<tbody>
+						<tr><td>Item</td><td>12358</td><td>Gear</td><td>Part used into gear box, Firebird model</td></tr>
+						<tr><td>Item</td><td>35813</td><td>Wheel</td><td>Part used to Corvette, from 1990 to 2010</td></tr> 
+						<tr><td>Item</td><td>81321</td><td>Rod</td><td>Replacement part to Porsche, after 2005</td></tr> 
+					</tbody>
+				</table>
+				
+				<p>Now what we have to do is to inform what they are:</p>
+
+				<div class="code">
+					gilgamesh: item 12358 Gear 'Part used into gear box, Firebird model'<br/>
+					gilgamesh: item 35813 Wheel 'Part used to Corvette, from 1990 to 2010'<br/>
+					gilgamesh: item 81321 Rod 'Replacement part to Porsche, after 2005'<br/>
+				</div>
+
+				<p>After this point you have information inside Gilgamesh Core
+					memory where you can consult any information about those items.
+					This is important because, in fact, it is up to you how to connect
+					your fact atoms. So now you can enter some stock during time:</p>
+
+				<div class="code">
+					gilgamesh: flow 23/01/2014 35813 quantity 5.00<br/>
+					gilgamesh: flow 23/01/2014 81321 quantity 2.00<br/>
+					gilgamesh: flow 23/01/2014 81321 quantity 22.00<br/>
+					gilgamesh: flow 24/01/2014 35813 quantity 10.00<br/>
+					gilgamesh: flow 24/01/2014 12358 quantity 35.00<br/>
+					gilgamesh: flow 24/01/2014 81321 quantity 7.00<br/>
+					gilgamesh: flow 25/01/2014 35813 quantity 16.00<br/>
+					gilgamesh: flow 26/01/2014 35813 quantity 19.00<br/>
+					gilgamesh: flow 26/01/2014 12358 quantity 44.00<br/>
+					gilgamesh: flow 29/01/2014 12358 quantity 11.00<br/>
+				</div>
+
+				<p>Every time when you want to query those data, you just need
+					to ask Gilgamesh according what you want to know. Let's suppose you
+					want to get part numbers registered into memory:</p>
+				<div class="code">
+					gilgamesh: answer; item<br/>
+					[ 575251487067600: 1.00000000 = item 81321 Rod Replacement part to Porsche, after 2005 ]<br/>
+					[ 575251485783800: 1.00000000 = item 35813 Wheel Part used to Corvette, from 1990 to 2010 ]<br/>
+					[ 575251424681800: 1.00000000 = item 12358 Gear Part used into gear box, Firebird model ]<br/>
+					gilgamesh:<br/>
+				</div>
+				
+				<p>After that, you could ask all entries about a specific item:</p>
+				<div class="code">
+					gilgamesh: answer; 12358 flow<br/>
+					[ 575251492671700: 2.00000000 = flow 29/01/2014 12358 quantity 11.00 ]<br/>
+					[ 575251492174700: 2.00000000 = flow 26/01/2014 12358 quantity 44.00 ]<br/>
+					[ 575251490195600: 2.00000000 = flow 24/01/2014 12358 quantity 35.00 ]<br/>
+					gilgamesh:<br/>
+				</div>
+				
+				<p>And then query which parts entered in an specific date:</p>
+				<div class="code">
+					gilgamesh: answer; 24/01/2014 flow<br/>
+					[ 575251490718500: 2.00000000 = flow 24/01/2014 81321 quantity 7.00 ]<br/>
+					[ 575251490195600: 2.00000000 = flow 24/01/2014 12358 quantity 35.00 ]<br/>
+					[ 575251489643700: 2.00000000 = flow 24/01/2014 35813 quantity 10.00 ]<br/>
+					gilgamesh:
+				</div>
+
+				<p>If you teach Gilgamesh with specific data types (item, part,
+					description etc) it can work similar to a common relational
+					database, when the point is to connect fields. However, there is a
+					certain flexibility using Gilgamesh because you can dynamically
+					define type of atoms, connection among them and how long they will
+					be.</p>
+
+				<p>Unfortunately so far, you cannot do any calculations just
+					using the shell command: you have to do any kind of source code
+					customization. Despite those problems, you still can control data
+					like above (actually, this example shows the simplest way to do
+					that).</p>
+
+
+				<div id="exampleMechanicalID" class="title4">Mechanical Diagnosis (examples/mechanical-diagnosis.txt)</div>
+
+				<p>Let's suppose you have a small mechanical workshop where you
+					fix cars and you would like to improve the quality of your work,
+					anticipating problems that could happen. For all those fixes that
+					you did right and knew about the cause, you could enter one record
+					into Gilgamesh. Below there is a scenario of 1 week of work:</p>
+
+				<table class="datatable">
+					<thead><tr><td>Defect</td><td>Part</td><td>Fix</td><td>Cause</td></tr></thead>
+					<tbody>
+						<tr><td>noise</td><td>wheel</td><td>bearing</td><td>bad calibration</td></tr>
+						<tr><td>fail</td><td>engine</td><td>sparks</td><td>bad calibration</td></tr>
+						<tr><td>noise</td><td>engine</td><td>valve</td><td>wasted part</td></tr>
+						<tr><td>fail</td><td>suspension</td><td>dumper</td><td>material defect</td></tr>
+						<tr><td>noise</td><td>suspension</td><td>dumper</td><td>bad calibration</td></tr>
+						<tr><td>noise</td><td>suspension</td><td>spring</td><td>material defect</td></tr>
+						<tr><td>fail</td><td>engine</td><td>sparks</td><td>	wasted part</td></tr>
+						<tr><td>fail</td><td>wheel</td><td>bearing</td><td>material defect</td></tr>
+						<tr><td>fail</td><td>engine</td><td>sparks</td><td>bad calibration</td></tr>
+						<tr><td>noise</td><td>engine</td><td>valve</td><td>	wasted part</td></tr>
+						<tr><td>fail</td><td>suspension</td><td>dumper</td><td>material defect</td></tr>
+						<tr><td>noise</td><td>suspension</td><td>dumper</td><td>bad calibration</td></tr>
+						<tr><td>noise</td><td>suspension</td><td>spring</td><td>material defect</td></tr>
+						<tr><td>fail</td><td>engine</td><td>sparks</td><td>	wasted part</td></tr>
+						<tr><td>noise</td><td>wheel</td><td>bearing</td><td>bad calibration</td></tr>
+						<tr><td>fail</td><td>engine</td><td>sparks</td><td>	bad calibration</td></tr>
+						<tr><td>noise</td><td>suspension</td><td>dumper</td><td>bad calibration</td></tr>
+						<tr><td>noise</td><td>suspension</td><td>spring</td><td>material defect</td></tr>
+						<tr><td>fail</td><td>engine</td><td>sparks</td><td>bad calibration</td></tr>
+						<tr><td>noise</td><td>suspension</td><td>dumper</td><td>bad calibration</td></tr>
+						<tr><td>noise</td><td>engine</td><td>valve</td><td>wasted part</td></tr>
+						<tr><td>fail</td><td>engine</td><td>sparks</td><td>bad calibration</td></tr>
+					</tbody>
+				</table>
+				
+				<p>You could enter those facts above like:</p>
+				<div class="code">
+					gilgamesh: noise wheel bearing 'bad calibration'
+				</div>
+
+				<p>After entered all information above, we can start asking
+					questions. So, what if you want to know what is the most common
+					cause to the engine fail?</p>
+				<div class="code">
+					gilgamesh: answer; engine fail<br/>
+					[ 606282518976900: 10.00000000 = fail engine sparks bad calibration ]<br/>
+					[ 606282576606000: 4.00000000 = fail engine sparks wasted part ]<br/>
+					gilgamesh:<br/>
+				</div>
+				
+				<p>Now we know that bad calibrations are the most common cause in engine fails. We could check causes for suspension noise:</p>
+				<div class="code">
+					gilgamesh: answer; suspension noise<br/>
+					[ 606282575635000: 8.00000000 = noise suspension dumper bad calibration ]<br/>
+					[ 606282576073900: 6.00000000 = noise suspension spring material defect ]<br/>
+					gilgamesh:<br/>
+				</div>
+				
+				<p>The most common is bad calibration too. What if we look defects related to bad calibrations?</p>
+				<div class="code">
+					gilgamesh: answer; 'bad calibration'<br/>
+					[ 606282518976900: 5.00000000 = fail engine sparks bad calibration ]<br/>
+					[ 606282575635000: 4.00000000 = noise suspension dumper bad calibration ]<br/>
+					[ 606282445518900: 2.00000000 = noise wheel bearing bad calibration ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>So we found out that bad calibrations are causing noise in
+					wheels too. In this case, some actions could be taken to verify all
+					calibrations in all cars you fix before delivery the car to the
+					customer. That could improve the quality of your work.</p>
+
+				<div id="exampleMedicalID" class="title4">Medical Prediction (examples/medical-prediction.txt)</div>
+
+				<p>This is probably the example I like most. That is because
+					this is the kind of system which could really help people
+					(actually, it is one of the reasons I have decided to made
+					Gilgamesh as open source). In my opinion, one prediction system
+					like this could reduce medical errors and make the diagnosis
+					process faster and more accurate, helping medics to take decisions.
+					It could be used to find solutions for diseases which we do not
+					know any treatment yet. So, let's consider these things:</p>
+					<ul>
+						<li>Disease: the disease diagnosed by a medic</li>
+						<li>Symptom: is what the patient feels.</li>
+						<li>Cause: the real problem to be treated.</li>
+						<li>Treatment: what was done or drug used to cure people.</li>
+					</ul>
+				<p>We will connect them as below (there are other ways to connect them, though):</p>
+					<ul>
+						<li>one disease can have one or more symptoms;</li>
+						<li>one disease can have one or more causes;</li>
+						<li>one disease has different treatments and we want to know which one is better;</li>
+					</ul>
+
+				<p>For this example, we can have more than a single atom of same
+					type into a fact (btw, I kept atoms as simple as possible). For
+					diseases with their symptoms and causes, single and few facts were
+					used. For treatments, shorter and more facts were created and there
+					is one row for each treated patient. That allows to Gilgamesh
+					chooses the best treatment for each disease. As more information
+					you enter, better answers you will get. After load the script:</p>
+				<div class="code">
+					gilgamesh: script;examples/medical-prediction.txt<br/>
+					Processing done.<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>Gilgamesh has some medical data and it would be ready to be
+					used by a medic. During a patient consult, a medic can verify these
+					symptoms : "pain", "fever" and "cough". Then, he could starting ask
+					to Gilgamesh find what was the most probable disease. Looking for
+					"pain", it would bring us all diseases which have pain as symptom:</p>
+				<div class="code">
+					gilgamesh: answer; symptoms pain<br/>
+					[ 607100915635800: 2.00000000 = hepatitis symptoms appetite fatigue fever nausea vomiting pain jaundice itching bleeding ]<br/>
+					[ 607100915322000: 2.00000000 = diabetes symptoms thirsty blurry tingling numbness pain ]<br/>
+					[ 607100915003800: 2.00000000 = cancer symptoms pain headache fatigue nausea vomiting ]<br/>
+					[ 607100914426800: 2.00000000 = flu symptoms headache fever pain chills fatigue nausea vomiting cough ]<br/>
+					gilgamesh:<br/>
+				</div>
+				
+				<p>Including "fever" the list would be shorter, since only flu and hepatitis have both symptoms together:</p>
+				<div class="code">
+					gilgamesh: answer; symptoms pain fever<br/>
+					[ 607100915635800: 3.00000000 = hepatitis symptoms appetite fatigue fever nausea vomiting pain jaundice itching bleeding ]<br/>
+					[ 607100914426800: 3.00000000 = flu symptoms headache fever pain chills fatigue nausea vomiting cough ]<br/>
+					gilgamesh:<br/>
+				</div>
+				
+				<p>And finally, including "cough":</p>
+				<div class="code">
+					gilgamesh: answer; symptoms pain fever cough<br/>
+					[ 607100914426800: 4.00000000 = flu symptoms headache fever pain chills fatigue nausea vomiting cough ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>He got only flu as possible answer. Now, based on all medical
+					treatment records, the medic could find out what is the best
+					treatment for flu:</p>
+				<div class="code">
+					gilgamesh: answer; flu treatment<br/>
+					[ 607100923881400: 20.00000000 = flu treatment antiviral ]<br/>
+					[ 607100922221000: 16.00000000 = flu treatment aspirin ]<br/>
+					[ 607100925606800: 14.00000000 = flu treatment codeine ]<br/>
+					gilgamesh:<br/>
+				</div>
+				<p>According treatments that have happened last period, an
+					antiviral treatment is being more effective than others. So, it is
+					possible to conclude that the system is providing some help to
+					medic diagnostics.</p>
+				<p>Of course that the example above is very rude
+					but the intention is to show how Gilgamesh could be used as a
+					learning system, crossing medical data to find best answers to
+					diseases treatments, among other things. I hope that someone likes
+					this example (and use it in practical ways).</p>
+
+
+				<div id="exampleMarketingID" class="title4">Marketing Research (examples/marketing-research.txt)</div>
+
+				<p>Marketing professional are used to do market researchs in
+					order to identify what customers want. Usually, there are two main
+					kinds of researchs: quantitative and qualitative. Quantitative
+					researchs gives you result in numbers, so it is easy to measure
+					that. In the other hand, qualitative researchs are difficult to
+					measure, since they are related about quality descriptions.
+					Gilgamesh can be used to help in both researchs, but specially for
+					qualitative ones.</p>
+				<p>Let's suppose you have interviewed a bunch of people in a
+					qualitative research about a shampoo new brand. Now you have all
+					answers, you would you like to know some customers intentions
+					related to your product. In this example, we are going to simplify
+					adjectives in order to simplify the example. First, we have to load
+					the example:</p>
+				<div class="code">
+					gilgamesh: script; examples\marketing-research.txt
+				</div>
+
+				<p>Now we have all opinions about those customers. First of all,
+					let's find out what words respondents have used:</p>
+				<div class="code">
+					gilgamesh: atoms;<br/>
+					fragrant, strong, color, bad, smell, good, transparent, thick, weak, creaminess, citric,
+					beutiful, price, dark, wood, floral, smelly, opaque, clear, ugly,
+					cheap, thin, expensive, weird, sickly, tasty,<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>So now, let's find out what customers think about our
+					shampoo. if you want to know what was the opinion which used more
+					"weird" in answers:</p>
+				<div class="code">
+					gilgamesh: answer; weird<br/>
+					[ 608166392023100: 3.00000000 = smell weird wood floral ]<br/>
+					[ 608166412756700: 2.00000000 = smell weird wood smelly ]<br/>
+					[ 608166410380600: 2.00000000 = smell tasty strong sickly weird wood floral citric ]<br/>
+					[ 608166407951600: 2.00000000 = smell sickly weird wood fragrant ]<br/>
+					[ 608166400547900: 2.00000000 = smell good tasty strong sickly weird wood citric ]<br/>
+					[ 608166397795300: 2.00000000 = smell good tasty strong sickly weird wood floral citric ]<br/>
+					[ 608166396526700: 2.00000000 = smell sickly weird wood weak smelly floral ]<br/>
+				</div>
+
+				<p>That means that more people think that smells of wood and
+					floral are weird. So, let's
+					see what people have realized about the citric smell in our
+					product:</p>
+				<div class="code">
+					gilgamesh: answer; citric<br/>
+					[ 608166401017600: 3.00000000 = smell good citric ]<br/>
+					[ 608166410380600: 2.00000000 = smell tasty strong sickly weird wood floral citric ]<br/>
+					[ 608166401607300: 2.00000000 = smell good bad fragrant weak smelly floral citric ]<br/>
+					[ 608166400771800: 2.00000000 = smell tasty bad fragrant weak smelly floral citric ]<br/>
+					[ 608166400547900: 2.00000000 = smell good tasty strong sickly weird wood citric ]<br/>
+					[ 608166397795300: 2.00000000 = smell good tasty strong sickly weird wood floral citric ]<br/>
+					[ 608166395003800: 2.00000000 = smell wood citric ]<br/>
+				</div>
+
+				<p>It seems they liked it. You could ask anything you want, like
+					"What do customers think when they have answered 'good price'?",
+					"Has someone answered 'smell strong weird'?" or "What opinions
+					contains 'strong'?". The possibilities are infinite, all depends
+					what you want to know.</p>
+				<p>Of course that those random data I have generated to the
+					example sometimes do not make any sense (you have atoms like 'good'
+					and 'bad' in the same fact). But the point is to show how you could
+					use Gilgamesh memory to improve your ability to identify market
+					trends, customer wishes etc.</p>
+				<div class="code">
+				</div>
+
+
+				<div id="exampleTeamID" class="title4">Team Management (examples/team-management.txt)</div>
+
+				<p>Most examples so far are related to connect a few information
+					types. But you can take some advantages from Gilgamesh if you
+					connect information of same type or if you don't know (or don't
+					want) to classify those information. This example will show you how
+					to connect data of same type (players, in this case). Let's suppose
+					the following example: you are a paintball team manager and have
+					the possibility to assembly your team between 2 and 4 players. To
+					the championship, you would like to know which team configuration
+					is better in order to have the best performance. Usually what team
+					managers do is to choose all those best players and put them
+					together. Very often, combining all best players doesn't mean that
+					the team will be the best one. Now, what you have to do is: find
+					the best players into the best team configuration. Your players
+					are:</p>
+
+				<p>
+					<b>James, David, Christopher, George, Ronald, John, Richard,
+						Daniel, Kenneth, Anthony, Robert, Charles, Paul, Steven, Kevin,
+						Michael, Joseph, Mark, Edward, Jason, William, Thomas, Donald,
+						Brian, Jeff, Mary, Jennifer, Lisa, Sandra, Michelle, Patricia,
+						Maria, Nancy, Donna, Laura, Linda, Susan, Karen, Carol, Sarah,
+						Barbara, Margaret, Betty, Ruth, Kimberly, Elizabeth, Dorothy,
+						Helen, Sharon, Deborah </b>
+				</p>
+
+				<p>So you will enter to Gilgamesh last year game results. You can do that loading the file:</p>
+				<div class="code">
+					gilgamesh: script; examples\team-management.txt<br/>
+					Processing done.<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>After that, you could ask something: "What the performance is in a team with Karen and Richard?": Let's see:</p>
+				<div class="code">
+					gilgamesh: answer; Karen Richard<br/>
+					[ 608775534368400: 4.00000000 = Karen Richard ]<br/>
+					[ 608775700224100: 2.00000000 = Anthony Deborah Karen Richard ]<br/>
+					[ 608775696084600: 2.00000000 = Karen Richard Ronald Susan ]<br/>
+				</div>
+
+				<p>Now, what about only Richard and Daniel?</p>
+				<div class="code">
+					gilgamesh: answer; Richard Daniel<br/>
+					[ 608775636247700: 6.00000000 = Daniel James Richard ]<br/>
+					[ 608775576733200: 6.00000000 = Daniel Jennifer Richard ]<br/>
+					[ 608775542076900: 6.00000000 = Anthony Daniel Richard ]<br/>
+					[ 608775567105600: 4.00000000 = Daniel David Richard ]<br/>
+				</div>
+
+				<p>So, we can see that we have a better configuration if we put
+					Daniel, James and Richard together in the same team. Again, there
+					are a lot of ways you can make questions to the code. It will
+					depends what you want to know.</p>
+
+
+				<div id="exampleProgrammingID" class="title4">Customized Programming Language (examples/custom-prog-lang.txt)</div>
+
+				<p>Sometimes, a common user needs to do some kind of work which
+					requests programming knowledge. That implies in a learning curve
+					that often is not requested to that professional main role. To have
+					that task done, the professional has to request some kind of work
+					from a programmer.</p>
+					
+				<p>Gilgamesh can help with this task, learning a
+					new language and helping to simplify that issue. Actually, it can
+					learn a pseudo code, that could be used by any common user, since
+					he knows what he is doing inside Gilgamesh. The result is much more
+					intuitive than most programming languages (it would be similar what
+					Ruby on Rails does), allowing a user without any programming
+					experience, can do some kind of programming. Let's see what we can
+					do.</p>
+
+				
+				<p>Supposing that we would like to allow a common user to create
+					simple html pages, to include them into a human resource website,
+					we could teach Gilgamesh to learn common tasks that the user could
+					do, matching (or "translating") them to html code. We could teach
+					something:</p>
+				<p><b>'start the page' &lt;html&gt;</b></p>
+				<p>From now on, every time when we type into the console:</p>
+				<p><b>'start the page'?-</b></p>
+				<p>The answer would be:</p>
+				<p><b>&lt;html&gt;</b></p>
+				<p>So you can program using Gilgamesh just asking it to answer
+					for what you want to do. E.g.: 'start the page', 'close the page',
+					'set the name style' etc. Executing the script
+					examples\custom-prog-lang.txt as below, will creates a html file
+					called resume.html. Inside that file, you will see the programming
+					result of a typed pseudo code.</p>
+				<div class="code">
+					gilgamesh: script; examples\custom-prog-lang.txt; resume.html<br/>
+					Processing done.<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>You can open it in a web browser, like Chrome or Firefox:</p>
+				<img src="images/resume.jpg"></img>
+
+			</div>
+		
+		</div>
+		
+		<div id="footerID" class="footer">
+			<table>
+				<tr>
+					<td><a href="http://www.gilgamesh-ai.org">© 2014 gilgamesh-ai.org</a></td>
+					<td style="text-align:right;">By Eduardo Alevi</td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+
+
+
+</body>
+</html>

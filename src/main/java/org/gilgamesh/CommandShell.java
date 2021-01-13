@@ -30,21 +30,21 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-import org.gilgamesh.model.Atom;
-import org.gilgamesh.model.Fact;
-import org.gilgamesh.model.Gilgamesh;
+import org.gilgamesh.core.Atom;
+import org.gilgamesh.core.Fact;
+import org.gilgamesh.core.Gilgamesh;
 
-
+@SuppressWarnings("unchecked")
 public class CommandShell {
 
-	private Gilgamesh gilgamesh = new Gilgamesh();
+	private Gilgamesh<String> gilgamesh = new Gilgamesh<String>();
 	private static final String PROMPT = "gilgamesh: ";
 	private static final String SINTAXE[] = { ";", "?", " ", "'", "#", "?-" };
 
 
 	private static enum Command {
-		UNKNOWN, COMMENT, LINKS, HELP, EXIT, RESET, ATOMS, ENTRY, LEARN, REINFORCE, PUNISH, FACT, FACTS, FORGET, QUESTION, QUESTION_SUB, 
-		SCRIPT, LOAD, SAVE, DONE, DEDUCE, ANSWER, ANSWERANY, ANSWERSUPP, ANSWERDIST, STATISTICS, ECHO, VERSION;
+		UNKNOWN, COMMENT, LINKS, HELP, EXIT, RESET, ATOMS, ENTRY, REINFORCE, PUNISH, FACT, FACTS, REMOVE, QUESTION, 
+		QUESTION_SUB, SCRIPT, LOAD, SAVE, DONE, ANSWER, /*ANSWERALL,*/ ANSWERANY, ANSWERSUPP, ANSWERDIST, STATISTICS, ECHO, VERSION;
 	};
 
 
@@ -99,7 +99,7 @@ public class CommandShell {
 					System.exit(0);
 					break;
 				case RESET:
-					gilgamesh = new Gilgamesh();
+					gilgamesh = new Gilgamesh<String>();
 					System.gc();
 					System.out.println("Memory erased.");
 					break;
@@ -113,46 +113,46 @@ public class CommandShell {
 					load(line);
 					break;
 				case ATOMS:
-					for (Atom<?> atom : gilgamesh.getMemory().getAtoms())
+					for (Atom<String> atom : gilgamesh.getAtoms())
 						System.out.printf("%s, ", atom);
 					System.out.println();
 					break;
 				case FACTS:
-					for (Fact fact : gilgamesh.getMemory().getFacts())
+					for (Fact<String> fact : gilgamesh.getFacts())
 						System.out.println(fact);
 					break;
-				case FORGET:
-					gilgamesh.forget(getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length())));
-					break;
-				case DEDUCE:
-						params = getParameters(line);
-						int level = Integer.parseInt(params[0]);
-						Atom<?> atoms[] = getBlocks(params[1]);
-						Fact answer = gilgamesh.deduce(level, 0, true, true, atoms);
-						System.out.println(answer);
+				case REMOVE:
+					gilgamesh.remove(getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length())));
 					break;
 				case ANSWER:
-					for (Fact current : gilgamesh.getAnswers(false, false, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
+					for (Fact<String> current : gilgamesh.getAnswers(false, false, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
 						output.write((current.toString() + "\n").getBytes());
 					output.flush();
 					break;
+				/*
+				case ANSWERALL:
+					for (Fact<String> current : gilgamesh.getAnswersFixed(false, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
+						output.write((current.toString() + "\n").getBytes());
+					output.flush();
+					break;
+				*/
 				case ANSWERANY:
-					for (Fact current : gilgamesh.getAnswers(true, false, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
+					for (Fact<String> current : gilgamesh.getAnswers(true, false, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
 						output.write((current.toString() + "\n").getBytes());
 					output.flush();
 					break;
 				case ANSWERSUPP:
-					for (Fact current : gilgamesh.getAnswers(false, true, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
+					for (Fact<String> current : gilgamesh.getAnswers(false, true, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
 						output.write((current.toString() + "\n").getBytes());
 					output.flush();
 					break;
 				case ANSWERDIST:
-					for (Fact current : gilgamesh.getAnswers(true, true, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
+					for (Fact<String> current : gilgamesh.getAnswers(true, true, getBlocks(line.substring(line.indexOf(SINTAXE[0]) + 1, line.length()))))
 						output.write((current.toString() + "\n").getBytes());
 					output.flush();
 					break;
 				case QUESTION:
-					output.write(stream(gilgamesh.answer(getBlocks(line.substring(0, line.length() - 1))).atoms).getBytes());
+					output.write(stream(gilgamesh.answer(getBlocks(line.substring(0, line.length() - 1))).toAtoms()).getBytes());
 					output.flush();
 					break;
 				case QUESTION_SUB:
@@ -168,14 +168,11 @@ public class CommandShell {
 						System.out.println("Invalid parameters.");
 					}
 					break;
-				case LEARN:
-					gilgamesh.learn(getBlocks(getParameters(line)[0]));
+				case PUNISH:
+					gilgamesh.punish(getBlocks(getParameters(line)[0]));
 					break;
 				case REINFORCE:
 					gilgamesh.reinforce(getBlocks(getParameters(line)[0]));
-					break;
-				case PUNISH:
-					gilgamesh.punish(getBlocks(getParameters(line)[0]));
 					break;
 				case ENTRY:
 					gilgamesh.reinforce(getBlocks(line));
@@ -197,8 +194,8 @@ public class CommandShell {
 				case COMMENT: // bypass
 					break;
 				case LINKS:
-					for (Atom<?> atom : gilgamesh.getMemory().getAtoms())
-						System.out.printf("%10d : %s\n", gilgamesh.getMemory().getFacts(atom).size(), atom.toString());
+					for (Atom<String> atom : gilgamesh.getAtoms())
+						System.out.printf("%10d : %s\n", atom.getFacts().size(), atom.toString());
 					break;
 				case VERSION:
 					System.out.printf("Version: %s\n", Gilgamesh.getVersion());
@@ -241,10 +238,9 @@ public class CommandShell {
 		return Command.ENTRY;
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private Atom<?>[] getBlocks(String line) {
+	private Atom<String>[] getBlocks(String line) {
 
-		ArrayList<Atom<?>> blocks = new ArrayList<Atom<?>>();
+		ArrayList<Atom<String>> blocks = new ArrayList<Atom<String>>();
 		String buffer = "";
 
 		boolean split = false;
@@ -257,7 +253,7 @@ public class CommandShell {
 
 			if (last != split || (!split && SINTAXE[2].equals("" + current))) {
 				if (!"".equals(buffer))
-					blocks.add(new Atom(buffer));
+					blocks.add(Atom.of(buffer));
 				buffer = "";
 				last = split;
 				continue;
@@ -267,18 +263,18 @@ public class CommandShell {
 		}
 
 		if (!"".equals(buffer))
-			blocks.add(new Atom(buffer));
+			blocks.add(Atom.of(buffer));
 
 		return blocks.toArray(new Atom[0]);
 	}
 
-	private String stream(Atom<?> blocks[]) {
+	private String stream(Atom<String> blocks[]) {
 
 		if (blocks == null || blocks.length <= 0)
 			return "";
 
 		String answer = "";
-		for (Atom<?> current : blocks)
+		for (Atom<String> current : blocks)
 			answer += current + " ";
 		return answer + "\n";
 	}
@@ -298,11 +294,11 @@ public class CommandShell {
 
 	private void showSubQuestion(OutputStream output, String line) throws IOException {
 
-		Atom<?> blocks[] = getBlocks(line.substring(0, line.length() - 2));
-		Set<Fact> answers = gilgamesh.getAnswers(false, true, blocks);
+		Atom<String> blocks[] = getBlocks(line.substring(0, line.length() - 2));
+		Set<Fact<String>> answers = gilgamesh.getAnswers(false, true, blocks);
 
 		if (answers.size() > 0) {
-			output.write(stream(answers.iterator().next().atoms).getBytes());
+			output.write(stream(answers.iterator().next().toAtoms()).getBytes());
 			output.flush();
 		}
 	}
@@ -324,12 +320,12 @@ public class CommandShell {
 		System.out.println("links;\t\t\tShow connection quantities from each atom.");
 		System.out.println("reinforce;<atoms>\tIncrease the force by 1 for that fact (same as default entry).");
 		System.out.println("punish;<atoms>\t\tDecrease the force by 1 for that fact.");
-		System.out.println("forget;<atoms>\t\tUnlearn and delete a fact from Gilgamesh memory.");
+		System.out.println("remove;<atoms>\t\tDelete a fact from Gilgamesh memory.");
 		System.out.println("answer;<atoms>\t\tGet all answers, matching all atoms.");
+		//System.out.println("answerall;<atoms>\tGet all answers, matching all atoms and fact size.");
 		System.out.println("answerany;<atoms>\tGet all answers, matching any atom.");
 		System.out.println("answersupp;<atoms>\tGet all answers, matching all atoms, but suppressing the question atoms.");
 		System.out.println("answerdist;<atoms>\tGet all answers, matching any atom, but suppressing the question atoms.");
-		System.out.println("deduce;<level>\tDeduce a best answer, according the memory deep level informed (eg. 0, 2, 100 etc).");
 		System.out.println("script;<IN>;<OUT>\tRead the <IN> script file and answer in <OUT> text file (optional).");
 		System.out.println("save;<OUT>\t\tSave the Gilgamesh Core memory in a binary file.");
 		System.out.println("load;<IN>\t\tLoad the Gilgamesh Core memory from a binary file.");
@@ -401,7 +397,7 @@ public class CommandShell {
 				return;
 			}
 
-			gilgamesh.save(file);
+			Gilgamesh.save(file, gilgamesh);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -429,7 +425,12 @@ public class CommandShell {
 				return;
 			}
 
-			gilgamesh.load(file);
+			Gilgamesh<String> temp = Gilgamesh.<String>load(file);
+
+			if (temp == null)
+				System.out.println("File not found.");
+			else
+				gilgamesh = temp;
 		}
 		catch (Exception e) {
 			e.printStackTrace();

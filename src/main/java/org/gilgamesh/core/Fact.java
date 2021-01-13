@@ -17,35 +17,43 @@
     
 */
 
-package org.gilgamesh.model;
+package org.gilgamesh.core;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class Fact implements Comparable<Fact>, Serializable {
+@SuppressWarnings("unchecked")
+public class Fact<T extends Serializable> implements Comparable<Fact<T>>, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public final Atom<?> atoms[];
+	protected long id;
+	protected double force;
+	
+	public final T atoms[];
 	public final int hash;
 	public final long time;
-	public final double force;
+	
+
 
 	
 	
-	
-	public Fact(Atom<?> ... atoms) {
-		this(0.0, System.nanoTime(), atoms);
+	protected Fact(T ... atoms) {
+		this(0, 0.0, System.nanoTime(), atoms);
 	}
 	
-	public Fact(double force, Atom<?> ... atoms) {
-		this(force, System.nanoTime(), atoms);
+	protected Fact(double force, T ... atoms) {
+		this(0, force, System.nanoTime(), atoms);
 	}
-	
-	public Fact(double force, long time, Atom<?> ... atoms) {
 
+	protected Fact(long id, double force, long time, T ... atoms) {
+
+		this.id = id;
+		
 		if(atoms.length <= 0)
 			throw new NullPointerException("A fact must have one atom at least.");
 		
@@ -55,49 +63,30 @@ public class Fact implements Comparable<Fact>, Serializable {
 
 		int value = 0;
 
-		for (Atom<?> atom : atoms)
+		for (T atom : atoms)
 			value += atom.hashCode();
 		
 		hash = value;
 	}
 
-	protected int matches(Atom<?> values[]) {
-		
-		int total = 0;
-		
-		for (Atom<?> atom : values)
-			total += count(atom);
-		
-		return total;
-	}
-	
-	protected int count(Atom<?> atom) {
-
-		int total = 0;
-		
-		for (Atom<?> current : atoms)
-			if (current.equals(atom))
-				total++;
-
-		return total;
-	}
-
-	public Fact suppress(Atom<?> ... values)
+	public Fact<T> suppress(T ... values)
 	{
-		List<Atom<?>> remains = new ArrayList<Atom<?>>(Arrays.asList(atoms));
+		List<T> remains = new ArrayList<T>(Arrays.asList(atoms));
 		
-		for(Atom<?> current : values)
+		for(T current : values)
 			remains.remove(current);
 		
-		return new Fact(force, time, remains.toArray(new Atom[0]));
+		T array[] = (T[]) Array.newInstance(values[0].getClass(), remains.size());
+		
+		for(int i=0; i<remains.size(); i++)
+			array[i] = remains.get(i);
+		
+		return new Fact<T>(0, force, time, array);
 	}
 
-	public long getTime() {
-		return time;
-	}
-	
-	public Atom<?>[] getAtoms() {
-		return atoms;
+	public Atom<T>[] toAtoms() {
+		
+		return Arrays.asList(atoms).stream().<Atom<T>>map(v -> new Atom<T>(v)).collect(Collectors.toList()).toArray(new Atom[0]);
 	}
 	
 	@Override
@@ -111,6 +100,10 @@ public class Fact implements Comparable<Fact>, Serializable {
 		return String.format("[ %d: %.8f = %s]", time, force, string);
 	}
 
+	public double getForce() {
+		return force;
+	}
+
 	@Override
 	public int hashCode() {
 
@@ -120,17 +113,18 @@ public class Fact implements Comparable<Fact>, Serializable {
 	@Override
 	public boolean equals(Object object) {
 
-		if (!(object instanceof Fact) || ((Fact) object).atoms.length != atoms.length)
+		if (!(object instanceof Fact) || ((Fact<T>) object).atoms.length != atoms.length)
 			return false;
 
 		for (int i = 0; i < atoms.length; i++)
-			if (!atoms[i].equals(((Fact) object).atoms[i]))
+			if (!atoms[i].equals(((Fact<T>) object).atoms[i]))
 				return false;
 
 		return true;
 	}
 	
-	public int compareTo(Fact fact) {
+	@Override
+	public int compareTo(Fact<T> fact) {
 
 		if(force > fact.force)
 			return 1;

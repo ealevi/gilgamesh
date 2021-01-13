@@ -44,6 +44,12 @@
 							<li><a href="#exampleMarketingID">Marketing Research</a></li>
 							<li><a href="#exampleTeamID">Team Management</a></li>
 							<li><a href="#exampleProgrammingID">Customized Programming Language</a></li>
+							<li><a href="#exampleTrafficID">Traffic Control</a></li>
+							<li><a href="#exampleHumanID">Human Resource Database</a></li>
+							<li><a href="#exampleSymbolID">Symbol Translation</a></li>
+							<li><a href="#exampleBankID">Bank Account System</a></li>
+							<li><a href="#exampleDroneID">Drone, Robot and Game Learning</a></li>
+							<li><a href="#exampleSignalID">Identifying Signal Patterns</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -690,6 +696,719 @@
 				<p>You can open it in a web browser, like Chrome or Firefox:</p>
 				<img src="images/resume.jpg"></img>
 
+
+				<div id="exampleTrafficID" class="title4">Traffic Control (examples/traffic-control.txt)</div>
+
+				<p>Imagine now that you work at traffic control. Your target is
+					to reduce the traffic jam in rush hours so you have to synchronize
+					three strategic semaphores (A, B and C) in order to achieve that.
+					The time spent in traffic jams you have to reduce is about a period
+					of 132 minutes during the rush hours. It would be possible to do
+					that if you know what is the best configuration for each semaphore.
+					You have the following information:</p>
+				<p>
+					<ul>
+						<li><b>Traffic Jam Duration: is the time which the traffic jam
+							persists in downtown during rush hours.</b></li>
+						<li><b>Semaphore Switch Time: is the time each semaphore has
+							before switch its state (from red to green and vice versa).</b></li>
+					</ul>
+				
+				<p>You did a test during a lot of days, taking note of all
+					traffic jam duration and about semaphore times. Let's suppose that
+					some of your records are something like:</p>
+
+				<table class="datatable">
+					<thead><tr><td>Traffic Duration (minutes)</td><td>Switch Time A (seconds)</td><td>Switch Time B (seconds)</td><td>Switch Time C (seconds)</td></tr></thead>
+					<tbody>
+						<tr><td>128</td><td>35</td><td>50</td><td>40</td></tr>
+						<tr><td>167</td><td>20</td><td>15</td><td>30</td></tr>
+						<tr><td>149</td><td>45</td><td>30</td><td>25</td></tr>
+						<tr><td colspan="4">...</td></tr>
+					</tbody>
+				</table>
+				<br/>
+				<img src="images/map.jpg"></img>
+
+				<p>Some of those configurations can happen more than one time,
+					having different duration for each measure. For example, you could
+					test the same switch configuration for a whole week (e.g.: A 35s, B
+					50s and C 40s), so you would have 5 measures with same
+					configuration but different traffic durations. Now, how is it
+					possible to know which configuration has the best performance to
+					reduce the traffic jam? Just feed those information into Gilgamesh,
+					making the traffic jam duration as its fact force, like:</p>
+					
+				<p><b>fact; -128; semaphore A 35 B 50 C 40</b></p>
+
+				<p>However, there is a trick here. As Gilgamesh sorts answers
+					from the highest to lowest forces, it would bring us the worst case
+					as first answer. Since we want to know the shortest time, we have
+					to multiply our duration times by -1 to invert its results (this is
+					why we used -128 instead 128). Then when we ask Gilgamesh to
+					answer, it will bring us the shortest duration time instead the
+					long one. Running the script:</p>
+
+				<div class="code">
+					gilgamesh: script; examples\traffic-control.txt<br/>
+					Processing done.<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>It will load all records about traffic jam and their
+					respective semaphore configurations. Now, a simple question could
+					bring us the best configuration for those semaphores:</p>
+				<div class="code">
+					gilgamesh: answer; semaphore<br/>
+					[ 37391151923400: -104.00000000 = semaphore A 35 B 40 C 50 ]<br/>
+					[ 37392522096400: -107.00000000 = semaphore A 10 B 15 C 35 ]<br/>
+					[ 37392867178600: -109.00000000 = semaphore A 25 B 30 C 35 ]<br/>
+					[ 37392337185200: -113.00000000 = semaphore A 35 B 40 C 10 ]<br/>
+					[ 37392893403800: -129.00000000 = semaphore A 25 B 10 C 45 ]<br/>
+				</div>
+
+				<p>So it is possible to conclude that the best configuration to
+					reduce traffic jam would be:</p>
+				<p><ul>
+					<li>Switch Time to Semaphore A: 35 seconds</li>
+					<li>Switch Time to Semaphore B: 40 seconds</li>
+					<li>Switch Time to Semaphore C: 50 seconds</li>
+				</ul></p>
+				<p>That makes your traffic jam duration will remain only for 104
+					minutes. Work done. It is possible to include in your fact the week
+					day, day time or any information you would think it is relevant to
+					identify the best configuration. Still would be possible that A, B
+					and C would not be a single semaphore, but a whole group of them
+					working together. The possibilities are many.</p>
+
+
+				<div id="exampleHumanID" class="title4">Human Resource Database (examples/human-resource-db.txt)</div>
+
+				<p>Sometime, human resource professionals have a lot of problems
+					to find a candidate that fits to some company position, among all
+					those resumes they received. That happens because each person has
+					its own way to do its resume. Very often, we see some companies
+					creating their own human resource database, asking to candidates to
+					register their resumes on those systems. As this registering has no
+					standards about how to do that, some companies can ask different
+					questions about candidates information, which sometimes, can end up
+					in a mess or in annoying forms to fill the templates.</p>
+				<p>It is possible to use Gilgamesh to help with this process.
+					Basically, the only thing they should do is to input all
+					information available in candidate resumes, using its name and what
+					about that information refers as a ID. Let's suppose that we have
+					the following candidate information:</p>
+				<p><b>name, address, objective, skills, experience</b></p>
+				<p>So you can load those informations, linking the facts with
+					key words you want, like above. For this example, we use them like
+					below:</p>
+				<p><b>Captain Kirk address Enterprise Vessel, where no man has gone before</b></p>
+				<p>Running the script as below:</p>
+				<div class="code">
+					gilgamesh: script; examples/human-resource-db.txt<br/>
+					Processing done.<br/>
+					gilgamesh: facts;<br/>
+				</div>
+
+				<p>You will load some resumes, like if you had typed them
+					entering all information available in a format like the pattern
+					described before. After that, you can start querying some
+					information, asking for key words you are looking for. Now, let's
+					suppose that you want to find a person to work in sales department
+					so you need someone with convincing skills. Let's take a look for
+					the word 'convince':</p>
+				<div class="code">
+					gilgamesh: answer; convince<br/>
+					[ 37908395169500: 1.00000000 = Anakin Skywalker skill Uses the force to convince people and pursuit the rebellions as well. ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>Note you have found that there one person with this
+					characteristic as one of his skills. You could search for people
+					which has the experience to take decisions. So, using <b>answerany</b>:</p>
+				<div class="code">
+					gilgamesh: answerany; decisions experience<br /> [ 38252348108500:
+					3.00000000 = Captain Kirk experience He has worked with Mr. Spock,
+					following most of all his advices to not get in trouble. However,
+					when he is in trouble due to not follow his advices, he takes
+					decisions which involves a beautiful girls to solve them. Great
+					experience to take red shirt crew members anywhere and let them
+					die. ]<br /> [ 38252347058600: 2.00000000 = Neo experience Neo has
+					experience looking for white rabbits in subliminal messages, most
+					of them in body tattoos from others. He can deform the matrix
+					(understand as everything), can fly and destroy a entire block
+					without being noted by anyone. Besides that he can savor drugs
+					given by strangers without any regretting (usually, red pills). ]<br />
+					[ 38252345473800: 2.00000000 = John Connor experience He has
+					experience killing terminators since he was a child. As an adult,
+					he survived to the nuclear holocaust and still had time to do this
+					resume. Besides that, he has the capacity to change his face,
+					giving the impression that his life is like a movie where they
+					constantly change the main actor. ]<br /> [ 38252349461800:
+					1.00000000 = Anakin Skywalker experience He grew up in Tatooine,
+					piloting some space ships as slave, no escaping and therefore,
+					showing his capacity to follow orders. Some time later, he went to
+					the Jedi center as a padawan, showing some emotions that remembers
+					a really bad actor. After became a jedi, he had decided to join to
+					the dark side, which was reinforced by unsolved family feelings,
+					like a not given child care rights. He gave the example that if you
+					had a bad feeling like slipping in a banana peel, you are already
+					in the dark side, being impossible to come back. ]<br /> [
+					38252347874200: 1.00000000 = Captain Kirk skill Give moral orders
+					and take decisions which often, are most improbable choices in real
+					world. ]<br /> gilgamesh:<br />
+				</div>
+
+				<p>You can see that it is possible to query any word you want,
+					since you enter each resume word as an atom, making bigger facts.
+					It is possible to query much more information according your needs
+					and details about the job opportunity you have, matching them with
+					candidates information. After knowing who has those needs you want,
+					you can ask specific questions like personal details:</p>
+				<div class="code">
+					gilgamesh: answer; Captain Kirk skill<br/>
+					[ 38252347874200: 3.00000000 = Captain Kirk skill Give moral orders and take decisions which often, are most improbable choices in real world. ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>It is still possible to query all information of one type, like all names for example:</p>
+				<div class="code">
+					gilgamesh: answer; name<br/>
+					[ 38252348420000: 1.00000000 = Anakin Skywalker name ]<br/>
+					[ 38252347489200: 1.00000000 = Captain Kirk name ]<br/>
+					[ 38252346066600: 1.00000000 = Neo name ]<br/>
+					[ 38252344530000: 1.00000000 = John Connor name ]<br/>
+					gilgamesh:<br/>
+				</div>
+				<p>With those results, would be possible to generate reports,
+					candidate summaries, common characteristics and information among
+					them etc.</p>
+
+
+				<div id="exampleSymbolID" class="title4">Symbol Translation (examples/symbol-translation.txt)</div>
+
+				<p>Gilgamesh can be used to translate texts. When I am talking
+					about translation, I mean from any language since you provide basic
+					information to the task. In this example, I am going to try
+					providing one way to do that.</p>
+				<p>The first thing to know is that symbols can represent
+					different things like syllables, things, sounds etc. For this
+					example, I have created some symbols which will act as hieroglyphs
+					transmitting a message. As hieroglyphs, unique symbols can have a
+					specific meaning while combined symbols can have another one.</p>
+				<p>As smaller the information is (fact), a higher force it
+					should have. If you intend to use this example as reference for
+					another similar translation work, I suggest you to define a scale
+					for fact forces, in order to fit your symbol combinations into it.
+					For now, we just have a combination for 2 symbols what means that
+					for our unique symbols, we will have the force 2 and for combined
+					ones, 1. The first thing we have to do is to teach Gilgamesh about
+					how to connect symbols and their meanings. In this case let's
+					consider our symbols below:</p>
+
+				<table class="datatable">
+					<thead><tr><td>Symbol</td><td>Type</td><td>Meaning</td></tr></thead>
+					<tbody>
+						<tr><td>(-_-)</td><td>Unique</td><td>sleep</td></tr>
+						<tr><td>_[]_</td><td>Unique</td><td>door</td></tr>
+						<tr><td>===</td><td>Unique</td><td>path</td></tr>
+						<tr><td>/\/</td><td>Unique</td><td>snake</td></tr>
+						<tr><td>_/\_</td><td>Unique</td><td>house</td></tr>
+						<tr><td>...</td><td>Unique</td><td>go</td></tr>
+						<tr><td>(:-)</td><td>Unique</td><td>happy</td></tr>
+						<tr><td>(o.O)</td><td>Unique</td><td>surprise</td></tr>
+						<tr><td>(o_o)</td><td>Unique</td><td>me</td></tr>
+						<tr><td>/*\</td><td>Unique</td><td>garden</td></tr>
+						<tr><td>_[]_ /*\</td><td>Combined</td><td>weapon</td></tr>
+						<tr><td>... (-_-)</td><td>Combined</td><td>death</td></tr>
+					</tbody>
+				</table>
+
+				<p>Note that combined symbols use a combination of already known
+					symbols to have a different meaning (like hieroglyphs). So, our
+					message is:</p>
+				<p><b>(o_o) (-_-)</b></p>
+				<p><b>/*\ /\/ ... _/\_ _[]_</b></p>
+				<p><b>(o_o) (o.O) _[]_ /*\ ... (-_-) /\/</b></p>
+				<p><b>(o_o) (:-)</b></p>
+				
+				<p>For facts, we will enter like below:</p>
+				<p><b>Unique: fact;2;(-_-) sleep</b></p>
+				<p><b>Combined: fact;1;_[]_ /*\ weapon</b></p>
+
+				<p>If you are a developer using Gilgamesh source code, you could
+					develop a system to first, trying to start finding a best match for
+					combined symbols and then reducing the size of facts to the unique
+					one. The decreasing force to the bigger facts is important because
+					when you try to look for an unique symbol, it will bring you all
+					answers which have that symbol, ordering them from the unique to
+					the combined ones. Let's suppose you have to find a best
+					translation until 5 combined symbols. In this case, we could use
+					something like:</p>
+					
+				<p><b>1 unique symbol = force 5</b></p>
+				<p><b>2 combined symbols = force 4</b></p>
+				<p><b>3 combined symbols = force 3</b></p>
+				<p><b>4 combined symbols = force 2</b></p>
+				<p><b>5 combined symbols = force 1</b></p>
+
+				<p>For our example, if we ask to Gilgamesh about an answer using
+					only the symbol (-_-) which has unique and combined meanings, it
+					would bring us first the unique answer:</p>
+				<div class="code">
+					gilgamesh: answer; (-_-)<br/>
+					[ 39475818492100: 2.00000000 = (-_-) sleep ]<br/>
+					[ 39475819538800: 1.00000000 = ... (-_-) death ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>So, running the script "symbol-translation.txt" we can have
+					the translation answer for our message above, like Indiana Jones
+					translating a caveman's story:</p>
+				<div class="code">
+					gilgamesh: script; examples/symbol-translation.txt<br/>
+					-------- Translation for Line 1 --------<br/>
+					me<br/>
+					sleep<br/>
+					-------- Translation for Line 2 --------<br/>
+					garden<br/>
+					snake<br/>
+					go<br/>
+					house<br/>
+					door<br/>
+					-------- Translation for Line 3 --------<br/>
+					me<br/>
+					surprise<br/>
+					weapon<br/>
+					death<br/>
+					snake<br/>
+					-------- Translation for Line 4 --------<br/>
+					me<br/>
+					happy<br/>
+					Processing done.<br/>
+					gilgamesh:<br/>
+				</div>
+
+
+				<div id="exampleBankID" class="title4">Bank Account System (examples/bank-account.txt)</div>
+
+				<p>In this example we are going to do a bank account system,
+					acting as a traditional bank account database. Let's consider the
+					following entity relationship model:</p>
+					
+				<img src="images/rem.jpg"></img>
+
+				<p>In our system, we can have many customers. Each customer can
+					have different accounts (current and investment) and each one of
+					those accounts can have a lot of debit and credit transactions.
+					Besides that, we have to control the balance for each account,
+					which usually could be done using some calculation and recording it
+					in the table "Transaction" inside a relational database.</p>
+				<p>To get control of each fact taught to Gilgamesh, we can
+					create a id which will refers to just one fact inside its memory,
+					like a single row in a database table. Actually, this is similar
+					how a common system works: users and programmers are used to have a
+					code to identify things in systems, which usually is a number. In
+					this case, we will create standard code for each table above. The
+					customers will have the code "CXXX", where "XXX" is a increasing
+					number or counter. So, we can teach Gilgamesh as the example below:</p>
+				<p><b>customer C001 name Harrison Ford</b></p>
+				<p><b>customer C001 address AAA street 12</b></p>
+				<p><b>customer C001 phone 1234-1234</b></p>
+				<p>That allows to Gilgamesh (and you) retrieve any single and
+					specific fact when needed. Every time when we have to include
+					another customer, we need to increment our customer code id (e.g.
+					C001, C002, C003 and so on). Now, let's see how we have composed
+					the lines above:</p>
+				<table class="datatable">
+					<thead><tr><td>Table</td><td>Customer ID</td><td>Column</td><td>Value</td></tr></thead>
+					<tbody>
+						<tr><td>customer</td><td>C001</td><td>name</td><td>Harrison Ford</td></tr>
+						<tr><td>customer</td><td>C001</td><td>address</td><td>AAA street 12</td></tr>
+						<tr><td>customer</td><td>C001</td><td>phone</td><td>1234-1234</td></tr>
+						<tr><td>customer</td><td>C002</td><td>name</td><td>Angelina Jolie</td></tr>
+						<tr><td>customer</td><td>C002</td><td>address</td><td>BBB street 23</td></tr>
+						<tr><td colspan="4">...</td></tr>
+					</tbody>
+				</table>
+				
+				<p>For accounts, we have to include the composite id to guarantee our fact integrity:</p>
+				<table class="datatable">
+					<thead><tr><td>Customer Foreign ID</td><td>Table</td><td>ID</td><td>Column</td><td>Value</td></tr></thead>
+					<tbody>
+						<tr><td>C001</td><td>account</td><td>A001</td><td>type</td><td>current</td></tr>
+						<tr><td>C001</td><td>account</td><td>A001</td><td>date</td><td>21/04/2013</td></tr>
+						<tr><td>C001</td><td>account</td><td>A002</td><td>type</td><td>investment</td></tr>
+						<tr><td>C001</td><td>account</td><td>A002</td><td>date</td><td>22/04/2013</td></tr>
+						<tr><td>C002</td><td>account</td><td>A001</td><td>type</td><td>current</td></tr>
+					</tbody>
+				</table>
+
+				<p>Note that we have to repeat the account id (A001, A002 etc)
+					because we have just two kind of accounts (current and investment).
+					As we are creating a fact matching with one customer (C001, C002
+					etc) there is no problem to duplicate those ids. Another important
+					point is to know that we just need to repeat the account id because
+					we intend to generate duplicated ids to accounts. If our intention
+					was to use a single account id for each record (fact), then would
+					not be necessary to include customer ids (it would be working as
+					unique key for any fact). Continuing, we will do the same for
+					transactions:</p>
+
+				<table class="datatable">
+					<thead><tr><td>Customer FK</td><td>Account FK</td><td>Table</td><td>ID</td><td>Date</td><td>Type</td><td>Value</td></tr></thead>
+					<tbody>
+						<tr><td>C001</td><td>A001</td><td>transaction</td><td>T001</td><td>01/01/2013</td><td>debit</td><td>-35.13</td></tr>
+						<tr><td>C001</td><td>A001</td><td>transaction</td><td>T002</td><td>01/01/2013</td><td>credit</td><td>48.03</td></tr>
+						<tr><td>C001</td><td>A001</td><td>transaction</td><td>T003</td><td>01/01/2013</td><td>credit</td><td>15.94</td></tr>
+						<tr><td>C001</td><td>A001</td><td>transaction</td><td>T004</td><td>01/01/2013</td><td>credit</td><td>31.59</td></tr>
+						<tr><td>C002</td><td>A002</td><td>transaction</td><td>T005</td><td>01/01/2013</td><td>debit</td><td>-34.95</td></tr>
+						<tr><td colspan="7">...</td></tr>
+					</tbody>
+				</table>
+
+				<p>For transactions, we will create a link among date, type of
+					transaction (debit/credit) and its value. We need to keep that
+					structure to ensure the fact will describe one specific condition
+					that happens sometime. And we have to input balances for each
+					account and day (note that we split the balance as another table):</p>
+
+				<table class="datatable">
+					<thead><tr><td>Customer FK</td><td>Account FK</td><td>Table</td><td>Date</td><td>Value</td></tr></thead>
+					<tbody>
+						<tr><td>C001</td><td>A001</td><td>balance</td><td>01/01/2013</td><td>159.90</td></tr>
+						<tr><td>C001</td><td>A001</td><td>balance</td><td>02/01/2013</td><td>192.92</td></tr>
+						<tr><td>C001</td><td>A001</td><td>balance</td><td>03/01/2013</td><td>309.85</td></tr>
+						<tr><td colspan="5">...</td></tr>
+					</tbody>
+				</table>
+				
+				<p>Now, let's execute our script to load all data for this example:</p>
+				<div class="code">
+					gilgamesh: script; examples/bank-account.txt<br/>
+					Processing done.<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>And let's see what we can do.</p>
+				<p>To query all customer names:</p>
+				<div class="code">
+					gilgamesh: answer; customer name<br/>
+					[ 40994505943600: 2.00000000 = customer C007 name Daniel Craig ]<br/>
+					[ 40994505254000: 2.00000000 = customer C006 name Denzel Washington ]<br/>
+					[ 40994504173900: 2.00000000 = customer C005 name Jessica Alba ]<br/>
+					[ 40994503495300: 2.00000000 = customer C004 name Samuel Jackson ]<br/>
+					[ 40994502826900: 2.00000000 = customer C003 name Nicole Kidman ]<br/>
+					[ 40994502149600: 2.00000000 = customer C002 name Angelina Jolie ]<br/>
+					[ 40994501466500: 2.00000000 = customer C001 name Harrison Ford ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>To query the customer code using a surname:</p>
+				<div class="code">
+					gilgamesh: answer; customer Alba<br/>
+					[ 40994504173900: 2.00000000 = customer C005 name Jessica Alba ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>To query all customer information from her code:</p>
+				<div class="code">
+					gilgamesh: answer; C005 customer<br/>
+					[ 40994504869500: 2.00000000 = customer C005 phone 5678-5678 ]<br/>
+					[ 40994504682300: 2.00000000 = customer C005 address FFF street 56 ]<br/>
+					[ 40994504173900: 2.00000000 = customer C005 name Jessica Alba ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>To query a specific information (phone) from her code:</p>
+				<div class="code">
+					gilgamesh: answer; C005 phone<br/>
+					[ 40994504869500: 2.00000000 = customer C005 phone 5678-5678 ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>To query which account types she has:</p>
+				<div class="code">
+					gilgamesh: answer; C005 account type<br/>
+					[ 40994510741400: 3.00000000 = C005 account A002 type investment ]<br/>
+					[ 40994510346900: 3.00000000 = C005 account A001 type current ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>To query when she has created the investment account:</p>
+				<div class="code">
+					gilgamesh: answer; C005 A002 account date<br/>
+					[ 40994510976700: 4.00000000 = C005 account A002 date 02/04/2013 ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>To query all transactions from her investment account:</p>
+				<div class="code">
+					gilgamesh: answer; C005 A002 transaction<br/>
+					[ 40994624675500: 3.00000000 = C005 A002 transaction T050 05/01/2013 credit 6,04 ]<br/>
+					[ 40994624440700: 3.00000000 = C005 A002 transaction T049 05/01/2013 credit 42,38 ]<br/>
+					[ 40994624224400: 3.00000000 = C005 A002 transaction T048 05/01/2013 debit -26,86 ]<br/>
+					[ 40994624024800: 3.00000000 = C005 A002 transaction T047 05/01/2013 debit -5,06 ]<br/>
+					[ 40994623823400: 3.00000000 = C005 A002 transaction T046 05/01/2013 debit -28,02 ]<br/>
+					[ 40994623623100: 3.00000000 = C005 A002 transaction T045 05/01/2013 credit 45,36 ]<br/>
+					[ 40994623417800: 3.00000000 = C005 A002 transaction T044 05/01/2013 credit 47,27 ]<br/>
+					[ 40994623208200: 3.00000000 = C005 A002 transaction T043 05/01/2013 debit -26,14 ]<br/>
+					[ 40994623009300: 3.00000000 = C005 A002 transaction T042 05/01/2013 credit 13,06 ]<br/>
+					[ 40994622805800: 3.00000000 = C005 A002 transaction T041 05/01/2013 debit -32,42 ]<br/>
+				</div>
+
+				<p>To query all her credit transactions from investment account:</p>
+				<div class="code">
+					gilgamesh: answer; C004 A002 transaction credit<br/>
+					[ 40994601509800: 4.00000000 = C004 A002 transaction T049 05/01/2013 credit 2,72 ]<br/>
+					[ 40994601311900: 4.00000000 = C004 A002 transaction T048 05/01/2013 credit 26,37 ]<br/>
+					[ 40994601069700: 4.00000000 = C004 A002 transaction T047 05/01/2013 credit 42,45 ]<br/>
+					[ 40994600799700: 4.00000000 = C004 A002 transaction T046 05/01/2013 credit 15,59 ]<br/>
+					[ 40994600596400: 4.00000000 = C004 A002 transaction T045 05/01/2013 credit 22,92 ]<br/>
+					[ 40994600193500: 4.00000000 = C004 A002 transaction T044 05/01/2013 credit 42,53 ]<br/>
+					[ 40994599579000: 4.00000000 = C004 A002 transaction T041 05/01/2013 credit 0,94 ]<br/>
+				</div>
+
+				<p>To query all her transactions in a specific date from investment account:</p>
+				<div class="code">
+					gilgamesh: answer; C004 A002 transaction 03/01/2013<br/>
+					[ 40994596915000: 4.00000000 = C004 A002 transaction T030 03/01/2013 credit 14,70 ]<br/>
+					[ 40994596720100: 4.00000000 = C004 A002 transaction T029 03/01/2013 debit -21,73 ]<br/>
+					[ 40994596524300: 4.00000000 = C004 A002 transaction T028 03/01/2013 debit -29,21 ]<br/>
+					[ 40994596328300: 4.00000000 = C004 A002 transaction T027 03/01/2013 credit 32,05 ]<br/>
+					[ 40994596132200: 4.00000000 = C004 A002 transaction T026 03/01/2013 credit 8,87 ]<br/>
+					[ 40994595936500: 4.00000000 = C004 A002 transaction T025 03/01/2013 credit 26,68 ]<br/>
+					[ 40994595741500: 4.00000000 = C004 A002 transaction T024 03/01/2013 credit 27,36 ]<br/>
+					[ 40994595546600: 4.00000000 = C004 A002 transaction T023 03/01/2013 debit -6,25 ]<br/>
+					[ 40994595351100: 4.00000000 = C004 A002 transaction T022 03/01/2013 credit 4,17 ]<br/>
+					[ 40994595153100: 4.00000000 = C004 A002 transaction T021 03/01/2013 credit 42,76 ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>To query all balances for all accounts in a specific date:</p>
+				<div class="code">
+					gilgamesh: answer; balance 03/01/2013<br/>
+					[ 40994668318500: 2.00000000 = C007 A002 balance 03/01/2013 150,00 ]<br/>
+					[ 40994656117500: 2.00000000 = C007 A001 balance 03/01/2013 423,96 ]<br/>
+					[ 40994643702800: 2.00000000 = C006 A002 balance 03/01/2013 425,19 ]<br/>
+					[ 40994631970000: 2.00000000 = C006 A001 balance 03/01/2013 214,53 ]<br/>
+					[ 40994620321600: 2.00000000 = C005 A002 balance 03/01/2013 511,31 ]<br/>
+					[ 40994608449300: 2.00000000 = C005 A001 balance 03/01/2013 83,88 ]<br/>
+					[ 40994597108200: 2.00000000 = C004 A002 balance 03/01/2013 179,12 ]<br/>
+					[ 40994586148200: 2.00000000 = C004 A001 balance 03/01/2013 131,11 ]<br/>
+					[ 40994574931400: 2.00000000 = C003 A002 balance 03/01/2013 2,29 ]<br/>
+					[ 40994563450600: 2.00000000 = C003 A001 balance 03/01/2013 314,89 ]<br/>
+					[ 40994552147600: 2.00000000 = C002 A002 balance 03/01/2013 505,06 ]<br/>
+					[ 40994541235400: 2.00000000 = C002 A001 balance 03/01/2013 535,00 ]<br/>
+					[ 40994530528600: 2.00000000 = C001 A002 balance 03/01/2013 340,45 ]<br/>
+					[ 40994519529700: 2.00000000 = C001 A001 balance 03/01/2013 309,85 ]<br/>
+					gilgamesh:<br/>
+				</div>
+
+
+				<div id="exampleDroneID" class="title4">Drone, Robot and Game Learning (examples/drone-controller.txt)</div>
+
+				<p>Let's suppose you want to make a intelligent drone or robot
+					which is capable to learn by itself some body's control or
+					movement. It is possible to use Gilgamesh's code to make it learn
+					positions getting information from movement sensors (you probably
+					would do that using the source code, but the concept can be
+					demonstrated through Gilgamesh console). The idea of this example
+					is to show how Gilgamesh could learn and use its memory in an
+					ongoing process, as soon as its memory is increasing up. That idea
+					could be used in games too, to control objects or AI characters for
+					a specific task.</p>
+				<p>Now, let's suppose you have a drone or space vessel in a game
+					which should learn the rotation in one axis. The best angle is 0,
+					identifying that your vessel is in the best rotation to fly (flat
+					position). The Gilgamesh memory should know what is the correction
+					to that angle which would put your vessel again in the best
+					rotation (eg.: if the angle of your vessel is 15 degrees, then the
+					memory has to know that it should correct the angle in -15 degrees
+					to reach 0 for rotation). For each measure of time, a sensor like a
+					gyroscope sends you the current rotation of your object, telling in
+					which degree it is:</p>
+					
+				<img src="images/drone.jpg"></img>
+
+				<p>To make the code learn, the execution will be in a loop,
+					monitoring and running a logic in this order:</p>
+					
+				<ol>
+					<li>get the current sensor rotation value;</li>
+					<li>if there is a correction value in Gilgamesh's memory for that angle:
+						<ul>
+							<li>get it and apply a "mutation" on it (small increment or decrement value) or</li>
+							<li>generate any random value</li>
+						</ul>
+					</li>
+					<li>apply the obtained correction</li>
+					<li>check the result after apply the correction and keep it in Gilgamesh's memory;</li>
+				</ol>
+					
+				<p>Let's make some assumptions:</p>
+
+				<p> - if the correction value applied makes our vessel turns its
+					axis near 0 degrees, then we can consider it as a good value.
+					Otherwise, would be a bad correction since our vessel didn't turn
+					near 0 degrees to the flat position. In this case, we can create a
+					measure to indicate that, as if it would be the sensor response
+					after apply the correction (this result will be used as fact force
+					in Gilgamesh's memory):</p>
+				<p>
+					<b>result = (minimum value between correction and rotation) -
+						(maximum value between correction and rotation)</b>
+				</p>
+
+				<p>Eg.: rotation = 14, correction = 3 (any random value at first
+					time) then the result = (3 - 14) = -11 The -11 is the result after
+					we apply our correction (which will be a random value at first
+					time). This value represents a sensor response indicating what
+					happens after we apply our correction. Any value near 0 is a good
+					value (our vessel rotation is near the flat position: 0 degrees).</p>
+
+				<p> - the mutation value is necessary to have variations in our
+					correction value. Think of it like a genetic mutation that happens
+					naturally during new generations. Actually, it could be interpreted
+					like that, since the result of our correction force could be
+					understood like natural selection :) The mutation assumed here will
+					be among -1, 0 or +1 values.</p>
+					
+				<p>Now, let's simulate the learning process.</p>
+				<p>The script "drone-controller.txt" into examples folder gives
+					an idea about that kind of control. After run that script which
+					execute those steps above a hundred times, you will get values
+					like:</p>
+
+				<div class="code">
+					gilgamesh: script; examples/drone-controller.txt<br/>
+					rotation 1 correction 0<br/>
+					rotation 1 correction 2<br/>
+					rotation 4 correction 3<br/>
+					rotation 4 correction 3<br/>
+					rotation 6 correction 5<br/>
+					rotation 6 correction 7<br/>
+					rotation 8 correction 7<br/>
+					rotation 8 correction 9<br/>
+					rotation 8 correction 9<br/>
+					rotation 10 correction 11<br/>
+					Processing done.<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>This happens because Gilgamesh will be learning a better
+					value after each iteration, creating a real memory of which value
+					is better to achieve the flat position for our vessel (0 degrees).
+					As more as you input data, more accurate will be its answers. Note
+					that for rotation 1, 8 and 10 it didn't get the best answer yet
+					because we had entered 100 lines of information. If we continue
+					this process, it would have best answers soon.</p>
+
+				<p>Now, think that you can use it in any kind of sensor you
+					want. This is one way of many that it could be used in a robot,
+					drone or game object, to make it learn during the running time.</p>
+
+
+				<div id="exampleSignalID" class="title4">Identifying Signal Patterns (examples/alien-signal.txt)</div>
+
+				<p>Gilgamesh can be used to identify some kind of signal pattern
+					in a sequence of data without too much effort. Let's suppose that
+					you work on SETI and you have the duty to analyse some piece of
+					information received from outer space. You want to identify if the
+					signal received has any pattern on it, which could mean a signal
+					sent from any intelligent life form. In this case, let's consider
+					that our signal is formed by letters (not numbers, to keep it easy)
+					and you have a signal like that:</p>
+					
+				<p><b>D M Z Q R O D K W F N B C Q Y T L M J X ...</b></p>
+
+				<p>As we don't have any idea how big could be a pattern, let's
+					starting testing it from 2 and 10 combinations. For each step in
+					the sequence, we will insert into Gilgamesh's memory a range of
+					numbers from 2 to 10. Eg.:</p>
+
+				<p>Step 1:<br/>
+					D M (from 1 to 2 letters)<br/>
+					D M Z (from 1 to 3 letters)<br/>
+					D M Z Q (from 1 to 4 letters)<br/>
+					D M Z Q R (from 1 to 5 letters)<br/>
+					D M Z Q R O (from 1 to 6 letters)<br/>
+					D M Z Q R O D (from 1 to 7 letters)<br/>
+					D M Z Q R O D K (from 1 to 8 letters)<br/>
+					D M Z Q R O D K W (from 1 to 9 letters)<br/>
+					D M Z Q R O D K W F (from 1 to 10 letters)<br/>
+				</p>
+				
+				<p>Step 2 (walks 1 letter in the sequence):<br/>
+					M Z (from 1 to 2 letters)<br/>
+					M Z Q (from 1 to 3 letters)<br/>
+					M Z Q R (from 1 to 4 letters)<br/>
+					M Z Q R O (from 1 to 5 letters)<br/>
+					M Z Q R O D (from 1 to 6 letters)<br/>
+					M Z Q R O D K (from 1 to 7 letters)<br/>
+					M Z Q R O D K W (from 1 to 8 letters)<br/>
+					M Z Q R O D K W F (from 1 to 9 letters)<br/>
+					M Z Q R O D K W F N (from 1 to 10 letters)<br/>
+				</p>
+				
+				<p>And so on.<br/>
+				To run our example, execute the script "alien-signal.txt":<br/>
+				</p>
+
+				<div class="code">
+					gilgamesh: script; examples/alien-signal.txt<br/>
+					Processing done.<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>After this step, Gilgamesh knows all patterns into the signal
+					and we are able to start analyzing the signal.</p>
+				<p>Let's take a look for most common atoms calling "links" command:</p>
+				<div class="code">
+					gilgamesh: links;<br/>
+					      1717 : A<br/>
+					      1967 : B<br/>
+					      2010 : C<br/>
+					      1489 : D<br/>
+					      3520 : E<br/>
+					      2037 : F<br/>
+					      1876 : G<br/>
+					      4478 : H<br/>
+					      1572 : I<br/>
+					      1791 : J<br/>
+					      2429 : K<br/>
+					      2009 : L<br/>
+					      1529 : M<br/>
+					      1520 : N<br/>
+					      2762 : O<br/>
+					      2333 : P<br/>
+					      2204 : Q<br/>
+					      3596 : R<br/>
+					      1942 : S<br/>
+					      2626 : T<br/>
+					      2769 : U<br/>
+					      1784 : V<br/>
+					      1977 : W<br/>
+					      1778 : X<br/>
+					      2859 : Y<br/>
+					      1531 : Z<br/>
+					gilgamesh:<br/>
+				</div>
+
+				<p>We can see that the most common letter is "H" - that gives us
+					a clue. Now, if we ask about most common pattern using "H" we will
+					see:</p>
+				<div class="code">
+					gilgamesh: answerany; H<br/>
+					[ 43285614010200: 98.00000000 = H I Y O U T H E R E ]<br/>
+					[ 43285613794500: 98.00000000 = H I Y O U T H E R ]<br/>
+					[ 43285613514100: 98.00000000 = H I Y O U T H E ]<br/>
+					[ 43285613270500: 98.00000000 = H I Y O U T H ]<br/>
+					[ 43285620442400: 54.00000000 = T H ]<br/>
+					[ 43285621932700: 50.00000000 = H E ]<br/>
+					[ 43285622259800: 49.00000000 = H E R E ]<br/>
+				</div>
+
 			</div>
 		
 		</div>
@@ -709,3 +1428,42 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
